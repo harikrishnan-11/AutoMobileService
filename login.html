@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ClickMechanic – Car Repair & Servicing</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@700;800;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./about.css">
+    <link rel="stylesheet" href="login.css">
+</head>
+
+<body>
+
+    <!-- OVERLAY -->
+    <div class="overlay" id="overlay"></div>
+
+    <!-- MOBILE MENU -->
+    <div class="mobile-menu" id="mobileMenu">
+        <button class="mm-close" id="closeMenuBtn"><i class="fa-solid fa-xmark"></i></button>
+        <a href="index.html">Home</a>
+        <a href="about.html" class="active">About Us</a>
+        <a href="#">How It Works</a>
+        <a href="#">Our Services</a>
+        <a href="#">Blog</a>
+        <a href="#">Support</a>
+        <hr style="border:0;border-top:1px solid #eee;">
+        <a href="#">Sign In</a>
+        <a href="#" class="mob-resume">Resume Quote</a>
+    </div>
+
+    <!-- ============================================================
+     HEADER
+============================================================ -->
+    <div class="site-header" id="siteHeader">
+        <nav class="nav-inner">
+            <a href="#" class="logo">Click<span>Mechanic</span></a>
+            <ul class="nav-links">
+                <li><a href="#">Home</a></li>
+                <li><a href="#" class="active">About Us</a></li>
+                <li><a href="#">How It Works</a></li>
+                <li><a href="#">Our Services <i class="fa-solid fa-chevron-down"
+                            style="font-size:9px;margin-left:2px;"></i></a></li>
+                <li><a href="#">Blog</a></li>
+            </ul>
+            <div class="nav-right">
+                <a href="#" class="btn-signin">Sign In</a>
+                <a href="#" class="btn-resume">Resume Quote</a>
+            </div>
+            <button class="hamburger" id="hamburgerBtn"><i class="fa-solid fa-bars"></i></button>
+        </nav>
+    </div>
+
+    <!-- ============================================================
+           SECTION 1 — LOGIN HERO BANNER (Console Intro)
+     ============================================================ -->
+    <section class="hero-about login-hero-override">
+        <!-- Animated Interactive Background Layers -->
+        <div class="orb orb1"></div>
+        <div class="orb orb2"></div>
+        <div class="orb orb3"></div>
+
+        <div class="hero-body">
+            <div class="hero-text">
+                <div class="hero-crumb">
+                    <a href="#">Home</a>
+                    <i class="fa-solid fa-chevron-right"></i>
+                    <span>Secure Console Access</span>
+                </div>
+                <h1>Command <em>Center</em></h1>
+                <p>Access your real-time vehicle performance metrics, scheduled diagnostics pipelines, active technician
+                    communication loops, and cryptographically verified billing statements.</p>
+                <div class="hero-ctas">
+                    <a href="#auth-core" class="btn-primary">Jump to Secure Form <i
+                            class="fa-solid fa-arrow-down"></i></a>
+                    <a href="#" class="btn-outline-w">Request Enterprise Token</a>
+                </div>
+            </div>
+
+            <!-- System Integrity Metrics Panel -->
+            <div class="hero-cards login-cards-mobile">
+                <div class="hc hc1">
+                    <div class="hc-icon bg-blue"><i class="fa-solid fa-fingerprint"></i></div>
+                    <div class="hc-label">Auth Security</div>
+                    <div class="hc-val">MFA</div>
+                    <div class="hc-sub">Hardware Key Ready</div>
+                </div>
+                <div class="hc hc2">
+                    <div class="hc-icon bg-green"><i class="fa-solid fa-shield-halved"></i></div>
+                    <div class="hc-label">Encryption Array</div>
+                    <div class="hc-val">AES-256</div>
+                    <div class="hc-sub">End-to-End Handshake</div>
+                </div>
+                <div class="hc hc3">
+                    <div class="hc-icon bg-yel"><i class="fa-solid fa-server"></i></div>
+                    <div class="hc-label">System Gateway</div>
+                    <div class="hc-val">v4.8.2</div>
+                    <div class="hc-sub">All Stations Operational</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Wave Section Divider -->
+        <div class="wave-wrap">
+            <svg viewBox="0 0 1440 80" preserveAspectRatio="none">
+                <path d="M0,40L120,50C240,60,480,70,720,68C960,66,1200,54,1320,44L1440,34L1440,80L0,80Z"></path>
+            </svg>
+        </div>
+    </section>
+
+    <!-- ============================================================
+           SECTION 2 — REAL-TIME NODE ACCESS STATUS
+     ============================================================ -->
+    <section class="ticker-section">
+        <div class="ticker-track">
+            <div class="ticker-item"><i class="fa-solid fa-circle-check"></i> Detroit Server Node: Active (3ms latency)
+            </div>
+            <div class="ticker-dot"></div>
+            <div class="ticker-item"><i class="fa-solid fa-key"></i> Key Exchange Layer: Refreshed</div>
+            <div class="ticker-dot"></div>
+            <div class="ticker-item"><i class="fa-solid fa-network-wired"></i> Remote Telemetry Feeds: Synced</div>
+            <div class="ticker-dot"></div>
+            <!-- Infinite Scrolling Mirror Loop -->
+            <div class="ticker-item"><i class="fa-solid fa-circle-check"></i> Detroit Server Node: Active (3ms latency)
+            </div>
+            <div class="ticker-dot"></div>
+            <div class="ticker-item"><i class="fa-solid fa-key"></i> Key Exchange Layer: Refreshed</div>
+            <div class="ticker-dot"></div>
+            <div class="ticker-item"><i class="fa-solid fa-network-wired"></i> Remote Telemetry Feeds: Synced</div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+           SECTION 3 — MAIN SECURE ENCRYPTED AUTHCARD CORE
+     ============================================================ -->
+    <section id="auth-core" class="cta-section login-spacing-override">
+        <div class="container cta-inner login-layout-reverse">
+
+            <div class="cta-text rv-l on">
+                <span class="sec-tag">Protected Portal</span>
+                <h2>Verify Identity Parameters to Mount Drive</h2>
+                <p>Our centralized authentication gateway isolates your session token across sandboxed environments.
+                    Ensure you are using registered corporate terminal locations to avoid account locking sequences.</p>
+
+                <div class="cta-features">
+                    <div class="cta-feat">
+                        <i class="fa-solid fa-circle-nodes"></i>
+                        <span>Single Sign-On (SSO) authentication enabled</span>
+                    </div>
+                    <div class="cta-feat">
+                        <i class="fa-solid fa-user-lock"></i>
+                        <span>Automatic background session timeout after 15 minutes</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Clean Interactive Authentic Login Matrix Form Component -->
+            <div class="cta-form-card rv-r on auth-card-glow">
+                <h3>Console Sign In</h3>
+                <form action="#" method="POST">
+                    <div class="form-field">
+                        <input type="text" placeholder="Email Address" required>
+                    </div>
+                    <div class="form-field">
+                        <div class="form-field">
+                            <select required>
+                                <option value="" disabled selected>Select a Role</option>
+                                <option value="user">User</option>
+                                <option value="admin">Admin</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-field auth-pass-wrapper">
+                        <input type="password" placeholder="Enter Your Password " required>
+                        <button type="button" class="auth-toggle-visibility"><i class="fa-solid fa-eye"></i></button>
+                    </div>
+
+                    <div class="auth-utility-row">
+                        <label class="auth-checkbox-label">
+                            <input type="checkbox">
+                            <span>Remember Terminal</span>
+                        </label>
+                        <a href="#" class="auth-forgot-link">Recover Passphrase?</a>
+                    </div>
+
+                    <button type="submit" class="form-submit">De-crypt & Initialize Console</button>
+                </form>
+
+                <div class="auth-divider"><span>OR CONTINUE VIA TOKEN</span></div>
+
+                <div class="auth-sso-buttons">
+                    <button class="sso-btn sso-google"><i class="fa-brands fa-google"></i> Google ID</button>
+                    <button class="sso-btn sso-apple"><i class="fa-brands fa-apple"></i> Apple Passkey</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+           SECTION 4 — INTERACTIVE SYSTEM REQUISITES BLOCK
+     ============================================================ -->
+    <section class="contact-section login-spacing-override" style="background:var(--pale);">
+        <div class="container">
+            <div class="contact-header rv on">
+                <span class="sec-tag">Environment Verification</span>
+                <h2 class="sec-title">Prerequisite Client Standards</h2>
+            </div>
+            <div class="contact-grid login-three-column-grid">
+                <!-- Requirement 1 -->
+                <div class="contact-card rv-s on d1" style="background:#fff;">
+                    <div class="cc-icon"><i class="fa-solid fa-browser"></i></div>
+                    <h4>Validated Browsers</h4>
+                    <p>Optimized explicitly for Chromium architecture engines and modern updates of Safari.</p>
+                </div>
+                <!-- Requirement 2 -->
+                <div class="contact-card rv-s on d2" style="background:#fff;">
+                    <div class="cc-icon"><i class="fa-solid fa-cookie-bite"></i></div>
+                    <h4>State Isolation</h4>
+                    <p>Requires functional cookies and localized application memory caches initialized to operate
+                        panels.</p>
+                </div>
+                <!-- Requirement 3 -->
+                <div class="contact-card rv-s on d3" style="background:#fff;">
+                    <div class="cc-icon"><i class="fa-solid fa-globe"></i></div>
+                    <h4>IP Tracking Matrix</h4>
+                    <p>Cross-references geo-location properties against whitelisted network vectors to stop proxy fraud.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+           SECTION 5 — CORPORATE SYSTEM TERMS AND DISCLAIMERS
+     ============================================================ -->
+    <section class="story-section login-spacing-override">
+        <div class="container story-inner">
+            <div class="story-visual rv-l on">
+                <div class="story-img-wrap login-asset-wrapper">
+                    <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=800&q=80"
+                        alt="Encrypted console interface loading dashboard metrics">
+                </div>
+                <div class="story-chip sc-left">
+                    <div class="sc-icon bg-blue"><i class="fa-solid fa-gavel"></i></div>
+                    <div>
+                        <div class="sc-num">Legal</div>
+                        <div class="sc-lbl">Data Policy</div>
+                    </div>
+                </div>
+                <div class="story-chip sc-right">
+                    <div class="sc-icon bg-green"><i class="fa-solid fa-user-shield"></i></div>
+                    <div>
+                        <div class="sc-num">Compliant</div>
+                        <div class="sc-lbl">SOC 2 Verified</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="story-text rv-r on">
+                <span class="sec-tag">Binding Regulations</span>
+                <h2 class="sec-title">Authorized Terminal Usage Policy</h2>
+                <p>This network node is classified strictly for credentialed system personnel access. Real-time logging
+                    layers log performance and connectivity patterns throughout active usage cycles.</p>
+                <div class="story-highlight">
+                    "Unregistered connection requests trigger systemic defensive blocks, isolating the offending network
+                    node from communication tunnels instantly."
+                </div>
+                <p style="font-size: 13px; color: var(--soft);">Unauthorized entry attempts violate national wire
+                    communications statues and face technical prosecution strategies.</p>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ============================================================
+           COMPLEMENTARY SYSTEM LAYERING (Appends Master Variables)
+     ============================================================ -->
+
+    <!-- ============================================================
+     FOOTER
+============================================================ -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <a href="#" class="footer-logo">Click<span>Mechanic</span></a>
+                    <p class="footer-desc">The UK's #1 platform for finding trusted mechanics and garages near you. Book
+                        online, get fixed, drive happy.</p>
+                    <div class="footer-socials">
+                        <a href="#" class="social-btn"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#" class="social-btn"><i class="fa-brands fa-x-twitter"></i></a>
+                        <a href="#" class="social-btn"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" class="social-btn"><i class="fa-brands fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h5>Services</h5>
+                    <ul>
+                        <li><a href="#">Oil Change</a></li>
+                        <li><a href="#">MOT Test</a></li>
+                        <li><a href="#">Brake Service</a></li>
+                        <li><a href="#">Battery Replacement</a></li>
+                        <li><a href="#">Diagnostics</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h5>Company</h5>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Press</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h5>Support</h5>
+                    <ul>
+                        <li><a href="#">Help Centre</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Cookie Policy</a></li>
+                        <li><a href="#">Apply as Mechanic</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2024 ClickMechanic. All rights reserved. Registered in England & Wales.</p>
+                <p>🛡️ All mechanics fully vetted & insured</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ============================================================
+     JAVASCRIPT
+============================================================ -->
+    <script>
+        /* --- Mobile Menu --- */
+        const hamburger = document.getElementById('hamburgerBtn');
+        const closeBtn = document.getElementById('closeMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const overlay = document.getElementById('overlay');
+
+        const openMenu = () => { mobileMenu.classList.add('active'); overlay.classList.add('active'); }
+        const closeMenu = () => { mobileMenu.classList.remove('active'); overlay.classList.remove('active'); }
+
+        hamburger.addEventListener('click', openMenu);
+        closeBtn.addEventListener('click', closeMenu);
+        overlay.addEventListener('click', closeMenu);
+
+        /* --- Scroll Reveal --- */
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(e => {
+                if (e.isIntersecting) {
+                    e.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.12 });
+
+        document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale').forEach(el => {
+            observer.observe(el);
+        });
+
+        /* --- Counter Animation --- */
+        const counterObserver = new IntersectionObserver((entries) => {
+            entries.forEach(e => {
+                if (e.isIntersecting && !e.target.dataset.done) {
+                    e.target.dataset.done = true;
+                    const target = +e.target.dataset.target;
+                    const duration = 2000;
+                    const step = target / (duration / 16);
+                    let current = 0;
+                    const timer = setInterval(() => {
+                        current += step;
+                        if (current >= target) {
+                            current = target;
+                            clearInterval(timer);
+                        }
+                        const formatted = target >= 1000
+                            ? Math.floor(current).toLocaleString('en-GB') + (target === 500000 ? '+' : target === 14000 ? '+' : '')
+                            : Math.floor(current) + (target === 98 ? '%' : target === 12 ? 'mo' : '');
+                        e.target.textContent = formatted;
+                    }, 16);
+                }
+            });
+        }, { threshold: 0.4 });
+
+        document.querySelectorAll('[data-target]').forEach(el => counterObserver.observe(el));
+
+        // FAQ Accordion - Only one open at a time
+        document.querySelectorAll('.faq-q').forEach(question => {
+            question.addEventListener('click', () => {
+                const currentItem = question.closest('.faq-item');
+
+                // Close all other items
+                document.querySelectorAll('.faq-item').forEach(item => {
+                    if (item !== currentItem) {
+                        item.classList.remove('open');
+                    }
+                });
+
+                // Toggle current item
+                currentItem.classList.toggle('open');
+            });
+        });
+    </script>
+</body>
+
+</html>

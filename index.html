@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StacklyMechanic – Car Repair & Servicing</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@700;800;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="about.css">
+</head>
+
+<body>
+
+<!-- OVERLAY -->
+<div class="overlay" id="overlay"></div>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+    <button class="mm-close" id="closeMenuBtn"><i class="fa-solid fa-xmark"></i></button>
+    <a href="index.html" class="active">Home</a>
+    <a href="about.html" >About Us</a>
+    <a href="#">How It Works</a>
+    <a href="#">Our Services</a>
+    <a href="#">Blog</a>
+    <a href="#">Support</a>
+    <hr style="border:0;border-top:1px solid #eee;">
+    <a href="#">Sign In</a>
+    <a href="#" class="mob-resume">Resume Quote</a>
+</div>
+
+<!-- ============================================================
+     HEADER
+============================================================ -->
+<div class="site-header" id="siteHeader">
+    <nav class="nav-inner">
+        <a href="#" class="logo">Stackly</a>
+        <ul class="nav-links">
+            <li><a href="#" class="active">Home</a></li>
+            <li><a href="#" >About Us</a></li>
+            <li><a href="#">How It Works</a></li>
+            <li><a href="#">Our Services <i class="fa-solid fa-chevron-down" style="font-size:9px;margin-left:2px;"></i></a></li>
+            <li><a href="#">Blog</a></li>
+        </ul>
+        <div class="nav-right">
+            <a href="#" class="btn-signin">Sign In</a>
+            <a href="#" class="btn-resume">Resume Quote</a>
+        </div>
+        <button class="hamburger" id="hamburgerBtn"><i class="fa-solid fa-bars"></i></button>
+    </nav>
+</div>
+
+    <!-- ============================================================
+     SECTION 1: HERO
+============================================================ -->
+    <div class="hero-section">
+        <div class="hero-container">
+            <div class="hero-left">
+                <div class="hero-badge">
+                    <i class="fa-solid fa-star"></i> Rated #1 Car Service Platform in the UK
+                </div>
+                <h1>Car repair &amp; servicing <em>made easy</em></h1>
+                <p>Find trusted garages &amp; mechanics that come to you, with next-day availability and fixed upfront
+                    pricing.</p>
+
+                <div class="search-box-wrap">
+                    <div class="input-wrap">
+                        <i class="fa-solid fa-car"></i>
+                        <input type="text" value="HONDA SEDAN" placeholder="Enter Vehicle Make/Model">
+                    </div>
+                    <div class="input-wrap">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <input type="text" value="W12 7SB" placeholder="Enter Postcode">
+                    </div>
+                    <button class="get-price-btn">Get Price <i class="fa-solid fa-arrow-right"></i></button>
+                </div>
+                <a href="#" class="unknown-reg">I don't know my registration number →</a>
+
+                <div class="reviews-row">
+                    <div class="rating-block">
+                        <div class="stars">
+                            <span class="tp-star fa-solid fa-star"></span>
+                            <span class="tp-star fa-solid fa-star"></span>
+                            <span class="tp-star fa-solid fa-star"></span>
+                            <span class="tp-star fa-solid fa-star"></span>
+                            <span class="tp-star fa-solid fa-star-half-stroke"></span>
+                            <span class="score">4.7</span>
+                        </div>
+                        <div class="rating-label"><strong>Trustpilot</strong> · 24,000+ Reviews</div>
+                    </div>
+                    <div class="rating-block">
+                        <div class="stars">
+                            <i class="fa-solid fa-star g-star"></i>
+                            <i class="fa-solid fa-star g-star"></i>
+                            <i class="fa-solid fa-star g-star"></i>
+                            <i class="fa-solid fa-star g-star"></i>
+                            <i class="fa-solid fa-star g-star"></i>
+                            <span class="score">4.8</span>
+                        </div>
+                        <div class="rating-label">192,000+ Customer Reviews</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hero-right">
+                <div class="circle-ring"></div>
+                <div class="circle-ring2"></div>
+                <img src="./src/Untitled design-compressed.webp" alt="Mechanic" class="mechanic-img"
+>
+
+                <div class="fb fb-repairs">
+                    <img src="https://img.icons8.com/ios-filled/50/007bff/wrench.png" alt="">
+                    <span>Repairs</span>
+                </div>
+                <div class="fb fb-service">
+                    <img src="https://img.icons8.com/ios-filled/50/007bff/maintenance.png" alt="">
+                    <span>Servicing</span>
+                </div>
+                <div class="fb fb-mot">
+                    <img src="https://img.icons8.com/ios-filled/50/007bff/car-roof-box.png" alt="">
+                    <span>MOT</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="wave-wrap">
+            <svg viewBox="0 0 1440 80" preserveAspectRatio="none">
+            <path d="M0,40L120,50C240,60,480,70,720,68C960,66,1200,54,1320,44L1440,34L1440,80L0,80Z"></path>
+        </svg>
+        </div>
+    </div>
+
+
+    <section class="ticker-section">
+    <div class="ticker-track">
+        <!-- Duplicated for seamless loop -->
+        <div class="ticker-item"><i class="fa-solid fa-star"></i> Trustpilot 4.7 / 5</div>
+        <div class="ticker-dot"></div>
+        <div class="ticker-item"><i class="fa-solid fa-shield-halved"></i> All Mechanics Vetted &amp; Insured</div>
+        <div class="ticker-dot"></div>
+        <div class="ticker-item"><i class="fa-solid fa-tag"></i> Fixed Upfront Pricing — No Surprises</div>
+        <div class="ticker-dot"></div>
+        <div class="ticker-item"><i class="fa-solid fa-clock"></i> Next-Day Availability</div>
+        <div class="ticker-dot"></div>
+        <div class="ticker-item"><i class="fa-solid fa-award"></i> Best Car Service Platform 2023</div>
+        <div class="ticker-dot"></div>
+        <div class="ticker-item"><i class="fa-solid fa-star"></i> Google 4.8 / 5 — 192K+ Reviews</div>
+        <div class="ticker-dot"></div>
+        <div class="ticker-item"><i class="fa-solid fa-rotate"></i> 12-Month Parts &amp; Labour Guarantee</div>
+        <div class="ticker-dot"></div>
+        <!-- duplicate -->
+        <div class="ticker-item"><i class="fa-solid fa-star"></i> Trustpilot 4.7 / 5</div>
+        <div class="ticker-dot"></div>
+        <div class="ticker-item"><i class="fa-solid fa-shield-halved"></i> All Mechanics Vetted &amp; Insured</div>
+        <div class="ticker-dot"></div>
+        <div class="ticker-item"><i class="fa-solid fa-tag"></i> Fixed Upfront Pricing — No Surprises</div>
+        <div class="ticker-dot"></div>
+        <div class="ticker-item"><i class="fa-solid fa-clock"></i> Next-Day Availability</div>
+        <div class="ticker-dot"></div>
+        <div class="ticker-item"><i class="fa-solid fa-award"></i> Best Car Service Platform 2023</div>
+        <div class="ticker-dot"></div>
+        <div class="ticker-item"><i class="fa-solid fa-star"></i> Google 4.8 / 5 — 192K+ Reviews</div>
+        <div class="ticker-dot"></div>
+        <div class="ticker-item"><i class="fa-solid fa-rotate"></i> 12-Month Parts &amp; Labour Guarantee</div>
+        <div class="ticker-dot"></div>
+    </div>
+</section>
+
+    <!-- ============================================================
+     SECTION 2: HOME
+============================================================ -->
+    <section class="hiw-section">
+        <div class="container">
+            <div class="hiw-header">
+                <p class="section-tag reveal">Simple Process</p>
+                <h2 class="section-title reveal d1">How Stackly Works</h2>
+                <p class="section-sub reveal d2">Book your car service in minutes, not hours.</p>
+            </div>
+            <div class="steps-grid">
+                <div class="step-card reveal d1">
+                    <div class="step-num">1</div>
+                    <h3>Enter Your Car &amp; Location</h3>
+                    <p>Type in your vehicle reg or make/model and postcode to get started instantly.</p>
+                </div>
+                <div class="step-card reveal d2">
+                    <div class="step-num">2</div>
+                    <h3>Choose a Service</h3>
+                    <p>Pick from our full range of repairs, servicing and MOT options with instant fixed prices.</p>
+                </div>
+                <div class="step-card reveal d3">
+                    <div class="step-num">3</div>
+                    <h3>Book a Mechanic</h3>
+                    <p>Get matched with a vetted, local mechanic or garage and pick a time that suits you.</p>
+                </div>
+                <div class="step-card reveal d4">
+                    <div class="step-num">4</div>
+                    <h3>Job Done!</h3>
+                    <p>Your mechanic arrives, does the work, you pay only when satisfied. It's that simple.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+     SECTION 3: SERVICES
+============================================================ -->
+    <section class="services-section">
+        <div class="container">
+            <div class="services-header">
+                <p class="section-tag reveal">What We Cover</p>
+                <h2 class="section-title reveal d1">Our Most Popular Services</h2>
+                <p class="section-sub reveal d2">Every service with upfront pricing, no hidden fees.</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card reveal d1">
+                    <div class="service-icon"><i class="fa-solid fa-oil-can"></i></div>
+                    <h3>Oil &amp; Filter Change</h3>
+                    <p>Keep your engine running smoothly with a full synthetic or semi-synthetic oil service.</p>
+                    <span class="price-from">From £69 →</span>
+                </div>
+                <div class="service-card reveal d2">
+                    <div class="service-icon"><i class="fa-solid fa-car-battery"></i></div>
+                    <h3>Battery Replacement</h3>
+                    <p>Dead or failing battery? We'll fit a new one at your home or workplace.</p>
+                    <span class="price-from">From £89 →</span>
+                </div>
+                <div class="service-card reveal d3">
+                    <div class="service-icon"><i class="fa-solid fa-circle-check"></i></div>
+                    <h3>MOT Test</h3>
+                    <p>Annual MOT at a local, trusted garage – book in minutes, drive with confidence.</p>
+                    <span class="price-from">From £35 →</span>
+                </div>
+                <div class="service-card reveal d1">
+                    <div class="service-icon"><i class="fa-solid fa-wrench"></i></div>
+                    <h3>Brake Pad Replacement</h3>
+                    <p>Front, rear or all four wheels. Parts + labour, fully covered with a 12-month guarantee.</p>
+                    <span class="price-from">From £99 →</span>
+                </div>
+                <div class="service-card reveal d2">
+                    <div class="service-icon"><i class="fa-solid fa-gauge-high"></i></div>
+                    <h3>Diagnostic Check</h3>
+                    <p>Warning light on? A full vehicle diagnostic will pinpoint the issue fast.</p>
+                    <span class="price-from">From £49 →</span>
+                </div>
+                <div class="service-card reveal d3">
+                    <div class="service-icon"><i class="fa-solid fa-snowflake"></i></div>
+                    <h3>Air Con Recharge</h3>
+                    <p>Restore your air conditioning to full power, ready for summer or year-round comfort.</p>
+                    <span class="price-from">From £55 →</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+     SECTION 4: WHY CHOOSE US
+============================================================ -->
+    <section class="trust-section">
+        <div class="container">
+            <div class="trust-inner">
+                <div class="trust-visual reveal-left">
+                    <div class="trust-img-bg">
+                        <img src="https://images.unsplash.com/photo-1625047509168-a7026f36de04?auto=format&fit=crop&q=80&w=800"
+                            alt="Mechanic at work">
+                    </div>
+                    <div class="trust-stat ts1">
+                        <div class="num">98%</div>
+                        <div class="lbl">Customer Satisfaction</div>
+                    </div>
+                    <div class="trust-stat ts2">
+                        <div class="num">12mo</div>
+                        <div class="lbl">Parts &amp; Labour Guarantee</div>
+                    </div>
+                </div>
+                <div class="trust-list">
+                    <p class="section-tag reveal">Why Stackly</p>
+                    <h2 class="section-title reveal d1">The smarter way to get your car fixed</h2>
+                    <div class="trust-item reveal d2">
+                        <div class="ti-icon"><i class="fa-solid fa-shield-halved"></i></div>
+                        <div class="ti-text">
+                            <h4>Fully Vetted Mechanics</h4>
+                            <p>Every mechanic is background-checked, insured and qualified before they join our
+                                platform.</p>
+                        </div>
+                    </div>
+                    <div class="trust-item reveal d3">
+                        <div class="ti-icon"><i class="fa-solid fa-tag"></i></div>
+                        <div class="ti-text">
+                            <h4>Fixed, Upfront Pricing</h4>
+                            <p>No surprise bills. You see the full price before you book – what you see is what you pay.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="trust-item reveal d4">
+                        <div class="ti-icon"><i class="fa-solid fa-clock"></i></div>
+                        <div class="ti-text">
+                            <h4>Next-Day Availability</h4>
+                            <p>Get your car fixed as soon as tomorrow, at a location convenient for you.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+     SECTION 5: STATS
+============================================================ -->
+    <section class="stats-section">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item reveal d1">
+                    <div class="big" data-target="500000">0</div>
+                    <p>Happy Customers</p>
+                </div>
+                <div class="stat-item reveal d2">
+                    <div class="big" data-target="14000">0</div>
+                    <p>Trusted Mechanics</p>
+                </div>
+                <div class="stat-item reveal d3">
+                    <div class="big" data-target="98">0</div>
+                    <p>% Satisfaction Rate</p>
+                </div>
+                <div class="stat-item reveal d4">
+                    <div class="big" data-target="12">0</div>
+                    <p>Month Guarantee</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+     SECTION 6: TESTIMONIALS
+============================================================ -->
+    <section class="testimonials-section">
+        <div class="container">
+            <div class="testimonials-header">
+                <p class="section-tag reveal">Real Reviews</p>
+                <h2 class="section-title reveal d1">What Our Customers Say</h2>
+                <p class="section-sub reveal d2">Over 192,000 verified reviews from real drivers across the UK.</p>
+            </div>
+            <div class="reviews-grid">
+                <div class="review-card reveal d1">
+                    <div class="review-stars">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p>"Absolutely brilliant service. My mechanic arrived on time, explained everything clearly and the
+                        price was exactly as quoted. Won't go anywhere else."</p>
+                    <div class="reviewer">
+                        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="" class="reviewer-avatar">
+                        <div>
+                            <div class="reviewer-name">Sarah M.</div>
+                            <div class="reviewer-loc">London, UK</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="review-card reveal d2">
+                    <div class="review-stars">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p>"Used Stackly for an MOT and full service. Cheaper than my local garage and the mechanic
+                        was professional and friendly. Highly recommend!"</p>
+                    <div class="reviewer">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="" class="reviewer-avatar">
+                        <div>
+                            <div class="reviewer-name">James T.</div>
+                            <div class="reviewer-loc">Manchester, UK</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="review-card reveal d3">
+                    <div class="review-stars">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                            class="fa-solid fa-star-half-stroke"></i>
+                    </div>
+                    <p>"Battery died on a Monday morning. Booked through Stackly, had a mechanic at my door by
+                        11am. Saved my day. Outstanding!"</p>
+                    <div class="reviewer">
+                        <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="" class="reviewer-avatar">
+                        <div>
+                            <div class="reviewer-name">Priya K.</div>
+                            <div class="reviewer-loc">Birmingham, UK</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+     SECTION 7: PRICING
+============================================================ -->
+    <section class="pricing-section">
+        <div class="container">
+            <div class="pricing-header">
+                <p class="section-tag reveal">Transparent Pricing</p>
+                <h2 class="section-title reveal d1">Simple, Honest Pricing Plans</h2>
+                <p class="section-sub reveal d2">All plans include a 12-month parts &amp; labour guarantee.</p>
+            </div>
+            <div class="pricing-grid">
+                <div class="pricing-card reveal d1">
+                    <div class="pricing-name">Basic</div>
+                    <div class="pricing-price"><span>£</span>35</div>
+                    <div class="pricing-sub">Per job, no subscription</div>
+                    <ul class="pricing-features">
+                        <li><i class="fa-solid fa-check"></i> Vetted local mechanic</li>
+                        <li><i class="fa-solid fa-check"></i> Fixed upfront price</li>
+                        <li><i class="fa-solid fa-check"></i> Online booking</li>
+                        <li class="off"><i class="fa-solid fa-xmark"></i> Priority support</li>
+                        <li class="off"><i class="fa-solid fa-xmark"></i> Loyalty rewards</li>
+                    </ul>
+                    <button class="pricing-btn outline">Get Started</button>
+                </div>
+                <div class="pricing-card featured reveal-scale d2">
+                    <div class="pricing-badge">Most Popular</div>
+                    <div class="pricing-name">Pro</div>
+                    <div class="pricing-price"><span>£</span>9<span style="font-size:18px">/mo</span></div>
+                    <div class="pricing-sub">Unlimited bookings included</div>
+                    <ul class="pricing-features">
+                        <li><i class="fa-solid fa-check"></i> Everything in Basic</li>
+                        <li><i class="fa-solid fa-check"></i> Priority scheduling</li>
+                        <li><i class="fa-solid fa-check"></i> Dedicated phone support</li>
+                        <li><i class="fa-solid fa-check"></i> 5% loyalty cashback</li>
+                        <li class="off"><i class="fa-solid fa-xmark"></i> Fleet management</li>
+                    </ul>
+                    <button class="pricing-btn white">Get Started</button>
+                </div>
+                <div class="pricing-card reveal d3">
+                    <div class="pricing-name">Fleet</div>
+                    <div class="pricing-price"><span>£</span>29<span style="font-size:18px">/mo</span></div>
+                    <div class="pricing-sub">For businesses &amp; fleets</div>
+                    <ul class="pricing-features">
+                        <li><i class="fa-solid fa-check"></i> Everything in Pro</li>
+                        <li><i class="fa-solid fa-check"></i> Multi-vehicle management</li>
+                        <li><i class="fa-solid fa-check"></i> Dedicated account manager</li>
+                        <li><i class="fa-solid fa-check"></i> Monthly invoicing</li>
+                        <li><i class="fa-solid fa-check"></i> API access</li>
+                    </ul>
+                    <button class="pricing-btn solid">Contact Sales</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+     SECTION 8: MECHANICS CTA BANNER
+============================================================ -->
+    <section style="padding:64px 0; background:var(--pale); border-top:1px solid #e8eef8;">
+        <div class="container">
+            <div
+                style="background:var(--grad); border-radius:28px; padding:48px 40px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:28px; position:relative; overflow:hidden;">
+                <div
+                    style="position:absolute;top:-40px;right:-40px;width:240px;height:240px;background:rgba(255,255,255,.08);border-radius:50%;">
+                </div>
+                <div class="reveal-left" style="flex:1;min-width:200px;">
+                    <p
+                        style="color:rgba(255,255,255,.7);font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:1px;margin-bottom:10px;">
+                        For Mechanics</p>
+                    <h3
+                        style="font-family:'Poppins',sans-serif;font-size:clamp(22px,3vw,32px);font-weight:800;color:#fff;line-height:1.2;margin-bottom:10px;">
+                        Earn more. Work flexible hours.</h3>
+                    <p style="color:rgba(255,255,255,.75);font-size:15px;line-height:1.6;">Join 14,000+ mechanics
+                        already making great money on the Stackly platform.</p>
+                </div>
+                <div class="reveal-right" style="display:flex;gap:14px;flex-wrap:wrap;">
+                    <a href="#"
+                        style="background:#fff;color:var(--blue);padding:14px 28px;border-radius:50px;font-size:14px;font-weight:700;text-decoration:none;transition:transform .2s,box-shadow .2s;"
+                        onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 12px 30px rgba(0,0,0,.2)'"
+                        onmouseout="this.style.transform='';this.style.boxShadow=''">Apply Now →</a>
+                    <a href="#"
+                        style="background:transparent;color:#fff;padding:14px 28px;border-radius:50px;font-size:14px;font-weight:700;text-decoration:none;border:2px solid rgba(255,255,255,.5);transition:border-color .2s"
+                        onmouseover="this.style.borderColor='#fff'"
+                        onmouseout="this.style.borderColor='rgba(255,255,255,.5)'">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+     SECTION 9: APP DOWNLOAD
+============================================================ -->
+    <section class="app-section">
+        <div class="container">
+            <div class="app-inner">
+                <div class="app-left">
+                    <p class="section-tag reveal">Mobile App</p>
+                    <h2 class="section-title reveal d1">Book, track &amp; manage from your phone</h2>
+                    <p class="section-sub reveal d2">Get live updates on your mechanic's arrival, review invoices, and
+                        chat directly – all in the Stackly app.</p>
+                    <div class="app-btns reveal d3">
+                        <a href="#" class="app-btn">
+                            <i class="fa-brands fa-apple"></i>
+                            <div class="app-btn-text">
+                                <small>Download on the</small>
+                                <strong>App Store</strong>
+                            </div>
+                        </a>
+                        <a href="#" class="app-btn">
+                            <i class="fa-brands fa-google-play"></i>
+                            <div class="app-btn-text">
+                                <small>Get it on</small>
+                                <strong>Google Play</strong>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="app-phone reveal-right">
+                    <div class="phone-mockup">
+                        <div class="phone-screen">
+                            <div class="ps-header">
+                                <span style="font-size:14px;font-weight:700;">My Bookings</span>
+                                <i class="fa-solid fa-bell"></i>
+                            </div>
+                            <div class="ps-card">
+                                <div class="ps-card-title">🔧 Oil Change – Honda Civic</div>
+                                <div class="ps-card-price">£89</div>
+                                <div class="ps-card-sub">Tomorrow, 10:00 AM · W12 7SB</div>
+                                <button class="ps-btn">Track Mechanic →</button>
+                            </div>
+                            <div class="ps-card" style="opacity:.7;">
+                                <div class="ps-card-title">✅ MOT Test – Completed</div>
+                                <div class="ps-card-price">£35</div>
+                                <div class="ps-card-sub">12 Jun · Passed</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+     SECTION 10: FAQ
+============================================================ -->
+    <section class="faq-section">
+        <div class="container">
+            <div class="faq-header">
+                <p class="section-tag reveal">FAQ</p>
+                <h2 class="section-title reveal d1">Got Questions? We've Got Answers.</h2>
+                <p class="section-sub reveal d2">Everything you need to know about booking with Stackly.</p>
+            </div>
+            <div class="faq-grid">
+                <div class="faq-item reveal d1">
+                    <div class="faq-q">How do I book a mechanic? <i class="fa-solid fa-plus"></i></div>
+                    <div class="faq-a">Enter your car details and postcode, choose a service, pick a time slot, and
+                        confirm. It takes less than 2 minutes!</div>
+                </div>
+                <div class="faq-item reveal d2">
+                    <div class="faq-q">Are your mechanics qualified? <i class="fa-solid fa-plus"></i></div>
+                    <div class="faq-a">Yes. Every mechanic on our platform is vetted, fully insured, and holds relevant
+                        industry qualifications (IMI, City &amp; Guilds, or equivalent).</div>
+                </div>
+                <div class="faq-item reveal d3">
+                    <div class="faq-q">What's included in the price? <i class="fa-solid fa-plus"></i></div>
+                    <div class="faq-a">The price shown includes all parts and labour. There are no hidden fees or
+                        call-out charges – what you see is exactly what you pay.</div>
+                </div>
+                <div class="faq-item reveal d4">
+                    <div class="faq-q">Do you offer a guarantee? <i class="fa-solid fa-plus"></i></div>
+                    <div class="faq-a">Absolutely. All work comes with a 12-month / 12,000-mile parts and labour
+                        guarantee for your complete peace of mind.</div>
+                </div>
+                <div class="faq-item reveal d5">
+                    <div class="faq-q">Can the mechanic come to my home? <i class="fa-solid fa-plus"></i></div>
+                    <div class="faq-a">Yes! Our mobile mechanics can come to your home, workplace, or any location with
+                        safe, level ground and adequate space to work.</div>
+                </div>
+                <div class="faq-item reveal d6">
+                    <div class="faq-q">What if I need to cancel or reschedule? <i class="fa-solid fa-plus"></i></div>
+                    <div class="faq-a">You can cancel or reschedule for free up to 24 hours before your appointment.
+                        Just log in to your account or contact our support team.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+     FOOTER
+============================================================ -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <a href="#" class="footer-logo">Stackly<span>Mechanic</span></a>
+                    <p class="footer-desc">The UK's #1 platform for finding trusted mechanics and garages near you. Book
+                        online, get fixed, drive happy.</p>
+                    <div class="footer-socials">
+                        <a href="#" class="social-btn"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#" class="social-btn"><i class="fa-brands fa-x-twitter"></i></a>
+                        <a href="#" class="social-btn"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" class="social-btn"><i class="fa-brands fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h5>Services</h5>
+                    <ul>
+                        <li><a href="#">Oil Change</a></li>
+                        <li><a href="#">MOT Test</a></li>
+                        <li><a href="#">Brake Service</a></li>
+                        <li><a href="#">Battery Replacement</a></li>
+                        <li><a href="#">Diagnostics</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h5>Company</h5>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Press</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h5>Support</h5>
+                    <ul>
+                        <li><a href="#">Help Centre</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Cookie Policy</a></li>
+                        <li><a href="#">Apply as Mechanic</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2024 Stackly Mechanic. All rights reserved. Registered in England & Wales.</p>
+                <p>🛡️ All mechanics fully vetted & insured</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ============================================================
+     JAVASCRIPT
+============================================================ -->
+    <script>
+        /* --- Mobile Menu --- */
+        const hamburger = document.getElementById('hamburgerBtn');
+        const closeBtn = document.getElementById('closeMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const overlay = document.getElementById('overlay');
+
+        const openMenu = () => { mobileMenu.classList.add('active'); overlay.classList.add('active'); }
+        const closeMenu = () => { mobileMenu.classList.remove('active'); overlay.classList.remove('active'); }
+
+        hamburger.addEventListener('click', openMenu);
+        closeBtn.addEventListener('click', closeMenu);
+        overlay.addEventListener('click', closeMenu);
+
+        /* --- Scroll Reveal --- */
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(e => {
+                if (e.isIntersecting) {
+                    e.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.12 });
+
+        document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale').forEach(el => {
+            observer.observe(el);
+        });
+
+        /* --- Counter Animation --- */
+        const counterObserver = new IntersectionObserver((entries) => {
+            entries.forEach(e => {
+                if (e.isIntersecting && !e.target.dataset.done) {
+                    e.target.dataset.done = true;
+                    const target = +e.target.dataset.target;
+                    const duration = 2000;
+                    const step = target / (duration / 16);
+                    let current = 0;
+                    const timer = setInterval(() => {
+                        current += step;
+                        if (current >= target) {
+                            current = target;
+                            clearInterval(timer);
+                        }
+                        const formatted = target >= 1000
+                            ? Math.floor(current).toLocaleString('en-GB') + (target === 500000 ? '+' : target === 14000 ? '+' : '')
+                            : Math.floor(current) + (target === 98 ? '%' : target === 12 ? 'mo' : '');
+                        e.target.textContent = formatted;
+                    }, 16);
+                }
+            });
+        }, { threshold: 0.4 });
+
+        document.querySelectorAll('[data-target]').forEach(el => counterObserver.observe(el));
+
+        // FAQ Accordion - Only one open at a time
+        document.querySelectorAll('.faq-q').forEach(question => {
+            question.addEventListener('click', () => {
+                const currentItem = question.closest('.faq-item');
+
+                // Close all other items
+                document.querySelectorAll('.faq-item').forEach(item => {
+                    if (item !== currentItem) {
+                        item.classList.remove('open');
+                    }
+                });
+
+                // Toggle current item
+                currentItem.classList.toggle('open');
+            });
+        });
+    </script>
+</body>
+
+</html>

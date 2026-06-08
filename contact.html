@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ClickMechanic – Car Repair & Servicing</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@700;800;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./about.css">
+    <link rel="stylesheet" href="./contact.css">
+</head>
+
+<body>
+
+<!-- OVERLAY -->
+<div class="overlay" id="overlay"></div>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+    <button class="mm-close" id="closeMenuBtn"><i class="fa-solid fa-xmark"></i></button>
+    <a href="index.html">Home</a>
+    <a href="about.html" class="active">About Us</a>
+    <a href="#">How It Works</a>
+    <a href="#">Our Services</a>
+    <a href="#">Blog</a>
+    <a href="#">Support</a>
+    <hr style="border:0;border-top:1px solid #eee;">
+    <a href="#">Sign In</a>
+    <a href="#" class="mob-resume">Resume Quote</a>
+</div>
+
+<!-- ============================================================
+     HEADER
+============================================================ -->
+<div class="site-header" id="siteHeader">
+    <nav class="nav-inner">
+        <a href="#" class="logo">Click<span>Mechanic</span></a>
+        <ul class="nav-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="#" class="active">About Us</a></li>
+            <li><a href="#">How It Works</a></li>
+            <li><a href="#">Our Services <i class="fa-solid fa-chevron-down" style="font-size:9px;margin-left:2px;"></i></a></li>
+            <li><a href="#">Blog</a></li>
+        </ul>
+        <div class="nav-right">
+            <a href="#" class="btn-signin">Sign In</a>
+            <a href="#" class="btn-resume">Resume Quote</a>
+        </div>
+        <button class="hamburger" id="hamburgerBtn"><i class="fa-solid fa-bars"></i></button>
+    </nav>
+</div>
+<!-- ============================================================
+           SECTION 1 — HERO COMMUNICATIONS BANNER
+     ============================================================ -->
+<section class="hero-about">
+    <!-- Animated CSS Orbs -->
+    <div class="orb orb1"></div>
+    <div class="orb orb2"></div>
+    <div class="orb orb3"></div>
+    
+    <div class="hero-body">
+        <div class="hero-text">
+            <div class="hero-crumb">
+                <a href="#">Home</a>
+                <i class="fa-solid fa-chevron-right"></i>
+                <span>Secure Communications Channels</span>
+            </div>
+            <h1>Initialize <em>Contact</em></h1>
+            <p>Direct technical access to our master workshop bays, logistics advisors, and priority fleet dispatch coordination layers. We maintain an average queue response duration under nine minutes.</p>
+            <div class="hero-ctas">
+                <a href="#routing-desk" class="btn-primary">Open Routing Portal <i class="fa-solid fa-arrow-down"></i></a>
+                <a href="tel:18005550199" class="btn-outline-w"><i class="fa-solid fa-phone"></i> Emergency Hotline</a>
+            </div>
+        </div>
+
+        <!-- Floating Card Collage — Contact Availability Readouts -->
+        <div class="hero-cards contact-cards-mobile">
+            <div class="hc hc1">
+                <div class="hc-icon bg-blue"><i class="fa-solid fa-clock"></i></div>
+                <div class="hc-label">Live Availability</div>
+                <div class="hc-val">24/7/365</div>
+                <div class="hc-sub">Emergency Diagnostics</div>
+            </div>
+            <div class="hc hc2">
+                <div class="hc-icon bg-green"><i class="fa-solid fa-bolt"></i></div>
+                <div class="hc-label">Average Response</div>
+                <div class="hc-val">&lt; 9 Min</div>
+                <div class="hc-sub">Digital Intake Latency</div>
+            </div>
+            <div class="hc hc3">
+                <div class="hc-icon bg-yel"><i class="fa-solid fa-location-dot"></i></div>
+                <div class="hc-label">Network Footprint</div>
+                <div class="hc-val">12</div>
+                <div class="hc-sub">Regional Repair Centers</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Waves Component Divider Accent -->
+   <div class="wave-wrap">
+            <svg viewBox="0 0 1440 80" preserveAspectRatio="none">
+            <path d="M0,40L120,50C240,60,480,70,720,68C960,66,1200,54,1320,44L1440,34L1440,80L0,80Z"></path>
+        </svg>
+        </div>
+</section>
+
+<!-- ============================================================
+           SECTION 2 — REAL-TIME NETWORK LATENCY TICKER
+     ============================================================ -->
+<section class="ticker-section">
+    <div class="ticker-track">
+        <div class="ticker-item"><i class="fa-solid fa-circle-nodes"></i> WORKSHOP STATUS: Operational</div>
+        <div class="ticker-dot"></div>
+        <div class="ticker-item"><i class="fa-solid fa-headset"></i> Telemetry Sync: Online</div>
+        <div class="ticker-dot"></div>
+        <div class="ticker-item"><i class="fa-solid fa-truck-ramp-box"></i> Direct Dispatch Response Lag: Minimal</div>
+        <div class="ticker-dot"></div>
+        <!-- Continuous loop rendering -->
+        <div class="ticker-item"><i class="fa-solid fa-circle-nodes"></i> WORKSHOP STATUS: Operational</div>
+        <div class="ticker-dot"></div>
+        <div class="ticker-item"><i class="fa-solid fa-headset"></i> Telemetry Sync: Online</div>
+        <div class="ticker-dot"></div>
+        <div class="ticker-item"><i class="fa-solid fa-truck-ramp-box"></i> Direct Dispatch Response Lag: Minimal</div>
+    </div>
+</section>
+
+<!-- ============================================================
+           SECTION 3 — TRIPARTITE DIRECT SUPPORT MATRIX
+     ============================================================ -->
+<section class="contact-section contact-spacing-override">
+    <div class="container">
+        <div class="contact-header rv on">
+            <span class="sec-tag">Direct Comms</span>
+            <h2 class="sec-title">Localized Access Channels</h2>
+        </div>
+        <div class="contact-grid contact-responsive-cards">
+            <!-- Channel 1 -->
+            <div class="contact-card rv-s on d1">
+                <div class="cc-icon"><i class="fa-solid fa-phone-volume"></i></div>
+                <h4>Emergency Dispatch</h4>
+                <p>On-road mechanical failures, safety locks, and urgent recovery routing vectors.</p>
+                <a href="tel:18005550199" class="cc-btn">Establish Audio Feed</a>
+            </div>
+            <!-- Channel 2 -->
+            <div class="contact-card rv-s on d2">
+                <div class="cc-icon"><i class="fa-solid fa-shield-halved"></i></div>
+                <h4>Warranty & Claims</h4>
+                <p>Itemized component review requests, billing audits, and parts certification queries.</p>
+                <a href="#" class="cc-btn">Initiate Audit File</a>
+            </div>
+            <!-- Channel 3 -->
+            <div class="contact-card rv-s on d3">
+                <div class="cc-icon"><i class="fa-solid fa-network-wired"></i></div>
+                <h4>Enterprise Logistics</h4>
+                <p>B2B commercial transport profiles, priority scheduling matrices, and volume RFQs.</p>
+                <a href="mailto:fleet@autocraft.com" class="cc-btn">Transmit Request</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================================
+           SECTION 4 — INTERACTIVE PRIMARY ROUTING DESK
+     ============================================================ -->
+<section id="routing-desk" class="cta-section contact-spacing-override">
+    <div class="container cta-inner contact-layout-swap">
+        <div class="cta-text rv-l on">
+            <span class="sec-tag">Intake Console</span>
+            <h2>Submit a Technical Assistance Directive</h2>
+            <p>Our centralized software matrix reads incoming parameters instantly. Specify target asset variants, deployment severity, and localized centers to safely pass processing pipelines.</p>
+            
+            <div class="cta-features">
+                <div class="cta-feat">
+                    <i class="fa-solid fa-signature"></i>
+                    <span>Signed cryptographic encryption on personal records</span>
+                </div>
+                <div class="cta-feat">
+                    <i class="fa-solid fa-gears"></i>
+                    <span>Direct injection to certified engineering queues</span>
+                </div>
+                <div class="cta-feat">
+                    <i class="fa-solid fa-file-invoice-dollar"></i>
+                    <span>Binding digital cost calculations guaranteed</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Form Architecture configured with your dark-mode inputs style -->
+        <div class="cta-form-card rv-r on">
+            <h3>Communications Router</h3>
+            <form action="#" method="POST">
+                <div class="form-field">
+                    <input type="text" placeholder="Authorized Representative Full Name" required>
+                </div>
+                <div class="form-field">
+                    <input type="email" placeholder="Corporate Contact Email Address" required>
+                </div>
+                <div class="form-field">
+                    <select required>
+                        <option value="" disabled selected>Urgency Classification Matrix</option>
+                        <option value="critical">Critical: Active Roadside Breakdown</option>
+                        <option value="maintenance">Standard: Core Diagnostics Appointment</option>
+                        <option value="fleet">Enterprise: Multi-Asset Fleet Allocation</option>
+                        <option value="general">Query: Parts & Structural Warranty Check</option>
+                    </select>
+                </div>
+                <div class="form-field">
+                    <!-- Standard placeholder with unescaped safe quotes -->
+                    <textarea placeholder="Provide specific asset behavior patterns or error readouts..." class="contact-textarea" required></textarea>
+                </div>
+                <button type="submit" class="form-submit">Transmit Communications Package</button>
+            </form>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================================
+           SECTION 5 — CORPORATE LOCATION Blueprints
+     ============================================================ -->
+<section class="story-section contact-spacing-override">
+    <div class="container story-inner">
+        <div class="story-visual rv-l on">
+            <div class="story-img-wrap contact-map-wrapper">
+                <!-- Fallback premium unsplash depicting technical operations base layout -->
+                <img src="https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?auto=format&fit=crop&w=800&q=80" alt="Corporate Headquarters Base Facility">
+            </div>
+            <!-- Interactive spatial validation chips matching master sheet specs -->
+            <div class="story-chip sc-left">
+                <div class="sc-icon bg-blue"><i class="fa-solid fa-warehouse"></i></div>
+                <div>
+                    <div class="sc-num">HQ Base</div>
+                    <div class="sc-lbl">Detroit Facility</div>
+                </div>
+            </div>
+            <div class="story-chip sc-right">
+                <div class="sc-icon bg-green"><i class="fa-solid fa-square-parking"></i></div>
+                <div>
+                    <div class="sc-num">40+</div>
+                    <div class="sc-lbl">Workshop Bays</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="story-text rv-r on">
+            <span class="sec-tag">Physical Command Center</span>
+            <h2 class="sec-title">Central Engineering Logistics Complex</h2>
+            <p>Our centralized processing base coordinate and verify asset deployments. Equipped to service extreme diagnostics, commercial vehicle arrays, and micro-component repairs simultaneously.</p>
+            
+            <div class="story-highlight">
+                "Central Command manages global digital intakes while dispatching specialized recovery vans equipped with heavy diagnostic units directly to regional zones."
+            </div>
+            <p style="font-size: 14px; color: var(--mid); margin-top: 10px;">
+                <i class="fa-solid fa-map-location-dot" style="color:var(--blue); margin-right:8px;"></i> 104 Automotive Blvd, Suite 40, Detroit, MI 48201
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================================
+           SECTION 6 — RESPONSE QUALITY ACCREDITATIONS
+     ============================================================ -->
+<section class="press-section contact-spacing-override" style="background: var(--pale);">
+    <div class="container">
+        <div class="press-header rv on">
+            <span class="sec-tag">SLA Verification</span>
+            <h2 class="sec-title">Communications Compliance Commitments</h2>
+        </div>
+        
+        <div class="awards-grid">
+            <div class="award-card rv-s on d1" style="background:#fff;">
+                <div class="award-icon">⚡</div>
+                <h4>Sub-10 Responsive Cap</h4>
+                <p>Binding contract assurances enforcing quick response updates over secure channels.</p>
+                <div class="award-year">Audited 2026</div>
+            </div>
+            <div class="award-card rv-s on d2" style="background:#fff;">
+                <div class="award-icon">🔒</div>
+                <h4>AES 256 Data Seals</h4>
+                <p>Personal asset records and incoming mechanical faults run on fully isolated networks.</p>
+                <div class="award-year">Compliance Lock</div>
+            </div>
+            <div class="award-card rv-s on d3" style="background:#fff;">
+                <div class="award-icon">🧑‍🔧</div>
+                <h4>Direct Engineer Access</h4>
+                <p>No call center buffers. You negotiate logistics queries directly with technical shift leads.</p>
+                <div class="award-year">100% Peer Match</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- ============================================================
+     FOOTER
+============================================================ -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <a href="#" class="footer-logo">Click<span>Mechanic</span></a>
+                    <p class="footer-desc">The UK's #1 platform for finding trusted mechanics and garages near you. Book
+                        online, get fixed, drive happy.</p>
+                    <div class="footer-socials">
+                        <a href="#" class="social-btn"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#" class="social-btn"><i class="fa-brands fa-x-twitter"></i></a>
+                        <a href="#" class="social-btn"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" class="social-btn"><i class="fa-brands fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h5>Services</h5>
+                    <ul>
+                        <li><a href="#">Oil Change</a></li>
+                        <li><a href="#">MOT Test</a></li>
+                        <li><a href="#">Brake Service</a></li>
+                        <li><a href="#">Battery Replacement</a></li>
+                        <li><a href="#">Diagnostics</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h5>Company</h5>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Press</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h5>Support</h5>
+                    <ul>
+                        <li><a href="#">Help Centre</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Cookie Policy</a></li>
+                        <li><a href="#">Apply as Mechanic</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2024 ClickMechanic. All rights reserved. Registered in England & Wales.</p>
+                <p>🛡️ All mechanics fully vetted & insured</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ============================================================
+     JAVASCRIPT
+============================================================ -->
+    <script>
+        /* --- Mobile Menu --- */
+        const hamburger = document.getElementById('hamburgerBtn');
+        const closeBtn = document.getElementById('closeMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const overlay = document.getElementById('overlay');
+
+        const openMenu = () => { mobileMenu.classList.add('active'); overlay.classList.add('active'); }
+        const closeMenu = () => { mobileMenu.classList.remove('active'); overlay.classList.remove('active'); }
+
+        hamburger.addEventListener('click', openMenu);
+        closeBtn.addEventListener('click', closeMenu);
+        overlay.addEventListener('click', closeMenu);
+
+        /* --- Scroll Reveal --- */
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(e => {
+                if (e.isIntersecting) {
+                    e.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.12 });
+
+        document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale').forEach(el => {
+            observer.observe(el);
+        });
+
+        /* --- Counter Animation --- */
+        const counterObserver = new IntersectionObserver((entries) => {
+            entries.forEach(e => {
+                if (e.isIntersecting && !e.target.dataset.done) {
+                    e.target.dataset.done = true;
+                    const target = +e.target.dataset.target;
+                    const duration = 2000;
+                    const step = target / (duration / 16);
+                    let current = 0;
+                    const timer = setInterval(() => {
+                        current += step;
+                        if (current >= target) {
+                            current = target;
+                            clearInterval(timer);
+                        }
+                        const formatted = target >= 1000
+                            ? Math.floor(current).toLocaleString('en-GB') + (target === 500000 ? '+' : target === 14000 ? '+' : '')
+                            : Math.floor(current) + (target === 98 ? '%' : target === 12 ? 'mo' : '');
+                        e.target.textContent = formatted;
+                    }, 16);
+                }
+            });
+        }, { threshold: 0.4 });
+
+        document.querySelectorAll('[data-target]').forEach(el => counterObserver.observe(el));
+
+        // FAQ Accordion - Only one open at a time
+        document.querySelectorAll('.faq-q').forEach(question => {
+            question.addEventListener('click', () => {
+                const currentItem = question.closest('.faq-item');
+
+                // Close all other items
+                document.querySelectorAll('.faq-item').forEach(item => {
+                    if (item !== currentItem) {
+                        item.classList.remove('open');
+                    }
+                });
+
+                // Toggle current item
+                currentItem.classList.toggle('open');
+            });
+        });
+    </script>
+</body>
+
+</html>

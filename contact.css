@@ -1,0 +1,67 @@
+    /* Spacing overrides for standalone page stack balance */
+    .contact-spacing-override {
+        padding: 96px 0 !important;
+    }
+
+    .contact-hero-override {
+        min-height: 52vh !important;
+        padding-top: 90px;
+    }
+
+    /* Custom Textarea configuration aligning to master .form-field rules */
+    .contact-textarea {
+        width: 100%;
+        min-height: 120px;
+        padding: 13px 18px;
+        background: rgba(255, 255, 255, .08);
+        border: 1px solid rgba(255, 255, 255, .15);
+        border-radius: 12px;
+        color: #fff;
+        font-size: 14px;
+        outline: none;
+        transition: border-color .25s, background .25s;
+        font-family: 'Inter', sans-serif;
+        resize: vertical;
+    }
+
+    .contact-textarea::placeholder {
+        color: rgba(255, 255, 255, .4);
+    }
+
+    .contact-textarea:focus {
+        border-color: rgba(0, 150, 255, .6);
+        background: rgba(255, 255, 255, .12);
+    }
+
+    .contact-map-wrapper {
+        height: 400px !important;
+    }
+
+    /* ============================================================
+               STRICT MOBILE RESPONSIVE SCALABILITY CODES
+       ============================================================ */
+    @media (max-width: 1024px) {
+        .contact-responsive-cards {
+            grid-template-columns: repeat(2, 1fr) !important;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .contact-hero-override {
+            padding-bottom: 80px !important;
+        }
+        .contact-cards-mobile {
+            display: none !important; /* Prevents overlap layers on small screen ports */
+        }
+        .contact-layout-swap {
+            grid-template-columns: 1fr !important;
+            gap: 40px !important;
+        }
+        .contact-responsive-cards {
+            grid-template-columns: 1fr !important;
+            gap: 20px !important;
+        }
+        .contact-map-wrapper {
+            height: 280px !important;
+        }
+    }

@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ClickMechanic – Car Repair & Servicing</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@700;800;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./about.css">
+    <link rel="stylesheet" href="./blog.css">
+</head>
+
+<body>
+
+<!-- OVERLAY -->
+<div class="overlay" id="overlay"></div>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+    <button class="mm-close" id="closeMenuBtn"><i class="fa-solid fa-xmark"></i></button>
+    <a href="index.html">Home</a>
+    <a href="about.html" class="active">About Us</a>
+    <a href="#">How It Works</a>
+    <a href="#">Our Services</a>
+    <a href="#">Blog</a>
+    <a href="#">Support</a>
+    <hr style="border:0;border-top:1px solid #eee;">
+    <a href="#">Sign In</a>
+    <a href="#" class="mob-resume">Resume Quote</a>
+</div>
+
+<!-- ============================================================
+     HEADER
+============================================================ -->
+<div class="site-header" id="siteHeader">
+    <nav class="nav-inner">
+        <a href="#" class="logo">Click<span>Mechanic</span></a>
+        <ul class="nav-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="#" class="active">About Us</a></li>
+            <li><a href="#">How It Works</a></li>
+            <li><a href="#">Our Services <i class="fa-solid fa-chevron-down" style="font-size:9px;margin-left:2px;"></i></a></li>
+            <li><a href="#">Blog</a></li>
+        </ul>
+        <div class="nav-right">
+            <a href="#" class="btn-signin">Sign In</a>
+            <a href="#" class="btn-resume">Resume Quote</a>
+        </div>
+        <button class="hamburger" id="hamburgerBtn"><i class="fa-solid fa-bars"></i></button>
+    </nav>
+</div>
+
+  <section class="hero-about">
+    <div class="orb orb1"></div>
+    <div class="orb orb2"></div>
+    <div class="orb orb3"></div>
+    
+    <div class="hero-body">
+        <div class="hero-text">
+            <div class="hero-crumb">
+                <a href="#">Home</a>
+                <i class="fa-solid fa-chevron-right"></i>
+                <span>Insights & Technical Articles</span>
+            </div>
+            <h1>The Technical <em>Journal</em></h1>
+            <p>Deep-dive diagnostics, mechanical optimization strategies, blueprint breakdowns, and master engineer insights keeping you ahead of automotive technology curves.</p>
+            <div class="hero-ctas">
+                <a href="#featured-grid" class="btn-primary">Browse Engineering Logs <i class="fa-solid fa-arrow-down"></i></a>
+                <a href="#newsletter-optin" class="btn-outline-w">Subscribe to Logs</a>
+            </div>
+        </div>
+
+        <div class="hero-cards blog-cards-mobile">
+            <div class="hc hc1">
+                <div class="hc-icon bg-blue"><i class="fa-solid fa-book-open"></i></div>
+                <div class="hc-label">Knowledge Base</div>
+                <div class="hc-val">240+</div>
+                <div class="hc-sub">Technical Articles</div>
+            </div>
+            <div class="hc hc2">
+                <div class="hc-icon bg-green"><i class="fa-solid fa-users"></i></div>
+                <div class="hc-label">Monthly Readers</div>
+                <div class="hc-val">18k</div>
+                <div class="hc-sub">Active Engineers</div>
+            </div>
+            <div class="hc hc3">
+                <div class="hc-icon bg-yel"><i class="fa-solid fa-feather"></i></div>
+                <div class="hc-label">Updates</div>
+                <div class="hc-val">Weekly</div>
+                <div class="hc-sub">Fresh Diagnostic Logs</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="wave-wrap">
+            <svg viewBox="0 0 1440 80" preserveAspectRatio="none">
+            <path d="M0,40L120,50C240,60,480,70,720,68C960,66,1200,54,1320,44L1440,34L1440,80L0,80Z"></path>
+        </svg>
+        </div>
+</section>
+
+<section class="ticker-section">
+    <div class="ticker-track">
+        <div class="ticker-item"><i class="fa-solid fa-fire"></i> TRENDING: Real-Time ECU Remapping Hazards</div>
+        <div class="ticker-dot"></div>
+        <div class="ticker-item"><i class="fa-solid fa-bolt"></i> EV Battery Thermal Degradation Solved</div>
+        <div class="ticker-dot"></div>
+        <div class="ticker-item"><i class="fa-solid fa-screwdriver-wrench"></i> 2026 Fleet Maintenance Best Practices</div>
+        <div class="ticker-dot"></div>
+        <div class="ticker-item"><i class="fa-solid fa-fire"></i> TRENDING: Real-Time ECU Remapping Hazards</div>
+        <div class="ticker-dot"></div>
+        <div class="ticker-item"><i class="fa-solid fa-bolt"></i> EV Battery Thermal Degradation Solved</div>
+        <div class="ticker-dot"></div>
+        <div class="ticker-item"><i class="fa-solid fa-screwdriver-wrench"></i> 2026 Fleet Maintenance Best Practices</div>
+    </div>
+</section>
+
+<section id="featured-grid" class="story-section blog-section-spacing">
+    <div class="container story-inner blog-reverse-flow">
+        <div class="story-visual rv-l on">
+            <div class="story-img-wrap blog-large-aspect">
+                <img src="https://images.unsplash.com/photo-1616422285623-13ff0162193c?auto=format&fit=crop&w=800&q=80" alt="Master Mechanic analyzing engine schematic">
+            </div>
+            <div class="story-chip sc-left">
+                <div class="sc-icon bg-blue"><i class="fa-solid fa-stopwatch"></i></div>
+                <div>
+                    <div class="sc-num">8 Min</div>
+                    <div class="sc-lbl">Reading Time</div>
+                </div>
+            </div>
+            <div class="story-chip sc-right">
+                <div class="sc-icon bg-green"><i class="fa-solid fa-chart-line"></i></div>
+                <div>
+                    <div class="sc-num">Top</div>
+                    <div class="sc-lbl">Editor's Choice</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="story-text rv-r on">
+            <span class="sec-tag">Featured Masterclass</span>
+            <h2 class="sec-title">Diagnosing Modern ECU Intermittent Network Architecture Faults</h2>
+            <p>Intermittent computational anomalies represent the single most complex threat vectors facing contemporary fleet maintenance operations. When a vehicle's primary network drops CAN-bus packets dynamically, standard diagnostic readouts often deliver clean bills of health.</p>
+            <p>In this comprehensive investigation, our director of performance engineering breaks down localized oscilloscope wave capturing strategies designed to catch structural dropouts instantly.</p>
+            <div class="story-highlight">
+                "Computational architecture shouldn't be a black box. Proactive logic pathing maps exactly where electrical load limits deteriorate."
+            </div>
+            <div class="blog-meta-strip">
+                <div class="blog-author-avatar">
+                    <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=120&q=80" alt="Sarah Jenkins">
+                    <span>By Dr. Sarah Jenkins</span>
+                </div>
+                <a href="#" class="btn-primary">Read Complete Abstract <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="mission-section blog-section-spacing">
+    <div class="container mission-inner">
+        <div class="mission-top rv on">
+            <span class="sec-tag inv">The Repository</span>
+            <h2 class="sec-title inv">Engineering & Mechanical Index</h2>
+            <p class="sec-sub inv">Explore localized mechanical case studies, systematic whitepapers, and operational troubleshooting manuals.</p>
+        </div>
+
+        <div class="values-grid blog-dynamic-grid">
+            <article class="val-card rv-s on d1 blog-card-layout">
+                <div class="blog-badge-tag bg-blue">Diagnostics</div>
+                <div class="blog-card-thumb">
+                    <img src="https://images.unsplash.com/photo-1486006920555-c77dce18193b?auto=format&fit=crop&w=600&q=80" alt="ECU Check">
+                </div>
+                <div class="blog-card-body">
+                    <div class="blog-date-line">June 08, 2026 • 5 Min Read</div>
+                    <h3>Understanding High-Pressure Fuel Rail Drop Offs</h3>
+                    <p>Isolating transient mechanical drop-offs within high-pressure direct injection systems under demanding load cycles.</p>
+                    <a href="#" class="blog-inline-link">Analyze Telemetry <i class="fa-solid fa-chevron-right"></i></a>
+                </div>
+            </article>
+
+            <article class="val-card rv-s on d2 blog-card-layout">
+                <div class="blog-badge-tag bg-green">Maintenance</div>
+                <div class="blog-card-thumb">
+                    <img src="https://images.unsplash.com/photo-1507136566006-cfc505b114fc?auto=format&fit=crop&w=600&q=80" alt="Brakes Safety">
+                </div>
+                <div class="blog-card-body">
+                    <div class="blog-date-line">May 29, 2026 • 4 Min Read</div>
+                    <h3>Kinetic Thermal Limits: Resurfacing vs Replacing</h3>
+                    <p>Evaluating heat micro-cracking thresholds across high-coefficient performance brake ceramic composite variants.</p>
+                    <a href="#" class="blog-inline-link">Analyze Telemetry <i class="fa-solid fa-chevron-right"></i></a>
+                </div>
+            </article>
+
+            <article class="val-card rv-s on d3 blog-card-layout">
+                <div class="blog-badge-tag bg-yel">Fleet Logistics</div>
+                <div class="blog-card-thumb">
+                    <img src="https://images.unsplash.com/photo-1516515429572-bf32372f2409?auto=format&fit=crop&w=600&q=80" alt="Fleet Care">
+                </div>
+                <div class="blog-card-body">
+                    <div class="blog-date-line">May 14, 2026 • 11 Min Read</div>
+                    <h3>Preventative Operations for Commercial Heavy Duty Fleets</h3>
+                    <p>Implementing systemic schedule protocols to reduce operational downtime across delivery frameworks.</p>
+                    <a href="#" class="blog-inline-link">Analyze Telemetry <i class="fa-solid fa-chevron-right"></i></a>
+                </div>
+            </article>
+        </div>
+    </div>
+</section>
+
+<section class="team-section blog-section-spacing">
+    <div class="container">
+        <div class="team-header rv on">
+            <span class="sec-tag">Contributors</span>
+            <h2 class="sec-title">The Engineering Editorial Panel</h2>
+            <p class="sec-sub">The technical voices drafting our diagnostic manuals, field updates, and architectural whitepapers.</p>
+        </div>
+
+        <div class="team-grid blog-author-columns">
+            <div class="team-card rv-s on d1">
+                <div class="team-img-wrap">
+                    <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=400&q=80" alt="Marcus Vance">
+                    <div class="team-overlay">
+                        <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fa-solid fa-envelope"></i></a>
+                    </div>
+                </div>
+                <div class="team-info">
+                    <h4>Marcus Vance, ASE</h4>
+                    <p>Principal Powertrain Analyst</p>
+                    <small style="color:var(--soft); font-size:11px; display:block; margin-top:6px;">42 Published Manuals</small>
+                </div>
+            </div>
+
+            <div class="team-card rv-s on d2">
+                <div class="team-img-wrap">
+                    <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=400&q=80" alt="Elena Rostova">
+                    <div class="team-overlay">
+                        <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fa-solid fa-envelope"></i></a>
+                    </div>
+                </div>
+                <div class="team-info">
+                    <h4>Elena Rostova</h4>
+                    <p>EV Diagnostics Researcher</p>
+                    <small style="color:var(--soft); font-size:11px; display:block; margin-top:6px;">29 Deep Dive Manuals</small>
+                </div>
+            </div>
+
+            <div class="team-card rv-s on d3">
+                <div class="team-img-wrap">
+                    <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=400&q=80" alt="David Miller">
+                    <div class="team-overlay">
+                        <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fa-solid fa-envelope"></i></a>
+                    </div>
+                </div>
+                <div class="team-info">
+                    <h4>David Miller</h4>
+                    <p>Chassis Dynamics Specialist</p>
+                    <small style="color:var(--soft); font-size:11px; display:block; margin-top:6px;">56 Field Breakdowns</small>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="newsletter-optin" class="cta-section blog-section-spacing">
+    <div class="container cta-inner">
+        <div class="cta-text rv-l on">
+            <span class="sec-tag">Direct Dispatch</span>
+            <h2>Never Miss a Critical Field Breakdown Directive</h2>
+            <p>Join over 18,000 independent repair operators and global enterprise transport managers who receive our raw engineering diagnostic drops directly in their inboxes every Tuesday morning.</p>
+            
+            <div class="cta-features">
+                <div class="cta-feat">
+                    <i class="fa-solid fa-shield-halved"></i>
+                    <span>No commercial advertising content. Zero spam.</span>
+                </div>
+                <div class="cta-feat">
+                    <i class="fa-solid fa-file-pdf"></i>
+                    <span>Includes factory schematic attachments and vector diagrams</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="cta-form-card rv-r on">
+            <h3>Subscribe to Technical Feeds</h3>
+            <form action="#" method="POST">
+                <div class="form-field">
+                    <input type="text" placeholder="Engineer Profile Name" required>
+                </div>
+                <div class="form-field">
+                    <input type="email" placeholder="Secure Workspace Email" required>
+                </div>
+                <div class="form-field">
+                    <select required>
+                        <option value="" disabled selected>Primary Mechanical Interest</option>
+                        <option value="all">Complete Architectural Coverage</option>
+                        <option value="ecu">Software Engineering & ECU Logs</option>
+                        <option value="powertrain">ICE & Hybrid Powertrains</option>
+                        <option value="ev">Heavy Industrial High Voltage Systems</option>
+                    </select>
+                </div>
+                <button type="submit" class="form-submit">Initialize Feed Subscription</button>
+            </form>
+        </div>
+    </div>
+</section>
+
+    <!-- ============================================================
+     FOOTER
+============================================================ -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <a href="#" class="footer-logo">Click<span>Mechanic</span></a>
+                    <p class="footer-desc">The UK's #1 platform for finding trusted mechanics and garages near you. Book
+                        online, get fixed, drive happy.</p>
+                    <div class="footer-socials">
+                        <a href="#" class="social-btn"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#" class="social-btn"><i class="fa-brands fa-x-twitter"></i></a>
+                        <a href="#" class="social-btn"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" class="social-btn"><i class="fa-brands fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h5>Services</h5>
+                    <ul>
+                        <li><a href="#">Oil Change</a></li>
+                        <li><a href="#">MOT Test</a></li>
+                        <li><a href="#">Brake Service</a></li>
+                        <li><a href="#">Battery Replacement</a></li>
+                        <li><a href="#">Diagnostics</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h5>Company</h5>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Press</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h5>Support</h5>
+                    <ul>
+                        <li><a href="#">Help Centre</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Cookie Policy</a></li>
+                        <li><a href="#">Apply as Mechanic</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2024 ClickMechanic. All rights reserved. Registered in England & Wales.</p>
+                <p>🛡️ All mechanics fully vetted & insured</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ============================================================
+     JAVASCRIPT
+============================================================ -->
+    <script>
+        /* --- Mobile Menu --- */
+        const hamburger = document.getElementById('hamburgerBtn');
+        const closeBtn = document.getElementById('closeMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const overlay = document.getElementById('overlay');
+
+        const openMenu = () => { mobileMenu.classList.add('active'); overlay.classList.add('active'); }
+        const closeMenu = () => { mobileMenu.classList.remove('active'); overlay.classList.remove('active'); }
+
+        hamburger.addEventListener('click', openMenu);
+        closeBtn.addEventListener('click', closeMenu);
+        overlay.addEventListener('click', closeMenu);
+
+        /* --- Scroll Reveal --- */
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(e => {
+                if (e.isIntersecting) {
+                    e.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.12 });
+
+        document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale').forEach(el => {
+            observer.observe(el);
+        });
+
+        /* --- Counter Animation --- */
+        const counterObserver = new IntersectionObserver((entries) => {
+            entries.forEach(e => {
+                if (e.isIntersecting && !e.target.dataset.done) {
+                    e.target.dataset.done = true;
+                    const target = +e.target.dataset.target;
+                    const duration = 2000;
+                    const step = target / (duration / 16);
+                    let current = 0;
+                    const timer = setInterval(() => {
+                        current += step;
+                        if (current >= target) {
+                            current = target;
+                            clearInterval(timer);
+                        }
+                        const formatted = target >= 1000
+                            ? Math.floor(current).toLocaleString('en-GB') + (target === 500000 ? '+' : target === 14000 ? '+' : '')
+                            : Math.floor(current) + (target === 98 ? '%' : target === 12 ? 'mo' : '');
+                        e.target.textContent = formatted;
+                    }, 16);
+                }
+            });
+        }, { threshold: 0.4 });
+
+        document.querySelectorAll('[data-target]').forEach(el => counterObserver.observe(el));
+
+        // FAQ Accordion - Only one open at a time
+        document.querySelectorAll('.faq-q').forEach(question => {
+            question.addEventListener('click', () => {
+                const currentItem = question.closest('.faq-item');
+
+                // Close all other items
+                document.querySelectorAll('.faq-item').forEach(item => {
+                    if (item !== currentItem) {
+                        item.classList.remove('open');
+                    }
+                });
+
+                // Toggle current item
+                currentItem.classList.toggle('open');
+            });
+        });
+    </script>
+</body>
+
+</html>

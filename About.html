@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us – ClickMechanic</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./about.css">
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+<!-- OVERLAY -->
+<div class="overlay" id="overlay"></div>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+    <button class="mm-close" id="closeMenuBtn"><i class="fa-solid fa-xmark"></i></button>
+    <a href="index.html">Home</a>
+    <a href="about.html" class="active">About Us</a>
+    <a href="#">How It Works</a>
+    <a href="#">Our Services</a>
+    <a href="#">Blog</a>
+    <a href="#">Support</a>
+    <hr style="border:0;border-top:1px solid #eee;">
+    <a href="#">Sign In</a>
+    <a href="#" class="mob-resume">Resume Quote</a>
+</div>
+
+<!-- ============================================================
+     HEADER
+============================================================ -->
+<div class="site-header" id="siteHeader">
+    <nav class="nav-inner">
+        <a href="#" class="logo">Click<span>Mechanic</span></a>
+        <ul class="nav-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="#" class="active">About Us</a></li>
+            <li><a href="#">How It Works</a></li>
+            <li><a href="#">Our Services <i class="fa-solid fa-chevron-down" style="font-size:9px;margin-left:2px;"></i></a></li>
+            <li><a href="#">Blog</a></li>
+        </ul>
+        <div class="nav-right">
+            <a href="#" class="btn-signin">Sign In</a>
+            <a href="#" class="btn-resume">Resume Quote</a>
+        </div>
+        <button class="hamburger" id="hamburgerBtn"><i class="fa-solid fa-bars"></i></button>
+    </nav>
+</div>
+
+<!-- ============================================================
+     SECTION 1 — HERO
+============================================================ -->
+<div class="hero-about">
+    <div class="orb orb1"></div>
+    <div class="orb orb2"></div>
+    <div class="orb orb3"></div>
+
+    <div class="hero-body">
+        <div class="hero-text">
+            <div class="hero-crumb">
+                <a href="#">Home</a>
+                <i class="fa-solid fa-chevron-right"></i>
+                <span>About Us</span>
+            </div>
+            <h1>We're on a mission to<br><em>fix car care</em> for good</h1>
+            <p>ClickMechanic was born out of frustration with an industry that lacked transparency, trust, and convenience. Today, we're the UK's leading car servicing marketplace — connecting drivers with world-class mechanics at fair, fixed prices.</p>
+            <div class="hero-ctas">
+                <a href="#story" class="btn-primary">Our Story <i class="fa-solid fa-arrow-down"></i></a>
+                <a href="#join" class="btn-outline-w">Join Our Team <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+        </div>
+
+        <div class="hero-cards">
+            <div class="hc hc1">
+                <div class="hc-icon bg-blue"><i class="fa-solid fa-users"></i></div>
+                <div class="hc-label">Happy Drivers</div>
+                <div class="hc-val">500K+</div>
+                <div class="hc-sub">Across the UK</div>
+            </div>
+            <div class="hc hc2">
+                <div class="hc-icon bg-green"><i class="fa-solid fa-shield-halved"></i></div>
+                <div class="hc-label">Satisfaction</div>
+                <div class="hc-val">98%</div>
+                <div class="hc-sub">Verified reviews</div>
+            </div>
+            <div class="hc hc3">
+                <div class="hc-icon bg-yel"><i class="fa-solid fa-wrench"></i></div>
+                <div class="hc-label">Mechanics</div>
+                <div class="hc-val">14,000+</div>
+                <div class="hc-sub">Fully vetted &amp; insured</div>
+            </div>
+        </div>
+    </div>
+
+   <div class="wave-wrap">
+            <svg viewBox="0 0 1440 80" preserveAspectRatio="none">
+            <path d="M0,40L120,50C240,60,480,70,720,68C960,66,1200,54,1320,44L1440,34L1440,80L0,80Z"></path>
+        </svg>
+        </div>
+</div>
+
+<!-- ============================================================
+     SECTION 2 — TRUST TICKER
+============================================================ -->
+<section class="ticker-section">
+    <div class="ticker-track">
+        <!-- Duplicated for seamless loop -->
+        <div class="ticker-item"><i class="fa-solid fa-star"></i> Trustpilot 4.7 / 5</div>
+        <div class="ticker-dot"></div>
+        <div class="ticker-item"><i class="fa-solid fa-shield-halved"></i> All Mechanics Vetted &amp; Insured</div>
+        <div class="ticker-dot"></div>
+        <div class="ticker-item"><i class="fa-solid fa-tag"></i> Fixed Upfront Pricing — No Surprises</div>
+        <div class="ticker-dot"></div>
+        <div class="ticker-item"><i class="fa-solid fa-clock"></i> Next-Day Availability</div>
+        <div class="ticker-dot"></div>
+        <div class="ticker-item"><i class="fa-solid fa-award"></i> Best Car Service Platform 2023</div>
+        <div class="ticker-dot"></div>
+        <div class="ticker-item"><i class="fa-solid fa-star"></i> Google 4.8 / 5 — 192K+ Reviews</div>
+        <div class="ticker-dot"></div>
+        <div class="ticker-item"><i class="fa-solid fa-rotate"></i> 12-Month Parts &amp; Labour Guarantee</div>
+        <div class="ticker-dot"></div>
+        <!-- duplicate -->
+        <div class="ticker-item"><i class="fa-solid fa-star"></i> Trustpilot 4.7 / 5</div>
+        <div class="ticker-dot"></div>
+        <div class="ticker-item"><i class="fa-solid fa-shield-halved"></i> All Mechanics Vetted &amp; Insured</div>
+        <div class="ticker-dot"></div>
+        <div class="ticker-item"><i class="fa-solid fa-tag"></i> Fixed Upfront Pricing — No Surprises</div>
+        <div class="ticker-dot"></div>
+        <div class="ticker-item"><i class="fa-solid fa-clock"></i> Next-Day Availability</div>
+        <div class="ticker-dot"></div>
+        <div class="ticker-item"><i class="fa-solid fa-award"></i> Best Car Service Platform 2023</div>
+        <div class="ticker-dot"></div>
+        <div class="ticker-item"><i class="fa-solid fa-star"></i> Google 4.8 / 5 — 192K+ Reviews</div>
+        <div class="ticker-dot"></div>
+        <div class="ticker-item"><i class="fa-solid fa-rotate"></i> 12-Month Parts &amp; Labour Guarantee</div>
+        <div class="ticker-dot"></div>
+    </div>
+</section>
+
+<!-- ============================================================
+     SECTION 3 — OUR STORY
+============================================================ -->
+<section class="story-section" id="story">
+    <div class="container">
+        <div class="story-inner">
+            <div class="story-visual rv-l">
+                <div class="story-img-wrap">
+                    <img src="https://images.unsplash.com/photo-1625047509168-a7026f36de04?auto=format&fit=crop&q=80&w=900" alt="Mechanic working">
+                </div>
+                <div class="story-chip sc-left">
+                    <div class="sc-icon bg-blue"><i class="fa-solid fa-calendar"></i></div>
+                    <div>
+                        <div class="sc-num">2012</div>
+                        <div class="sc-lbl">Founded in London</div>
+                    </div>
+                </div>
+                <div class="story-chip sc-right">
+                    <div class="sc-icon bg-green"><i class="fa-solid fa-trophy"></i></div>
+                    <div>
+                        <div class="sc-num">#1</div>
+                        <div class="sc-lbl">UK Car Service App</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="story-text">
+                <span class="sec-tag rv d1">Our Story</span>
+                <h2 class="sec-title rv d2">From a garage frustration to a national platform</h2>
+
+                <p class="rv d3">ClickMechanic started in 2012 when co-founders Andrew and Harry spent three weeks trying to get a fair quote for a simple clutch repair. The process was opaque, stressful, and expensive.</p>
+
+                <p class="rv d3">They believed there was a better way. By connecting drivers directly with local, vetted mechanics — with full pricing shown upfront — they could remove the anxiety from car ownership altogether.</p>
+
+                <div class="story-highlight rv d4">
+                    "We didn't just want to build a booking tool. We wanted to restore trust between drivers and mechanics — one repair at a time."
+                </div>
+
+                <p class="rv d4">More than a decade later, ClickMechanic is trusted by over 500,000 drivers and 14,000 mechanics across the UK. We've completed millions of jobs and earned an industry-leading 98% satisfaction score.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================================
+     SECTION 4 — MISSION & VALUES
+============================================================ -->
+<section class="mission-section">
+    <div class="container mission-inner">
+        <div class="mission-top">
+            <span class="sec-tag inv rv">What We Stand For</span>
+            <h2 class="sec-title inv rv d1">Our Mission &amp; Core Values</h2>
+            <p class="sec-sub inv rv d2">Everything we build, every decision we make, flows from these five principles.</p>
+        </div>
+        <div class="values-grid">
+            <div class="val-card rv d1">
+                <div class="val-num">01</div>
+                <div class="val-icon"><i class="fa-solid fa-eye"></i></div>
+                <h3>Radical Transparency</h3>
+                <p>We show the full price before you book — parts, labour, and everything in between. No hidden charges, ever.</p>
+            </div>
+            <div class="val-card rv d2">
+                <div class="val-num">02</div>
+                <div class="val-icon"><i class="fa-solid fa-handshake"></i></div>
+                <h3>Trust at Every Step</h3>
+                <p>Every mechanic on our platform is background-checked, insured, and continuously reviewed by real customers.</p>
+            </div>
+            <div class="val-card rv d3">
+                <div class="val-num">03</div>
+                <div class="val-icon"><i class="fa-solid fa-bolt"></i></div>
+                <h3>Speed &amp; Convenience</h3>
+                <p>From booking to completion, we respect your time. Next-day slots, mobile mechanics, zero waiting rooms.</p>
+            </div>
+            <div class="val-card rv d4">
+                <div class="val-num">04</div>
+                <div class="val-icon"><i class="fa-solid fa-leaf"></i></div>
+                <h3>Fair Earnings for Mechanics</h3>
+                <p>We believe mechanics deserve great pay and flexibility. Our platform is built to help them thrive.</p>
+            </div>
+            <div class="val-card rv d5">
+                <div class="val-num">05</div>
+                <div class="val-icon"><i class="fa-solid fa-earth-europe"></i></div>
+                <h3>Sustainable Practices</h3>
+                <p>We're committed to reducing the environmental impact of car servicing through smarter logistics and eco-conscious partners.</p>
+            </div>
+            <div class="val-card rv d6" style="background:var(--grad);border-color:transparent;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;cursor:pointer;">
+                <i class="fa-solid fa-rocket" style="font-size:36px;color:#fff;margin-bottom:16px;"></i>
+                <h3 style="color:#fff;">Join Our Journey</h3>
+                <p style="color:rgba(255,255,255,.75);">We're just getting started. See open roles →</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================================
+     SECTION 5 — TIMELINE
+============================================================ -->
+<section class="timeline-section">
+    <div class="container">
+        <div class="timeline-top">
+            <span class="sec-tag rv">Our Journey</span>
+            <h2 class="sec-title rv d1">Key Milestones</h2>
+            <p class="sec-sub rv d2">A decade of growth, trust, and transformation.</p>
+        </div>
+        <div class="timeline">
+            <div class="tl-item rv d1">
+                <div class="tl-content">
+                    <div class="tl-year">2012 · Founded</div>
+                    <h4>ClickMechanic Launches in London</h4>
+                    <p>Andrew &amp; Harry launch the platform after a personal frustration with the traditional garage experience.</p>
+                </div>
+                <div class="tl-dot"></div>
+                <div class="tl-spacer"></div>
+            </div>
+            <div class="tl-item rv d2">
+                <div class="tl-spacer"></div>
+                <div class="tl-dot"></div>
+                <div class="tl-content">
+                    <div class="tl-year">2014 · First 10K</div>
+                    <h4>10,000 Happy Customers Reached</h4>
+                    <p>Growth explodes beyond London — mechanics in Manchester, Birmingham, and Leeds join the platform.</p>
+                </div>
+            </div>
+            <div class="tl-item rv d3">
+                <div class="tl-content">
+                    <div class="tl-year">2016 · App Launch</div>
+                    <h4>ClickMechanic Mobile App Goes Live</h4>
+                    <p>Our iOS and Android apps launch, enabling real-time booking and mechanic tracking on the go.</p>
+                </div>
+                <div class="tl-dot"></div>
+                <div class="tl-spacer"></div>
+            </div>
+            <div class="tl-item rv d4">
+                <div class="tl-spacer"></div>
+                <div class="tl-dot"></div>
+                <div class="tl-content">
+                    <div class="tl-year">2019 · Series A</div>
+                    <h4>£12M Series A Funding Secured</h4>
+                    <p>Investment fuels expansion across the entire UK and a new enterprise fleet product for businesses.</p>
+                </div>
+            </div>
+            <div class="tl-item rv d5">
+                <div class="tl-content">
+                    <div class="tl-year">2022 · 500K Milestone</div>
+                    <h4>Half a Million Customers Served</h4>
+                    <p>We celebrate 500,000 completed jobs and launch our 12-month parts &amp; labour guarantee programme.</p>
+                </div>
+                <div class="tl-dot"></div>
+                <div class="tl-spacer"></div>
+            </div>
+            <div class="tl-item rv d6">
+                <div class="tl-spacer"></div>
+                <div class="tl-dot"></div>
+                <div class="tl-content">
+                    <div class="tl-year">2024 · Today</div>
+                    <h4>14,000 Mechanics. 192K+ Reviews.</h4>
+                    <p>The UK's #1 car servicing platform — and we're just getting started with exciting new features.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================================
+     SECTION 6 — TEAM
+============================================================ -->
+<section class="team-section">
+    <div class="container">
+        <div class="team-header">
+            <span class="sec-tag rv">The People</span>
+            <h2 class="sec-title rv d1">Meet the Leadership Team</h2>
+            <p class="sec-sub rv d2">Passionate people building a better car care experience for everyone.</p>
+        </div>
+        <div class="team-grid">
+            <div class="team-card rv d1">
+                <div class="team-img-wrap">
+                    <img src="https://randomuser.me/api/portraits/men/45.jpg" alt="Andrew Jervis">
+                    <div class="team-overlay">
+                        <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+                    </div>
+                </div>
+                <div class="team-info">
+                    <h4>Andrew Jervis</h4>
+                    <p>Co-Founder &amp; CEO</p>
+                </div>
+            </div>
+            <div class="team-card rv d2">
+                <div class="team-img-wrap">
+                    <img src="https://randomuser.me/api/portraits/men/22.jpg" alt="Harry Jones">
+                    <div class="team-overlay">
+                        <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+                    </div>
+                </div>
+                <div class="team-info">
+                    <h4>Harry Jones</h4>
+                    <p>Co-Founder &amp; CTO</p>
+                </div>
+            </div>
+            <div class="team-card rv d3">
+                <div class="team-img-wrap">
+                    <img src="https://randomuser.me/api/portraits/women/33.jpg" alt="Sophie Clarke">
+                    <div class="team-overlay">
+                        <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+                    </div>
+                </div>
+                <div class="team-info">
+                    <h4>Sophie Clarke</h4>
+                    <p>Chief Marketing Officer</p>
+                </div>
+            </div>
+            <div class="team-card rv d4">
+                <div class="team-img-wrap">
+                    <img src="https://randomuser.me/api/portraits/men/67.jpg" alt="Raj Patel">
+                    <div class="team-overlay">
+                        <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+                    </div>
+                </div>
+                <div class="team-info">
+                    <h4>Raj Patel</h4>
+                    <p>VP of Operations</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================================
+     SECTION 7 — STATS
+============================================================ -->
+<section class="stats-section">
+    <div class="container stats-inner">
+        <div class="stats-top">
+            <span class="sec-tag inv rv">By the Numbers</span>
+            <h2 class="sec-title inv rv d1">ClickMechanic in Numbers</h2>
+            <p class="sec-sub inv rv d2">Real impact, measurable results.</p>
+        </div>
+        <div class="stats-grid">
+            <div class="stat-card rv d1">
+                <div class="stat-icon"><i class="fa-solid fa-users"></i></div>
+                <div class="stat-num" data-target="500000">0</div>
+                <div class="stat-lbl">Happy Customers</div>
+            </div>
+            <div class="stat-card rv d2">
+                <div class="stat-icon"><i class="fa-solid fa-wrench"></i></div>
+                <div class="stat-num" data-target="14000">0</div>
+                <div class="stat-lbl">Vetted Mechanics</div>
+            </div>
+            <div class="stat-card rv d3">
+                <div class="stat-icon"><i class="fa-solid fa-star"></i></div>
+                <div class="stat-num" data-target="192000">0</div>
+                <div class="stat-lbl">Customer Reviews</div>
+            </div>
+            <div class="stat-card rv d4">
+                <div class="stat-icon"><i class="fa-solid fa-shield-halved"></i></div>
+                <div class="stat-num" data-target="98">0</div>
+                <div class="stat-lbl">% Satisfaction Rate</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================================
+     SECTION 8 — PRESS & AWARDS
+============================================================ -->
+<section class="press-section">
+    <div class="container">
+        <div class="press-header">
+            <span class="sec-tag rv">Recognition</span>
+            <h2 class="sec-title rv d1">Awards &amp; Press</h2>
+            <p class="sec-sub rv d2">Recognised by industry leaders and loved by the media.</p>
+        </div>
+        <div class="awards-grid">
+            <div class="award-card rv d1">
+                <div class="award-icon">🏆</div>
+                <h4>Best Car Service Platform</h4>
+                <p>UK Auto Technology Awards</p>
+                <span class="award-year">2023</span>
+            </div>
+            <div class="award-card rv d2">
+                <div class="award-icon">⭐</div>
+                <h4>Trustpilot Excellence Award</h4>
+                <p>Top-rated marketplace — 4.7 stars</p>
+                <span class="award-year">2022 &amp; 2023</span>
+            </div>
+            <div class="award-card rv d3">
+                <div class="award-icon">🚀</div>
+                <h4>Tech Startup of the Year</h4>
+                <p>Startups.co.uk Annual Awards</p>
+                <span class="award-year">2019</span>
+            </div>
+        </div>
+        <div class="press-logos rv">
+            <span class="press-logo-item">The Telegraph</span>
+            <span class="press-logo-item">The Guardian</span>
+            <span class="press-logo-item">BBC News</span>
+            <span class="press-logo-item">Auto Express</span>
+            <span class="press-logo-item">Forbes</span>
+            <span class="press-logo-item">TechCrunch</span>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================================
+     SECTION 9 — MECHANIC CTA / JOIN
+============================================================ -->
+<section class="cta-section" id="join">
+    <div class="container">
+        <div class="cta-inner">
+            <div class="cta-text">
+                <span class="sec-tag rv">For Mechanics</span>
+                <h2 class="sec-title rv d1">Become a ClickMechanic</h2>
+                <p class="sec-sub rv d2">Join 14,000+ independent mechanics already earning more, working flexibly, and growing their reputation on our platform.</p>
+                <div class="cta-features">
+                    <div class="cta-feat rv d3">
+                        <i class="fa-solid fa-pound-sign"></i>
+                        <span>Earn up to £800+ per week — on your schedule</span>
+                    </div>
+                    <div class="cta-feat rv d4">
+                        <i class="fa-solid fa-calendar-check"></i>
+                        <span>Set your own hours and availability</span>
+                    </div>
+                    <div class="cta-feat rv d5">
+                        <i class="fa-solid fa-chart-line"></i>
+                        <span>Grow your reputation with verified reviews</span>
+                    </div>
+                    <div class="cta-feat rv d6">
+                        <i class="fa-solid fa-headset"></i>
+                        <span>24/7 mechanic support from our team</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cta-form-card rv-r">
+                <h3>Apply in 2 Minutes</h3>
+                <div class="form-field">
+                    <input type="text" placeholder="Full Name">
+                </div>
+                <div class="form-field">
+                    <input type="email" placeholder="Email Address">
+                </div>
+                <div class="form-field">
+                    <input type="tel" placeholder="Phone Number">
+                </div>
+                <div class="form-field">
+                    <select>
+                        <option value="" disabled selected>Years of Experience</option>
+                        <option>1–2 years</option>
+                        <option>3–5 years</option>
+                        <option>6–10 years</option>
+                        <option>10+ years</option>
+                    </select>
+                </div>
+                <div class="form-field">
+                    <input type="text" placeholder="Your Postcode">
+                </div>
+                <button class="form-submit">Apply Now – It's Free <i class="fa-solid fa-arrow-right" style="margin-left:6px;"></i></button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================================
+     SECTION 10 — CONTACT
+============================================================ -->
+<section class="contact-section">
+    <div class="container">
+        <div class="contact-header">
+            <span class="sec-tag rv">Get In Touch</span>
+            <h2 class="sec-title rv d1">We'd Love to Hear From You</h2>
+            <p class="sec-sub rv d2">Whether you're a customer, mechanic, or press — we're here to help.</p>
+        </div>
+        <div class="contact-grid">
+            <div class="contact-card rv d1">
+                <div class="cc-icon"><i class="fa-solid fa-headset"></i></div>
+                <h4>Customer Support</h4>
+                <p>Got a question about your booking or a repair? Our support team is available 7 days a week.</p>
+                <a href="#" class="cc-btn"><i class="fa-solid fa-arrow-right"></i> Visit Help Centre</a>
+            </div>
+            <div class="contact-card rv d2">
+                <div class="cc-icon"><i class="fa-solid fa-briefcase"></i></div>
+                <h4>Business &amp; Fleet</h4>
+                <p>Managing a fleet of vehicles? Talk to our enterprise team about custom plans and invoicing.</p>
+                <a href="#" class="cc-btn"><i class="fa-solid fa-arrow-right"></i> Contact Sales</a>
+            </div>
+            <div class="contact-card rv d3">
+                <div class="cc-icon"><i class="fa-solid fa-newspaper"></i></div>
+                <h4>Press &amp; Media</h4>
+                <p>Journalists and media professionals can reach our PR team for interviews, data, and comment.</p>
+                <a href="#" class="cc-btn"><i class="fa-solid fa-arrow-right"></i> Press Enquiries</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================================
+     FOOTER
+============================================================ -->
+   <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <a href="#" class="footer-logo">Click<span>Mechanic</span></a>
+                    <p class="footer-desc">The UK's #1 platform for finding trusted mechanics and garages near you. Book
+                        online, get fixed, drive happy.</p>
+                    <div class="footer-socials">
+                        <a href="#" class="social-btn"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#" class="social-btn"><i class="fa-brands fa-x-twitter"></i></a>
+                        <a href="#" class="social-btn"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" class="social-btn"><i class="fa-brands fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h5>Services</h5>
+                    <ul>
+                        <li><a href="#">Oil Change</a></li>
+                        <li><a href="#">MOT Test</a></li>
+                        <li><a href="#">Brake Service</a></li>
+                        <li><a href="#">Battery Replacement</a></li>
+                        <li><a href="#">Diagnostics</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h5>Company</h5>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Press</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h5>Support</h5>
+                    <ul>
+                        <li><a href="#">Help Centre</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Cookie Policy</a></li>
+                        <li><a href="#">Apply as Mechanic</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2024 ClickMechanic. All rights reserved. Registered in England & Wales.</p>
+                <p>🛡️ All mechanics fully vetted & insured</p>
+            </div>
+        </div>
+    </footer>
+
+<!-- ============================================================
+     JAVASCRIPT
+============================================================ -->
+<script>
+    /* --- Mobile Menu --- */
+    const hamburger  = document.getElementById('hamburgerBtn');
+    const closeBtn   = document.getElementById('closeMenuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const overlay    = document.getElementById('overlay');
+
+    hamburger.addEventListener('click', () => {
+        mobileMenu.classList.add('active');
+        overlay.classList.add('active');
+    });
+    const closeMenu = () => {
+        mobileMenu.classList.remove('active');
+        overlay.classList.remove('active');
+    };
+    closeBtn.addEventListener('click', closeMenu);
+    overlay.addEventListener('click', closeMenu);
+
+    /* --- Sticky Header --- */
+    const siteHeader = document.getElementById('siteHeader');
+    window.addEventListener('scroll', () => {
+        siteHeader.classList.toggle('scrolled', window.scrollY > 60);
+    });
+
+    /* --- Scroll Reveal --- */
+    const revealObserver = new IntersectionObserver(entries => {
+        entries.forEach(e => {
+            if (e.isIntersecting) e.target.classList.add('on');
+        });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.rv, .rv-l, .rv-r, .rv-s').forEach(el => revealObserver.observe(el));
+
+    /* --- Counter Animation --- */
+    const counterObserver = new IntersectionObserver(entries => {
+        entries.forEach(e => {
+            if (e.isIntersecting && !e.target.dataset.done) {
+                e.target.dataset.done = 'true';
+                const target   = +e.target.dataset.target;
+                const duration = 2200;
+                const step     = target / (duration / 16);
+                let current    = 0;
+
+                const suffix = target === 98 ? '%'
+                             : target === 500000 ? 'K+'
+                             : target === 192000 ? 'K+'
+                             : target === 14000  ? 'K+'
+                             : '';
+
+                const format = n => {
+                    if (target === 500000) return Math.floor(n/1000) + 'K+';
+                    if (target === 192000) return Math.floor(n/1000) + 'K+';
+                    if (target === 14000)  return Math.floor(n/1000) + 'K+';
+                    if (target === 98)     return Math.floor(n) + '%';
+                    return Math.floor(n).toLocaleString('en-GB');
+                };
+
+                const timer = setInterval(() => {
+                    current += step;
+                    if (current >= target) { current = target; clearInterval(timer); }
+                    e.target.textContent = format(current);
+                }, 16);
+            }
+        });
+    }, { threshold: 0.4 });
+
+    document.querySelectorAll('[data-target]').forEach(el => counterObserver.observe(el));
+
+    /* --- Form submit feedback --- */
+    document.querySelector('.form-submit').addEventListener('click', function() {
+        const inputs = document.querySelectorAll('.cta-form-card input');
+        let valid = true;
+        inputs.forEach(i => { if(!i.value.trim()) valid = false; });
+        if (valid) {
+            this.textContent = '✓ Application Received!';
+            this.style.background = 'linear-gradient(135deg,#00b67a,#00874d)';
+            this.style.animation = 'none';
+        } else {
+            this.textContent = 'Please fill all fields';
+            this.style.background = '#e74c3c';
+            setTimeout(() => {
+                this.textContent = 'Apply Now – It\'s Free →';
+                this.style.background = '';
+            }, 2000);
+        }
+    });
+</script>
+</body>
+</html>

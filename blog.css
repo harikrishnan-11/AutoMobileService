@@ -1,0 +1,169 @@
+
+    /* Section Separation Fixes */
+    .blog-section-spacing {
+        padding: 96px 0 !important;
+    }
+    
+    /* Layout Adjustments for Headerless Flow */
+    .blog-hero-override {
+        min-height: 60vh !important;
+        padding-top: 80px;
+    }
+
+    /* Long-form Strip Custom Rules */
+    .blog-meta-strip {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 32px;
+        gap: 20px;
+        flex-wrap: wrap;
+    }
+    
+    .blog-author-avatar {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+    }
+    
+    .blog-author-avatar img {
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 2px solid var(--blue);
+    }
+    
+    .blog-author-avatar span {
+        font-size: 14px;
+        font-weight: 700;
+        color: var(--dark);
+    }
+
+    /* Grid Layout Variations for Cards */
+    .blog-card-layout {
+        display: flex;
+        flex-direction: column;
+        padding: 0 !important;
+        overflow: hidden;
+        background: #fff !important;
+        border: 1px solid #e8eef8 !important;
+    }
+    
+    .blog-card-thumb {
+        width: 100%;
+        height: 200px;
+        overflow: hidden;
+        position: relative;
+    }
+    
+    .blog-card-thumb img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.4s ease;
+    }
+    
+    .blog-card-layout:hover .blog-card-thumb img {
+        transform: scale(1.06);
+    }
+    
+    .blog-badge-tag {
+        position: absolute;
+        top: 16px;
+        left: 16px;
+        z-index: 5;
+        font-size: 11px;
+        font-weight: 800;
+        text-transform: uppercase;
+        color: #fff;
+        padding: 4px 12px;
+        border-radius: 100px;
+        letter-spacing: 0.5px;
+    }
+    
+    .blog-card-body {
+        padding: 24px 24px 32px;
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+    }
+    
+    .blog-date-line {
+        font-size: 12px;
+        font-weight: 600;
+        color: var(--soft);
+        margin-bottom: 10px;
+    }
+    
+    .blog-card-body h3 {
+        color: var(--dark) !important;
+        font-size: 18px !important;
+        line-height: 1.4 !important;
+        margin-bottom: 12px !important;
+    }
+    
+    .blog-card-body p {
+        color: var(--mid) !important;
+        margin-bottom: 20px !important;
+        flex-grow: 1;
+    }
+    
+    .blog-inline-link {
+        font-size: 13px;
+        font-weight: 700;
+        color: var(--blue);
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        transition: color 0.2s;
+    }
+    
+    .blog-inline-link:hover {
+        color: var(--blue-dark);
+    }
+
+    /* ============================================================
+               STRICT MOBILE SCALABILITY MATRIX (Responsive Breakpoints)
+       ============================================================ */
+    @media (max-width: 1024px) {
+        .blog-dynamic-grid {
+            grid-template-columns: repeat(2, 1fr) !important;
+        }
+        .blog-author-columns {
+            grid-template-columns: repeat(3, 1fr) !important;
+        }
+    }
+    
+    @media (max-width: 768px) {
+        .blog-hero-override {
+            padding-bottom: 80px !important;
+        }
+        .blog-cards-mobile {
+            display: none !important; /* Drops complex collisions on smaller viewports safely */
+        }
+        .blog-reverse-flow {
+            grid-template-columns: 1fr !important;
+            gap: 40px !important;
+        }
+        .blog-dynamic-grid {
+            grid-template-columns: 1fr !important;
+        }
+        .blog-author-columns {
+            grid-template-columns: 1fr !important;
+            gap: 20px !important;
+        }
+        .blog-meta-strip {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 16px;
+        }
+        .blog-meta-strip .btn-primary {
+            width: 100%;
+            justify-content: center;
+        }
+        .story-img-wrap.blog-large-aspect {
+            height: 300px !important;
+        }
+    }
