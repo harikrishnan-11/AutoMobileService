@@ -6,14 +6,14 @@
   --surface2:  #181b22;
   --border:    #1f2330;
   --accent:    #fbbf24;       /* vivid amber-orange: engine heat */
-  --accent2:   #fbbf24;
+  --accent2:   #FFFF;
   --accent-dim:#f9731620;
   --text:      #e8eaf0;
   --muted:     #6b7280;
   --success:   #22c55e;
   --warning:   #fbbf24;
   --danger:    #ef4444;
-  --info:      #fbbf24;
+  --info:      #246cfb;
   --sidebar-w: 260px;
   --topbar-h:  64px;
   --radius:    12px;
