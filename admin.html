@@ -1,0 +1,988 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AutoServe Pro — Dashboard</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="stylesheet" href="./dashboard.css">
+</head>
+<body>
+
+<!-- ── OVERLAY ── -->
+<div class="overlay" id="overlay" onclick="closeSidebar()"></div>
+
+<!-- ── SIDEBAR ── -->
+<aside class="sidebar" id="sidebar">
+  <div class="sidebar-logo">
+    <div class="logo-icon"><i class="fas fa-car-wrench"></i></div>
+    <div class="logo-text">Auto<span>Serve</span> Pro</div>
+  </div>
+
+  <div class="nav-section">Main</div>
+  <ul>
+    <li class="nav-item active" onclick="navigate('dashboard', this)" data-page="dashboard">
+      <i class="fas fa-gauge-high"></i> Dashboard
+    </li>
+    <li class="nav-item" onclick="navigate('services', this)" data-page="services">
+      <i class="fas fa-wrench"></i> Services
+      <span class="nav-badge">3</span>
+    </li>
+    <li class="nav-item" onclick="navigate('appointments', this)" data-page="appointments">
+      <i class="fas fa-calendar-check"></i> Appointments
+      <span class="nav-badge">8</span>
+    </li>
+    <li class="nav-item" onclick="navigate('vehicles', this)" data-page="vehicles">
+      <i class="fas fa-car"></i> Vehicles
+    </li>
+    <li class="nav-item" onclick="navigate('reports', this)" data-page="reports">
+      <i class="fas fa-chart-line"></i> Reports & Billing
+    </li>
+  </ul>
+
+  <div class="nav-section">Admin</div>
+  <ul id="admin-nav">
+    <li class="nav-item" onclick="navigate('staff', this)" data-page="staff">
+      <i class="fas fa-users-gear"></i> Staff & Roles
+    </li>
+    <li class="nav-item" onclick="navigate('settings', this)" data-page="settings">
+      <i class="fas fa-sliders"></i> Settings
+    </li>
+  </ul>
+
+  <div class="sidebar-footer">v2.4.1 &copy; 2026 AutoServe</div>
+</aside>
+
+<!-- ── TOPBAR ── -->
+<header class="topbar">
+  <button class="hamburger icon-btn" onclick="toggleSidebar()"><i class="fas fa-bars"></i></button>
+  <div class="topbar-title" id="topbar-title">Dashboard</div>
+  
+  <div class="topbar-actions">
+    
+    <button class="icon-btn" title="Notifications">
+      <i class="fas fa-bell"></i>
+      <span class="dot"></span>
+    </button>
+    <button class="icon-btn" title="Messages">
+      <i class="fas fa-envelope"></i>
+    </button>
+    <div class="topbar-user" onclick="toggleDropdown()">
+      <div class="user-av" id="user-av">AK</div>
+      <div class="user-info">
+        <div class="user-name" id="user-name">Arjun Kumar</div>
+        <div class="user-role" id="user-role-tag">Admin</div>
+      </div>
+      <i class="fas fa-chevron-down" style="font-size:.65rem;color:var(--muted);margin-left:4px"></i>
+      <div class="user-dropdown" id="user-dropdown">
+        <div class="dropdown-item"><i class="fas fa-circle-user"></i> My Profile</div>
+        <div class="dropdown-item"><i class="fas fa-envelope"></i> <span id="dd-email">arjun@autoservepro.in</span></div>
+        <div class="dropdown-item"><i class="fas fa-gear"></i> Account Settings</div>
+        <div class="dropdown-divider"></div>
+        <div class="dropdown-item logout" onclick="handleLogout()"><i class="fas fa-right-from-bracket"></i> Logout</div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ── MAIN ── -->
+<main class="main">
+
+<!-- ════════════════════════════════════════════════════
+     PAGE 1 — DASHBOARD
+════════════════════════════════════════════════════ -->
+<section class="page active" id="page-dashboard">
+  <div class="page-header">
+    <h1>Dashboard Overview</h1>
+    <p>Good morning, Arjun — here's what's happening today at the garage.</p>
+  </div>
+
+  <!-- STAT CARDS -->
+  <div class="grid-4">
+    <div class="stat-card">
+      <div class="stat-top">
+        <div class="stat-icon" style="background:rgba(249,115,22,.15)">
+          <i class="fas fa-car-wrench" style="color:var(--accent)"></i>
+        </div>
+        <span class="stat-change up">↑ 12%</span>
+      </div>
+      <div class="stat-val">148</div>
+      <div class="stat-label">Active Service Jobs</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-top">
+        <div class="stat-icon" style="background:rgba(34,197,94,.12)">
+          <i class="fas fa-indian-rupee-sign" style="color:var(--success)"></i>
+        </div>
+        <span class="stat-change up">↑ 8%</span>
+      </div>
+      <div class="stat-val">₹4.2L</div>
+      <div class="stat-label">Revenue This Month</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-top">
+        <div class="stat-icon" style="background:rgba(59,130,246,.12)">
+          <i class="fas fa-calendar-check" style="color:var(--info)"></i>
+        </div>
+        <span class="stat-change up">↑ 5%</span>
+      </div>
+      <div class="stat-val">37</div>
+      <div class="stat-label">Appointments Today</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-top">
+        <div class="stat-icon" style="background:rgba(234,179,8,.12)">
+          <i class="fas fa-star" style="color:var(--warning)"></i>
+        </div>
+        <span class="stat-change up">↑ 0.3</span>
+      </div>
+      <div class="stat-val">4.8</div>
+      <div class="stat-label">Avg Customer Rating</div>
+    </div>
+  </div>
+
+  <div class="grid-2-1">
+    <!-- Revenue Chart -->
+    <div class="card">
+      <div class="card-head">
+        <div class="card-title">Monthly Revenue</div>
+        <button class="card-action">This Year</button>
+      </div>
+      <div class="chart-area" id="revenueChart"></div>
+      <div class="bar-label" id="chartLabels"></div>
+    </div>
+
+    <!-- Donut -->
+    <div class="card">
+      <div class="card-head">
+        <div class="card-title">Service Breakdown</div>
+      </div>
+      <div class="donut-ring">
+        <svg viewBox="0 0 100 100" width="130" height="130">
+          <circle cx="50" cy="50" r="40" fill="none" stroke="var(--border)" stroke-width="12"/>
+          <circle cx="50" cy="50" r="40" fill="none" stroke="var(--accent)" stroke-width="12"
+            stroke-dasharray="100.5 150.8" stroke-linecap="round"/>
+          <circle cx="50" cy="50" r="40" fill="none" stroke="var(--info)" stroke-width="12"
+            stroke-dasharray="62.8 188.5" stroke-dashoffset="-100.5" stroke-linecap="round"/>
+          <circle cx="50" cy="50" r="40" fill="none" stroke="var(--success)" stroke-width="12"
+            stroke-dasharray="37.7 213.6" stroke-dashoffset="-163.3" stroke-linecap="round"/>
+        </svg>
+        <div class="donut-center"><strong>251</strong></div>
+      </div>
+      <div class="legend">
+        <div class="legend-item"><div class="legend-dot" style="background:var(--accent)"></div> Engine & Mechanical <span style="margin-left:auto;font-size:.78rem">40%</span></div>
+        <div class="legend-item"><div class="legend-dot" style="background:var(--info)"></div> Electrical <span style="margin-left:auto;font-size:.78rem">25%</span></div>
+        <div class="legend-item"><div class="legend-dot" style="background:var(--success)"></div> Body & Paint <span style="margin-left:auto;font-size:.78rem">15%</span></div>
+        <div class="legend-item"><div class="legend-dot" style="background:var(--warning)"></div> Others <span style="margin-left:auto;font-size:.78rem">20%</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Recent Jobs -->
+  <div class="card">
+    <div class="card-head">
+      <div class="card-title">Recent Service Jobs</div>
+      <button class="card-action">View All</button>
+    </div>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Job ID</th><th>Customer</th><th>Vehicle</th><th>Service</th><th>Technician</th><th>Status</th><th>Amount</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>#SJ-2091</td><td>Ravi Shankar</td><td>Hyundai i20</td><td>Full Service</td><td>Mehul P.</td><td><span class="badge badge-green">Completed</span></td><td>₹4,800</td></tr>
+          <tr><td>#SJ-2090</td><td>Priya Nair</td><td>Honda City</td><td>AC Repair</td><td>Sanjay K.</td><td><span class="badge badge-orange">In Progress</span></td><td>₹2,200</td></tr>
+          <tr><td>#SJ-2089</td><td>Deepak Iyer</td><td>Tata Nexon</td><td>Brake Service</td><td>Arif M.</td><td><span class="badge badge-blue">Waiting Parts</span></td><td>₹1,650</td></tr>
+          <tr><td>#SJ-2088</td><td>Kavya Reddy</td><td>Maruti Swift</td><td>Oil Change</td><td>Mehul P.</td><td><span class="badge badge-green">Completed</span></td><td>₹900</td></tr>
+          <tr><td>#SJ-2087</td><td>Arun Patel</td><td>Toyota Innova</td><td>Engine Tuning</td><td>Sanjay K.</td><td><span class="badge badge-yellow">Pending</span></td><td>₹6,500</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Today's Appointments + Alerts -->
+  <div class="grid-2">
+    <div class="card">
+      <div class="card-head">
+        <div class="card-title">Today's Appointments</div>
+        <button class="card-action">+ Add</button>
+      </div>
+      <div class="appt-item">
+        <div class="appt-date"><div class="appt-day">09</div><div class="appt-mon">Jun</div></div>
+        <div class="appt-body"><div class="appt-title">Tyre Rotation — KL 45 C 2201</div><div class="appt-sub">Ravi Shankar · Bay 3</div></div>
+        <div class="appt-time">09:00 AM</div>
+      </div>
+      <div class="appt-item">
+        <div class="appt-date"><div class="appt-day">09</div><div class="appt-mon">Jun</div></div>
+        <div class="appt-body"><div class="appt-title">Full Service — TN 58 BQ 7890</div><div class="appt-sub">Priya Nair · Bay 1</div></div>
+        <div class="appt-time">11:30 AM</div>
+      </div>
+      <div class="appt-item">
+        <div class="appt-date"><div class="appt-day">09</div><div class="appt-mon">Jun</div></div>
+        <div class="appt-body"><div class="appt-title">Battery Check — MH 12 XZ 3344</div><div class="appt-sub">Arun Patel · Bay 2</div></div>
+        <div class="appt-time">02:00 PM</div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-head"><div class="card-title">Alerts &amp; Notices</div></div>
+      <div class="notif-item notif-unread">
+        <div class="notif-icon" style="background:rgba(239,68,68,.12);color:var(--danger)"><i class="fas fa-triangle-exclamation"></i></div>
+        <div class="notif-body"><div class="notif-text">Low stock: Synthetic Oil (5W-30) — only 4 litres remaining.</div><div class="notif-time">8 min ago</div></div>
+      </div>
+      <div class="notif-item notif-unread">
+        <div class="notif-icon" style="background:rgba(249,115,22,.12);color:var(--accent)"><i class="fas fa-star"></i></div>
+        <div class="notif-body"><div class="notif-text">New 5-star review from Kavya Reddy — "Excellent service!"</div><div class="notif-time">42 min ago</div></div>
+      </div>
+      <div class="notif-item">
+        <div class="notif-icon" style="background:rgba(59,130,246,.12);color:var(--info)"><i class="fas fa-truck"></i></div>
+        <div class="notif-body"><div class="notif-text">Parts shipment #PO-881 scheduled for delivery today at 3 PM.</div><div class="notif-time">2 hrs ago</div></div>
+      </div>
+      <div class="notif-item">
+        <div class="notif-icon" style="background:rgba(234,179,8,.12);color:var(--warning)"><i class="fas fa-certificate"></i></div>
+        <div class="notif-body"><div class="notif-text">Technician license renewal due in 14 days for Sanjay K.</div><div class="notif-time">Yesterday</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════════
+     PAGE 2 — SERVICES
+════════════════════════════════════════════════════ -->
+<section class="page" id="page-services">
+  <div class="page-header">
+    <h1>Service Catalogue</h1>
+    <p>Manage all service types, pricing, and active job orders.</p>
+  </div>
+
+  <!-- STAT ROW -->
+  <div class="grid-4" style="margin-bottom:24px">
+    <div class="stat-card">
+      <div class="stat-top"><div class="stat-icon" style="background:rgba(249,115,22,.15)"><i class="fas fa-list-check" style="color:var(--accent)"></i></div></div>
+      <div class="stat-val">24</div><div class="stat-label">Service Types</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-top"><div class="stat-icon" style="background:rgba(34,197,94,.12)"><i class="fas fa-circle-check" style="color:var(--success)"></i></div></div>
+      <div class="stat-val">118</div><div class="stat-label">Completed This Month</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-top"><div class="stat-icon" style="background:rgba(59,130,246,.12)"><i class="fas fa-spinner" style="color:var(--info)"></i></div></div>
+      <div class="stat-val">30</div><div class="stat-label">In Progress</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-top"><div class="stat-icon" style="background:rgba(234,179,8,.12)"><i class="fas fa-clock" style="color:var(--warning)"></i></div></div>
+      <div class="stat-val">12</div><div class="stat-label">Awaiting Approval</div>
+    </div>
+  </div>
+
+  <!-- SERVICE LIST + FORM -->
+  <div class="grid-2">
+    <div class="card">
+      <div class="card-head"><div class="card-title">Available Services</div><button class="btn btn-primary btn-sm">+ Add Service</button></div>
+      <div class="service-row">
+        <div class="service-icon"><i class="fas fa-oil-can"></i></div>
+        <div class="service-body"><div class="service-name">Engine Oil Change</div><div class="service-desc">Synthetic / Semi-synthetic · 30–45 min</div></div>
+        <div class="service-price">₹950</div>
+      </div>
+      <div class="service-row">
+        <div class="service-icon"><i class="fas fa-car-battery"></i></div>
+        <div class="service-body"><div class="service-name">Battery Replacement</div><div class="service-desc">Test + Replace · 20 min</div></div>
+        <div class="service-price">₹3,800</div>
+      </div>
+      <div class="service-row">
+        <div class="service-icon"><i class="fas fa-snowflake"></i></div>
+        <div class="service-body"><div class="service-name">AC Gas Refill</div><div class="service-desc">R134a Refrigerant · 1 hr</div></div>
+        <div class="service-price">₹2,200</div>
+      </div>
+      <div class="service-row">
+        <div class="service-icon"><i class="fas fa-brake-warning"></i></div>
+        <div class="service-body"><div class="service-name">Brake Pad Replacement</div><div class="service-desc">All 4 wheels · 2 hrs</div></div>
+        <div class="service-price">₹4,500</div>
+      </div>
+      <div class="service-row">
+        <div class="service-icon"><i class="fas fa-spray-can-sparkles"></i></div>
+        <div class="service-body"><div class="service-name">Full Body Polish</div><div class="service-desc">Compound + Wax · 4 hrs</div></div>
+        <div class="service-price">₹5,500</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-head"><div class="card-title">Raise New Service Request</div></div>
+      <div class="form-group">
+        <label class="form-label">Customer Name</label>
+        <input class="form-control" type="text" placeholder="Search customer…">
+      </div>
+      <div class="form-group">
+        <label class="form-label">Vehicle Registration</label>
+        <input class="form-control" type="text" placeholder="e.g. TN 58 BQ 7890">
+      </div>
+      <div class="form-group">
+        <label class="form-label">Service Type</label>
+        <select class="form-control">
+          <option>Engine Oil Change</option>
+          <option>Battery Replacement</option>
+          <option>AC Gas Refill</option>
+          <option>Brake Pad Replacement</option>
+          <option>Full Body Polish</option>
+        </select>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label class="form-label">Assign Bay</label>
+          <select class="form-control"><option>Bay 1</option><option>Bay 2</option><option>Bay 3</option></select>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Priority</label>
+          <select class="form-control"><option>Normal</option><option>Urgent</option><option>VIP</option></select>
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Notes</label>
+        <textarea class="form-control" rows="3" placeholder="Customer complaints, special instructions…"></textarea>
+      </div>
+      <button class="btn btn-primary" style="width:100%"><i class="fas fa-plus"></i> Create Job Order</button>
+    </div>
+  </div>
+
+  <!-- Active Jobs Table -->
+  <div class="card">
+    <div class="card-head"><div class="card-title">Active Job Orders</div><button class="card-action">Export</button></div>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Job ID</th><th>Service</th><th>Vehicle</th><th>Bay</th><th>Tech</th><th>Progress</th><th>ETA</th><th>Action</th></tr></thead>
+        <tbody>
+          <tr>
+            <td>#SJ-2090</td><td>AC Repair</td><td>TN 58 BQ 7890</td><td>Bay 1</td><td>Sanjay K.</td>
+            <td style="min-width:120px">
+              <div style="display:flex;align-items:center;gap:8px">
+                <div class="progress-bar" style="flex:1"><div class="progress-fill" style="width:65%"></div></div>
+                <span style="font-size:.75rem;color:var(--muted)">65%</span>
+              </div>
+            </td>
+            <td>3:00 PM</td>
+            <td><button class="btn btn-outline btn-sm">Update</button></td>
+          </tr>
+          <tr>
+            <td>#SJ-2089</td><td>Brake Service</td><td>MH 12 XZ 3344</td><td>Bay 2</td><td>Arif M.</td>
+            <td style="min-width:120px">
+              <div style="display:flex;align-items:center;gap:8px">
+                <div class="progress-bar" style="flex:1"><div class="progress-fill" style="width:30%"></div></div>
+                <span style="font-size:.75rem;color:var(--muted)">30%</span>
+              </div>
+            </td>
+            <td>5:00 PM</td>
+            <td><button class="btn btn-outline btn-sm">Update</button></td>
+          </tr>
+          <tr>
+            <td>#SJ-2087</td><td>Engine Tuning</td><td>KA 03 MN 1122</td><td>Bay 3</td><td>Sanjay K.</td>
+            <td style="min-width:120px">
+              <div style="display:flex;align-items:center;gap:8px">
+                <div class="progress-bar" style="flex:1"><div class="progress-fill" style="width:10%"></div></div>
+                <span style="font-size:.75rem;color:var(--muted)">10%</span>
+              </div>
+            </td>
+            <td>Tomorrow</td>
+            <td><button class="btn btn-outline btn-sm">Update</button></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════════
+     PAGE 3 — APPOINTMENTS
+════════════════════════════════════════════════════ -->
+<section class="page" id="page-appointments">
+  <div class="page-header">
+    <h1>Appointments</h1>
+    <p>Schedule, rebook, and track all upcoming service visits.</p>
+  </div>
+
+  <div class="grid-4">
+    <div class="stat-card"><div class="stat-top"><div class="stat-icon" style="background:rgba(249,115,22,.15)"><i class="fas fa-calendar-day" style="color:var(--accent)"></i></div></div><div class="stat-val">37</div><div class="stat-label">Today's Bookings</div></div>
+    <div class="stat-card"><div class="stat-top"><div class="stat-icon" style="background:rgba(59,130,246,.12)"><i class="fas fa-calendar-week" style="color:var(--info)"></i></div></div><div class="stat-val">184</div><div class="stat-label">This Week</div></div>
+    <div class="stat-card"><div class="stat-top"><div class="stat-icon" style="background:rgba(234,179,8,.12)"><i class="fas fa-clock-rotate-left" style="color:var(--warning)"></i></div></div><div class="stat-val">5</div><div class="stat-label">Rescheduled</div></div>
+    <div class="stat-card"><div class="stat-top"><div class="stat-icon" style="background:rgba(239,68,68,.12)"><i class="fas fa-calendar-xmark" style="color:var(--danger)"></i></div></div><div class="stat-val">2</div><div class="stat-label">Cancelled Today</div></div>
+  </div>
+
+  <div class="grid-2">
+    <div class="card">
+      <div class="card-head"><div class="card-title">Upcoming Appointments</div><button class="btn btn-primary btn-sm">+ Book</button></div>
+      <div class="appt-item">
+        <div class="appt-date"><div class="appt-day">09</div><div class="appt-mon">Jun</div></div>
+        <div class="appt-body"><div class="appt-title">Full Service — Honda City</div><div class="appt-sub">Priya Nair · <span class="badge badge-orange">In Progress</span></div></div>
+        <div class="appt-time">11:30 AM</div>
+      </div>
+      <div class="appt-item">
+        <div class="appt-date"><div class="appt-day">09</div><div class="appt-mon">Jun</div></div>
+        <div class="appt-body"><div class="appt-title">Battery Check — Innova</div><div class="appt-sub">Arun Patel · <span class="badge badge-yellow">Pending</span></div></div>
+        <div class="appt-time">02:00 PM</div>
+      </div>
+      <div class="appt-item">
+        <div class="appt-date"><div class="appt-day">10</div><div class="appt-mon">Jun</div></div>
+        <div class="appt-body"><div class="appt-title">Engine Diagnostics — Swift</div><div class="appt-sub">Kavya Reddy · <span class="badge badge-blue">Confirmed</span></div></div>
+        <div class="appt-time">10:00 AM</div>
+      </div>
+      <div class="appt-item">
+        <div class="appt-date"><div class="appt-day">10</div><div class="appt-mon">Jun</div></div>
+        <div class="appt-body"><div class="appt-title">AC Overhaul — Nexon</div><div class="appt-sub">Deepak Iyer · <span class="badge badge-blue">Confirmed</span></div></div>
+        <div class="appt-time">12:00 PM</div>
+      </div>
+      <div class="appt-item">
+        <div class="appt-date"><div class="appt-day">11</div><div class="appt-mon">Jun</div></div>
+        <div class="appt-body"><div class="appt-title">Tyre Replacement — i20</div><div class="appt-sub">Ravi Shankar · <span class="badge badge-yellow">Pending</span></div></div>
+        <div class="appt-time">09:00 AM</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-head"><div class="card-title">Book Appointment</div></div>
+      <div class="form-group">
+        <label class="form-label">Customer</label>
+        <input class="form-control" placeholder="Name or phone number">
+      </div>
+      <div class="form-group">
+        <label class="form-label">Service</label>
+        <select class="form-control"><option>Select service…</option><option>Oil Change</option><option>Full Service</option><option>AC Repair</option><option>Engine Tuning</option></select>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label class="form-label">Date</label>
+          <input class="form-control" type="date" value="2026-06-10">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Time Slot</label>
+          <select class="form-control"><option>09:00 AM</option><option>11:00 AM</option><option>02:00 PM</option><option>04:00 PM</option></select>
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Assign Technician</label>
+        <select class="form-control"><option>Auto-assign</option><option>Sanjay K.</option><option>Mehul P.</option><option>Arif M.</option></select>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Reminder</label>
+        <select class="form-control"><option>1 hour before</option><option>1 day before</option><option>No reminder</option></select>
+      </div>
+      <button class="btn btn-primary" style="width:100%"><i class="fas fa-calendar-plus"></i> Confirm Booking</button>
+    </div>
+  </div>
+
+  <!-- All Appointments Table -->
+  <div class="card">
+    <div class="card-head"><div class="card-title">All Appointments</div><button class="card-action">Filter</button></div>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Ref</th><th>Customer</th><th>Vehicle</th><th>Service</th><th>Date & Time</th><th>Tech</th><th>Status</th><th></th></tr></thead>
+        <tbody>
+          <tr><td>#AP-401</td><td>Priya Nair</td><td>Honda City</td><td>Full Service</td><td>09 Jun, 11:30</td><td>Sanjay K.</td><td><span class="badge badge-orange">In Progress</span></td><td><button class="btn btn-outline btn-sm">Edit</button></td></tr>
+          <tr><td>#AP-402</td><td>Arun Patel</td><td>Toyota Innova</td><td>Battery Check</td><td>09 Jun, 14:00</td><td>Mehul P.</td><td><span class="badge badge-yellow">Pending</span></td><td><button class="btn btn-outline btn-sm">Edit</button></td></tr>
+          <tr><td>#AP-403</td><td>Kavya Reddy</td><td>Maruti Swift</td><td>Engine Diagnostics</td><td>10 Jun, 10:00</td><td>Auto</td><td><span class="badge badge-blue">Confirmed</span></td><td><button class="btn btn-outline btn-sm">Edit</button></td></tr>
+          <tr><td>#AP-404</td><td>Deepak Iyer</td><td>Tata Nexon</td><td>AC Overhaul</td><td>10 Jun, 12:00</td><td>Arif M.</td><td><span class="badge badge-blue">Confirmed</span></td><td><button class="btn btn-outline btn-sm">Edit</button></td></tr>
+          <tr><td>#AP-405</td><td>Ravi Shankar</td><td>Hyundai i20</td><td>Tyre Replacement</td><td>11 Jun, 09:00</td><td>Sanjay K.</td><td><span class="badge badge-yellow">Pending</span></td><td><button class="btn btn-outline btn-sm">Edit</button></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════════
+     PAGE 4 — VEHICLES
+════════════════════════════════════════════════════ -->
+<section class="page" id="page-vehicles">
+  <div class="page-header">
+    <h1>Vehicle Registry</h1>
+    <p>Every registered vehicle, its history, and current status at a glance.</p>
+  </div>
+
+  <div class="grid-4">
+    <div class="stat-card"><div class="stat-top"><div class="stat-icon" style="background:rgba(249,115,22,.15)"><i class="fas fa-cars" style="color:var(--accent)"></i></div></div><div class="stat-val">342</div><div class="stat-label">Registered Vehicles</div></div>
+    <div class="stat-card"><div class="stat-top"><div class="stat-icon" style="background:rgba(34,197,94,.12)"><i class="fas fa-car-side" style="color:var(--success)"></i></div></div><div class="stat-val">28</div><div class="stat-label">In Service Now</div></div>
+    <div class="stat-card"><div class="stat-top"><div class="stat-icon" style="background:rgba(59,130,246,.12)"><i class="fas fa-history" style="color:var(--info)"></i></div></div><div class="stat-val">91</div><div class="stat-label">Serviced This Month</div></div>
+    <div class="stat-card"><div class="stat-top"><div class="stat-icon" style="background:rgba(234,179,8,.12)"><i class="fas fa-file-invoice" style="color:var(--warning)"></i></div></div><div class="stat-val">6</div><div class="stat-label">Warranty Claims</div></div>
+  </div>
+
+  <!-- Vehicle Cards Grid -->
+  <div class="grid-3">
+    <div class="vehicle-card">
+      <div class="vehicle-head">
+        <div class="vehicle-icon">🚗</div>
+        <div><div class="vehicle-name">Hyundai i20 (2022)</div><div class="vehicle-plate">KL 45 C 2201</div></div>
+        <span class="badge badge-green" style="margin-left:auto">Active</span>
+      </div>
+      <div class="vehicle-meta">
+        <span class="vehicle-tag">Petrol</span><span class="vehicle-tag">28,400 km</span><span class="vehicle-tag">Ravi Shankar</span>
+      </div>
+      <div>
+        <div style="display:flex;justify-content:space-between;font-size:.78rem;color:var(--muted);margin-bottom:4px"><span>Service Health</span><span>82%</span></div>
+        <div class="progress-bar"><div class="progress-fill" style="width:82%"></div></div>
+      </div>
+      <div style="display:flex;gap:8px">
+        <button class="btn btn-outline btn-sm" style="flex:1">History</button>
+        <button class="btn btn-primary btn-sm" style="flex:1">Book Service</button>
+      </div>
+    </div>
+
+    <div class="vehicle-card">
+      <div class="vehicle-head">
+        <div class="vehicle-icon">🚙</div>
+        <div><div class="vehicle-name">Honda City (2021)</div><div class="vehicle-plate">TN 58 BQ 7890</div></div>
+        <span class="badge badge-orange" style="margin-left:auto">In Service</span>
+      </div>
+      <div class="vehicle-meta">
+        <span class="vehicle-tag">Diesel</span><span class="vehicle-tag">52,100 km</span><span class="vehicle-tag">Priya Nair</span>
+      </div>
+      <div>
+        <div style="display:flex;justify-content:space-between;font-size:.78rem;color:var(--muted);margin-bottom:4px"><span>Service Health</span><span>54%</span></div>
+        <div class="progress-bar"><div class="progress-fill" style="width:54%"></div></div>
+      </div>
+      <div style="display:flex;gap:8px">
+        <button class="btn btn-outline btn-sm" style="flex:1">History</button>
+        <button class="btn btn-primary btn-sm" style="flex:1">Track Job</button>
+      </div>
+    </div>
+
+    <div class="vehicle-card">
+      <div class="vehicle-head">
+        <div class="vehicle-icon">🏎️</div>
+        <div><div class="vehicle-name">Tata Nexon EV (2023)</div><div class="vehicle-plate">MH 12 XZ 3344</div></div>
+        <span class="badge badge-blue" style="margin-left:auto">Waiting</span>
+      </div>
+      <div class="vehicle-meta">
+        <span class="vehicle-tag">Electric</span><span class="vehicle-tag">11,200 km</span><span class="vehicle-tag">Deepak Iyer</span>
+      </div>
+      <div>
+        <div style="display:flex;justify-content:space-between;font-size:.78rem;color:var(--muted);margin-bottom:4px"><span>Service Health</span><span>95%</span></div>
+        <div class="progress-bar"><div class="progress-fill" style="width:95%"></div></div>
+      </div>
+      <div style="display:flex;gap:8px">
+        <button class="btn btn-outline btn-sm" style="flex:1">History</button>
+        <button class="btn btn-primary btn-sm" style="flex:1">Book Service</button>
+      </div>
+    </div>
+
+    <div class="vehicle-card">
+      <div class="vehicle-head">
+        <div class="vehicle-icon">🚐</div>
+        <div><div class="vehicle-name">Toyota Innova (2020)</div><div class="vehicle-plate">KA 03 MN 1122</div></div>
+        <span class="badge badge-yellow" style="margin-left:auto">Overdue</span>
+      </div>
+      <div class="vehicle-meta">
+        <span class="vehicle-tag">Diesel</span><span class="vehicle-tag">78,800 km</span><span class="vehicle-tag">Arun Patel</span>
+      </div>
+      <div>
+        <div style="display:flex;justify-content:space-between;font-size:.78rem;color:var(--muted);margin-bottom:4px"><span>Service Health</span><span>38%</span></div>
+        <div class="progress-bar"><div class="progress-fill" style="width:38%;background:linear-gradient(90deg,var(--danger),#f97316)"></div></div>
+      </div>
+      <div style="display:flex;gap:8px">
+        <button class="btn btn-outline btn-sm" style="flex:1">History</button>
+        <button class="btn btn-primary btn-sm" style="flex:1">Book Service</button>
+      </div>
+    </div>
+
+    <div class="vehicle-card">
+      <div class="vehicle-head">
+        <div class="vehicle-icon">🚗</div>
+        <div><div class="vehicle-name">Maruti Swift (2023)</div><div class="vehicle-plate">TN 01 AZ 9912</div></div>
+        <span class="badge badge-green" style="margin-left:auto">Active</span>
+      </div>
+      <div class="vehicle-meta">
+        <span class="vehicle-tag">Petrol</span><span class="vehicle-tag">8,600 km</span><span class="vehicle-tag">Kavya Reddy</span>
+      </div>
+      <div>
+        <div style="display:flex;justify-content:space-between;font-size:.78rem;color:var(--muted);margin-bottom:4px"><span>Service Health</span><span>97%</span></div>
+        <div class="progress-bar"><div class="progress-fill" style="width:97%"></div></div>
+      </div>
+      <div style="display:flex;gap:8px">
+        <button class="btn btn-outline btn-sm" style="flex:1">History</button>
+        <button class="btn btn-primary btn-sm" style="flex:1">Book Service</button>
+      </div>
+    </div>
+
+    <div class="vehicle-card" style="border:1px dashed var(--border);justify-content:center;align-items:center;min-height:200px;cursor:pointer" onclick="">
+      <div style="text-align:center;color:var(--muted)">
+        <i class="fas fa-plus-circle" style="font-size:2rem;color:var(--accent);margin-bottom:10px"></i>
+        <div style="font-weight:600;font-size:.875rem">Register New Vehicle</div>
+        <div style="font-size:.78rem;margin-top:4px">Click to add</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Service History Timeline -->
+  <div class="grid-2">
+    <div class="card">
+      <div class="card-head"><div class="card-title">Service History — TN 58 BQ 7890</div></div>
+      <div class="timeline">
+        <div class="tl-item"><div class="tl-dot done"></div><div class="tl-title">AC Repair — In Progress</div><div class="tl-sub">June 9, 2026 · Sanjay K.</div></div>
+        <div class="tl-item"><div class="tl-dot done"></div><div class="tl-title">Oil Change + Filter</div><div class="tl-sub">March 12, 2026 · Mehul P. · ₹1,400</div></div>
+        <div class="tl-item"><div class="tl-dot done"></div><div class="tl-title">Full Service Inspection</div><div class="tl-sub">Dec 5, 2026 · Arif M. · ₹6,200</div></div>
+        <div class="tl-item"><div class="tl-dot done"></div><div class="tl-title">Tyre Rotation</div><div class="tl-sub">Sep 18, 2026 · Mehul P. · ₹800</div></div>
+        <div class="tl-item"><div class="tl-dot"></div><div class="tl-title">Brake Fluid Change</div><div class="tl-sub">Jun 3, 2026 · Sanjay K. · ₹950</div></div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-head"><div class="card-title">Add Vehicle</div></div>
+      <div class="form-group"><label class="form-label">Owner Name</label><input class="form-control" placeholder="Full name"></div>
+      <div class="form-row">
+        <div class="form-group"><label class="form-label">Make / Brand</label><select class="form-control"><option>Maruti</option><option>Hyundai</option><option>Tata</option><option>Honda</option><option>Toyota</option></select></div>
+        <div class="form-group"><label class="form-label">Model</label><input class="form-control" placeholder="e.g. Swift"></div>
+      </div>
+      <div class="form-row">
+        <div class="form-group"><label class="form-label">Year</label><input class="form-control" type="number" placeholder="2023"></div>
+        <div class="form-group"><label class="form-label">Fuel Type</label><select class="form-control"><option>Petrol</option><option>Diesel</option><option>Electric</option><option>CNG</option></select></div>
+      </div>
+      <div class="form-group"><label class="form-label">Registration No.</label><input class="form-control" placeholder="TN 01 AB 1234"></div>
+      <button class="btn btn-primary" style="width:100%"><i class="fas fa-car-side"></i> Register Vehicle</button>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════════
+     PAGE 5 — REPORTS & BILLING
+════════════════════════════════════════════════════ -->
+<section class="page" id="page-reports">
+  <div class="page-header">
+    <h1>Reports &amp; Billing</h1>
+    <p>Revenue analytics, invoice management, and financial summaries.</p>
+  </div>
+
+  <div class="grid-4">
+    <div class="stat-card"><div class="stat-top"><div class="stat-icon" style="background:rgba(34,197,94,.12)"><i class="fas fa-money-bill-trend-up" style="color:var(--success)"></i></div><span class="stat-change up">↑ 8%</span></div><div class="stat-val">₹4.2L</div><div class="stat-label">Revenue This Month</div></div>
+    <div class="stat-card"><div class="stat-top"><div class="stat-icon" style="background:rgba(59,130,246,.12)"><i class="fas fa-file-invoice-dollar" style="color:var(--info)"></i></div><span class="stat-change up">↑ 14</span></div><div class="stat-val">138</div><div class="stat-label">Invoices Raised</div></div>
+    <div class="stat-card"><div class="stat-top"><div class="stat-icon" style="background:rgba(234,179,8,.12)"><i class="fas fa-hourglass-half" style="color:var(--warning)"></i></div></div><div class="stat-val">₹38k</div><div class="stat-label">Pending Payments</div></div>
+    <div class="stat-card"><div class="stat-top"><div class="stat-icon" style="background:rgba(239,68,68,.12)"><i class="fas fa-percent" style="color:var(--danger)"></i></div></div><div class="stat-val">6.2%</div><div class="stat-label">Discount Given</div></div>
+  </div>
+
+  <div class="grid-2">
+    <!-- Revenue Breakdown -->
+    <div class="card">
+      <div class="card-head"><div class="card-title">Revenue by Service Category</div></div>
+      <div style="display:flex;flex-direction:column;gap:12px">
+        <div>
+          <div style="display:flex;justify-content:space-between;font-size:.82rem;margin-bottom:5px"><span>Engine &amp; Mechanical</span><span style="color:var(--accent)">₹1,68,000</span></div>
+          <div class="progress-bar"><div class="progress-fill" style="width:78%"></div></div>
+        </div>
+        <div>
+          <div style="display:flex;justify-content:space-between;font-size:.82rem;margin-bottom:5px"><span>Electrical</span><span style="color:var(--info)">₹84,000</span></div>
+          <div class="progress-bar"><div class="progress-fill" style="width:39%;background:linear-gradient(90deg,var(--info),#60a5fa)"></div></div>
+        </div>
+        <div>
+          <div style="display:flex;justify-content:space-between;font-size:.82rem;margin-bottom:5px"><span>AC &amp; Cooling</span><span style="color:var(--success)">₹63,000</span></div>
+          <div class="progress-bar"><div class="progress-fill" style="width:29%;background:linear-gradient(90deg,var(--success),#4ade80)"></div></div>
+        </div>
+        <div>
+          <div style="display:flex;justify-content:space-between;font-size:.82rem;margin-bottom:5px"><span>Body &amp; Paint</span><span style="color:var(--warning)">₹42,000</span></div>
+          <div class="progress-bar"><div class="progress-fill" style="width:19%;background:linear-gradient(90deg,var(--warning),#fde047)"></div></div>
+        </div>
+        <div>
+          <div style="display:flex;justify-content:space-between;font-size:.82rem;margin-bottom:5px"><span>Miscellaneous</span><span style="color:var(--muted)">₹21,000</span></div>
+          <div class="progress-bar"><div class="progress-fill" style="width:10%;background:var(--muted)"></div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Recent Invoices -->
+    <div class="card">
+      <div class="card-head"><div class="card-title">Recent Invoices</div><button class="card-action">+ New Invoice</button></div>
+      <div class="invoice-row">
+        <div><div class="inv-num">#INV-2209</div><div style="font-size:.75rem;color:var(--muted)">Ravi Shankar · Full Service</div></div>
+        <div style="text-align:right"><div class="inv-amount">₹4,800</div><span class="badge badge-green">Paid</span></div>
+      </div>
+      <div class="invoice-row">
+        <div><div class="inv-num">#INV-2208</div><div style="font-size:.75rem;color:var(--muted)">Priya Nair · AC Repair</div></div>
+        <div style="text-align:right"><div class="inv-amount">₹2,200</div><span class="badge badge-yellow">Pending</span></div>
+      </div>
+      <div class="invoice-row">
+        <div><div class="inv-num">#INV-2207</div><div style="font-size:.75rem;color:var(--muted)">Deepak Iyer · Brake Svc</div></div>
+        <div style="text-align:right"><div class="inv-amount">₹1,650</div><span class="badge badge-yellow">Pending</span></div>
+      </div>
+      <div class="invoice-row">
+        <div><div class="inv-num">#INV-2206</div><div style="font-size:.75rem;color:var(--muted)">Kavya Reddy · Oil Change</div></div>
+        <div style="text-align:right"><div class="inv-amount">₹900</div><span class="badge badge-green">Paid</span></div>
+      </div>
+      <div class="invoice-row">
+        <div><div class="inv-num">#INV-2205</div><div style="font-size:.75rem;color:var(--muted)">Arun Patel · Engine Tuning</div></div>
+        <div style="text-align:right"><div class="inv-amount">₹6,500</div><span class="badge badge-red">Overdue</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Invoice Generator -->
+  <div class="card">
+    <div class="card-head"><div class="card-title">Generate Invoice</div></div>
+    <div class="form-row">
+      <div class="form-group"><label class="form-label">Customer</label><input class="form-control" placeholder="Customer name or ID"></div>
+      <div class="form-group"><label class="form-label">Job Order ID</label><input class="form-control" placeholder="#SJ-XXXX"></div>
+    </div>
+    <div class="form-row">
+      <div class="form-group"><label class="form-label">Labour Charge (₹)</label><input class="form-control" type="number" placeholder="0"></div>
+      <div class="form-group"><label class="form-label">Parts Cost (₹)</label><input class="form-control" type="number" placeholder="0"></div>
+    </div>
+    <div class="form-row">
+      <div class="form-group"><label class="form-label">GST %</label><select class="form-control"><option>18%</option><option>12%</option><option>5%</option></select></div>
+      <div class="form-group"><label class="form-label">Discount %</label><input class="form-control" type="number" placeholder="0"></div>
+    </div>
+    <div style="display:flex;gap:12px;flex-wrap:wrap">
+      <button class="btn btn-primary"><i class="fas fa-file-invoice"></i> Generate Invoice</button>
+      <button class="btn btn-outline"><i class="fas fa-print"></i> Print</button>
+      <button class="btn btn-outline"><i class="fas fa-paper-plane"></i> Send to Customer</button>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════════
+     PAGE 6 — STAFF (Admin only)
+════════════════════════════════════════════════════ -->
+<section class="page" id="page-staff">
+  <div class="page-header">
+    <h1>Staff &amp; Roles</h1>
+    <p>Manage technicians, assign roles, and monitor performance.</p>
+  </div>
+
+  <div class="grid-4">
+    <div class="stat-card"><div class="stat-top"><div class="stat-icon" style="background:rgba(249,115,22,.15)"><i class="fas fa-users" style="color:var(--accent)"></i></div></div><div class="stat-val">18</div><div class="stat-label">Total Staff</div></div>
+    <div class="stat-card"><div class="stat-top"><div class="stat-icon" style="background:rgba(34,197,94,.12)"><i class="fas fa-user-check" style="color:var(--success)"></i></div></div><div class="stat-val">14</div><div class="stat-label">Active Today</div></div>
+    <div class="stat-card"><div class="stat-top"><div class="stat-icon" style="background:rgba(59,130,246,.12)"><i class="fas fa-user-tie" style="color:var(--info)"></i></div></div><div class="stat-val">3</div><div class="stat-label">Senior Technicians</div></div>
+    <div class="stat-card"><div class="stat-top"><div class="stat-icon" style="background:rgba(234,179,8,.12)"><i class="fas fa-graduation-cap" style="color:var(--warning)"></i></div></div><div class="stat-val">2</div><div class="stat-label">In Training</div></div>
+  </div>
+
+  <div class="grid-2">
+    <div class="card">
+      <div class="card-head"><div class="card-title">Technician Directory</div><button class="btn btn-primary btn-sm">+ Add Staff</button></div>
+      <div style="display:flex;flex-direction:column;gap:10px">
+        <div class="tech-card">
+          <div class="tech-av" style="background:linear-gradient(135deg,#f97316,#fbbf24)">SK</div>
+          <div class="tech-info"><div class="tech-name">Sanjay Kumar</div><div class="tech-spec">Engine · Senior Tech</div></div>
+          <div><div class="tech-rating"><i class="fas fa-star"></i> 4.9</div><span class="badge badge-green" style="margin-top:4px;font-size:.65rem">On Duty</span></div>
+        </div>
+        <div class="tech-card">
+          <div class="tech-av" style="background:linear-gradient(135deg,#3b82f6,#06b6d4)">MP</div>
+          <div class="tech-info"><div class="tech-name">Mehul Patel</div><div class="tech-spec">Electrical · Senior Tech</div></div>
+          <div><div class="tech-rating"><i class="fas fa-star"></i> 4.7</div><span class="badge badge-green" style="margin-top:4px;font-size:.65rem">On Duty</span></div>
+        </div>
+        <div class="tech-card">
+          <div class="tech-av" style="background:linear-gradient(135deg,#22c55e,#16a34a)">AM</div>
+          <div class="tech-info"><div class="tech-name">Arif Mohammed</div><div class="tech-spec">Body & Paint · Technician</div></div>
+          <div><div class="tech-rating"><i class="fas fa-star"></i> 4.5</div><span class="badge badge-green" style="margin-top:4px;font-size:.65rem">On Duty</span></div>
+        </div>
+        <div class="tech-card">
+          <div class="tech-av" style="background:linear-gradient(135deg,#8b5cf6,#6d28d9)">RV</div>
+          <div class="tech-info"><div class="tech-name">Raghu Venkat</div><div class="tech-spec">AC & Cooling · Trainee</div></div>
+          <div><div class="tech-rating"><i class="fas fa-star"></i> 4.1</div><span class="badge badge-yellow" style="margin-top:4px;font-size:.65rem">Training</span></div>
+        </div>
+        <div class="tech-card">
+          <div class="tech-av" style="background:linear-gradient(135deg,#ef4444,#b91c1c)">LK</div>
+          <div class="tech-info"><div class="tech-name">Lakshmi Karthik</div><div class="tech-spec">Engine · Technician</div></div>
+          <div><div class="tech-rating"><i class="fas fa-star"></i> 4.6</div><span class="badge badge-red" style="margin-top:4px;font-size:.65rem">On Leave</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-head"><div class="card-title">Performance This Month</div></div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Technician</th><th>Jobs Done</th><th>Avg Time</th><th>Rating</th></tr></thead>
+          <tbody>
+            <tr><td>Sanjay K.</td><td>42</td><td>2.1 hrs</td><td><span style="color:var(--warning)">★ 4.9</span></td></tr>
+            <tr><td>Mehul P.</td><td>38</td><td>1.8 hrs</td><td><span style="color:var(--warning)">★ 4.7</span></td></tr>
+            <tr><td>Arif M.</td><td>29</td><td>3.4 hrs</td><td><span style="color:var(--warning)">★ 4.5</span></td></tr>
+            <tr><td>Raghu V.</td><td>14</td><td>2.9 hrs</td><td><span style="color:var(--warning)">★ 4.1</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="card-head" style="margin-top:20px"><div class="card-title">Role Management</div></div>
+      <div class="form-group"><label class="form-label">Staff Member</label><select class="form-control"><option>Sanjay Kumar</option><option>Mehul Patel</option><option>Arif Mohammed</option></select></div>
+      <div class="form-row">
+        <div class="form-group"><label class="form-label">Role</label><select class="form-control"><option>Technician</option><option>Senior Tech</option><option>Supervisor</option><option>Admin</option></select></div>
+        <div class="form-group"><label class="form-label">Shift</label><select class="form-control"><option>Morning</option><option>Evening</option><option>Full Day</option></select></div>
+      </div>
+      <button class="btn btn-primary"><i class="fas fa-floppy-disk"></i> Save Changes</button>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════════
+     PAGE 7 — SETTINGS
+════════════════════════════════════════════════════ -->
+<section class="page" id="page-settings">
+  <div class="page-header">
+    <h1>Settings</h1>
+    <p>Configure your garage profile, notifications, and system preferences.</p>
+  </div>
+
+  <div class="grid-2">
+    <!-- Garage Profile -->
+    <div class="card">
+      <div class="card-head"><div class="card-title">Garage Profile</div></div>
+      <div class="form-group"><label class="form-label">Garage Name</label><input class="form-control" value="AutoServe Pro — Tirunelveli"></div>
+      <div class="form-group"><label class="form-label">Owner Name</label><input class="form-control" value="Arjun Kumar"></div>
+      <div class="form-row">
+        <div class="form-group"><label class="form-label">Phone</label><input class="form-control" value="+91 94432 00123"></div>
+        <div class="form-group"><label class="form-label">GST Number</label><input class="form-control" value="33ABCDE1234F1Z5"></div>
+      </div>
+      <div class="form-group"><label class="form-label">Address</label><textarea class="form-control" rows="2">45, Anna Salai, Tirunelveli, TN 627001</textarea></div>
+      <div class="form-group"><label class="form-label">Working Hours</label>
+        <div class="form-row">
+          <input class="form-control" type="time" value="08:00">
+          <input class="form-control" type="time" value="20:00">
+        </div>
+      </div>
+      <button class="btn btn-primary"><i class="fas fa-floppy-disk"></i> Save Profile</button>
+    </div>
+
+    <!-- Notification & Preferences -->
+    <div class="card">
+      <div class="card-head"><div class="card-title">Notifications &amp; Preferences</div></div>
+      <div style="display:flex;flex-direction:column;gap:16px">
+        <div style="display:flex;align-items:center;justify-content:space-between">
+          <div><div style="font-size:.875rem;font-weight:600">SMS Reminders</div><div style="font-size:.75rem;color:var(--muted)">Send appointment reminders to customers</div></div>
+          <label class="toggle"><input type="checkbox" checked onchange=""><span class="track"></span></label>
+        </div>
+        <div style="display:flex;align-items:center;justify-content:space-between">
+          <div><div style="font-size:.875rem;font-weight:600">Email Invoices</div><div style="font-size:.75rem;color:var(--muted)">Auto-send invoice after job completion</div></div>
+          <label class="toggle"><input type="checkbox" checked><span class="track"></span></label>
+        </div>
+        <div style="display:flex;align-items:center;justify-content:space-between">
+          <div><div style="font-size:.875rem;font-weight:600">Low Stock Alerts</div><div style="font-size:.75rem;color:var(--muted)">Alert when parts drop below minimum</div></div>
+          <label class="toggle"><input type="checkbox" checked><span class="track"></span></label>
+        </div>
+        <div style="display:flex;align-items:center;justify-content:space-between">
+          <div><div style="font-size:.875rem;font-weight:600">Daily Reports</div><div style="font-size:.75rem;color:var(--muted)">Email summary at 8 PM each day</div></div>
+          <label class="toggle"><input type="checkbox"><span class="track"></span></label>
+        </div>
+      </div>
+      <div class="card-head" style="margin-top:20px;border-top:1px solid var(--border);padding-top:16px"><div class="card-title">Danger Zone</div></div>
+      <div style="display:flex;gap:10px;flex-wrap:wrap">
+        <button class="btn btn-danger btn-sm"><i class="fas fa-rotate"></i> Reset All Data</button>
+        <button class="btn btn-danger btn-sm"><i class="fas fa-trash"></i> Delete Account</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Security -->
+  <div class="card">
+    <div class="card-head"><div class="card-title">Security &amp; Access</div></div>
+    <div class="form-row">
+      <div class="form-group"><label class="form-label">Current Password</label><input class="form-control" type="password" placeholder="••••••••"></div>
+      <div class="form-group"><label class="form-label">New Password</label><input class="form-control" type="password" placeholder="••••••••"></div>
+    </div>
+    <div class="form-row">
+      <div class="form-group"><label class="form-label">Confirm Password</label><input class="form-control" type="password" placeholder="••••••••"></div>
+      <div class="form-group"><label class="form-label">2FA Method</label><select class="form-control"><option>SMS OTP</option><option>Authenticator App</option><option>Disabled</option></select></div>
+    </div>
+    <div style="display:flex;gap:10px">
+      <button class="btn btn-primary"><i class="fas fa-shield-halved"></i> Update Security</button>
+      <button class="btn btn-outline"><i class="fas fa-key"></i> View Active Sessions</button>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ── TOGGLE SWITCH CSS ── -->
+<style>
+.toggle { position: relative; display: inline-block; width: 42px; height: 24px; cursor: pointer; }
+.toggle input { opacity: 0; width: 0; height: 0; }
+.track {
+  position: absolute; inset: 0;
+  background: var(--border); border-radius: 24px;
+  transition: background var(--transition);
+}
+.track::after {
+  content: '';
+  position: absolute; top: 3px; left: 3px;
+  width: 18px; height: 18px;
+  background: #fff; border-radius: 50%;
+  transition: transform var(--transition);
+}
+.toggle input:checked + .track { background: var(--accent); }
+.toggle input:checked + .track::after { transform: translateX(18px); }
+</style>
+
+<script>
+/* ── NAV ── */
+function navigate(pageId, el) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
+  document.getElementById('page-' + pageId).classList.add('active');
+  el.classList.add('active');
+  document.getElementById('topbar-title').textContent = el.querySelector('i').nextSibling.textContent.trim();
+  if (window.innerWidth < 900) closeSidebar();
+}
+
+/* ── SIDEBAR ── */
+function toggleSidebar() {
+  const s = document.getElementById('sidebar');
+  const o = document.getElementById('overlay');
+  s.classList.toggle('open');
+  o.classList.toggle('open');
+}
+function closeSidebar() {
+  document.getElementById('sidebar').classList.remove('open');
+  document.getElementById('overlay').classList.remove('open');
+}
+
+/* ── DROPDOWN ── */
+function toggleDropdown() {
+  document.getElementById('user-dropdown').classList.toggle('open');
+}
+document.addEventListener('click', function(e) {
+  const u = document.querySelector('.topbar-user');
+  if (!u.contains(e.target)) {
+    document.getElementById('user-dropdown').classList.remove('open');
+  }
+});
+
+/* ── ROLE SWITCH ── */
+const roles = {
+  admin: { name: 'Arjun Kumar', email: 'arjun@autoservepro.in', initials: 'AK', label: 'Admin' },
+  user:  { name: 'Priya Nair',  email: 'priya.nair@gmail.com',   initials: 'PN', label: 'Customer' }
+};
+function switchRole(r, btn) {
+  document.querySelectorAll('.role-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  const d = roles[r];
+  document.getElementById('user-name').textContent = d.name;
+  document.getElementById('user-role-tag').textContent = d.label;
+  document.getElementById('user-av').textContent = d.initials;
+  document.getElementById('dd-email').textContent = d.email;
+  const adminNav = document.getElementById('admin-nav');
+  adminNav.style.display = (r === 'admin') ? 'block' : 'none';
+}
+
+/* ── LOGOUT ── */
+function handleLogout() {
+  if (confirm('Logout from AutoServe Pro?')) {
+    document.body.style.opacity = '0';
+    document.body.style.transition = 'opacity .4s';
+    setTimeout(() => { document.body.style.opacity = '1'; document.body.style.transition = ''; alert('Logged out. (Demo — page reloaded)'); location.reload(); }, 400);
+  }
+}
+
+/* ── REVENUE CHART ── */
+(function buildChart() {
+  const months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+  const vals   = [2.1,2.8,3.0,2.5,3.6,4.2,3.9,4.5,3.8,4.1,3.7,4.8];
+  const maxVal = Math.max(...vals);
+  const chart  = document.getElementById('revenueChart');
+  const labels = document.getElementById('chartLabels');
+  if (!chart) return;
+  vals.forEach((v, i) => {
+    const bar = document.createElement('div');
+    bar.className = 'bar';
+    bar.style.height = (v / maxVal * 100) + '%';
+    bar.title = months[i] + ': ₹' + v + 'L';
+    if (i === 5) bar.style.opacity = '1';
+    chart.appendChild(bar);
+    const lbl = document.createElement('span');
+    lbl.textContent = months[i].slice(0,1);
+    labels.appendChild(lbl);
+  });
+})();
+</script>
+</body>
+</html>

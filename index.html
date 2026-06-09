@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>StacklyMechanic – Car Repair & Servicing</title>
+    <title>Stackly Car Service Home </title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@700;800;900&display=swap"
@@ -21,15 +21,13 @@
 <!-- MOBILE MENU -->
 <div class="mobile-menu" id="mobileMenu">
     <button class="mm-close" id="closeMenuBtn"><i class="fa-solid fa-xmark"></i></button>
-    <a href="index.html" class="active">Home</a>
-    <a href="about.html" >About Us</a>
-    <a href="#">How It Works</a>
-    <a href="#">Our Services</a>
-    <a href="#">Blog</a>
-    <a href="#">Support</a>
+    <a href="./index.html" class="active">Home</a>
+    <a href="./About.html" >About Us</a>
+    <a href="./Service.html">Our Services</a>
+    <a href="./blog.html">Blog</a>
+    <a href="./contact.html">Contact</a>
     <hr style="border:0;border-top:1px solid #eee;">
-    <a href="#">Sign In</a>
-    <a href="#" class="mob-resume">Resume Quote</a>
+    <a href="./login.html">Login</a>
 </div>
 
 <!-- ============================================================
@@ -37,17 +35,16 @@
 ============================================================ -->
 <div class="site-header" id="siteHeader">
     <nav class="nav-inner">
-        <a href="#" class="logo">Stackly</a>
+        <a href="./404.html" class="logo">Stackly</a>
         <ul class="nav-links">
-            <li><a href="#" class="active">Home</a></li>
-            <li><a href="#" >About Us</a></li>
-            <li><a href="#">How It Works</a></li>
-            <li><a href="#">Our Services <i class="fa-solid fa-chevron-down" style="font-size:9px;margin-left:2px;"></i></a></li>
-            <li><a href="#">Blog</a></li>
+            <li><a href="./index.html" class="active">Home</a></li>
+            <li><a href="./About.html" >About Us</a></li>
+            <li><a href="./Service.html">Our Services </a></li>
+            <li><a href="./blog.html">Blog</a></li>
+            <li><a href="./contact.html">Contact</a></li>
         </ul>
         <div class="nav-right">
-            <a href="#" class="btn-signin">Sign In</a>
-            <a href="#" class="btn-resume">Resume Quote</a>
+            <a href="./login.html" class="btn-resume">Login</a>
         </div>
         <button class="hamburger" id="hamburgerBtn"><i class="fa-solid fa-bars"></i></button>
     </nav>
@@ -60,25 +57,24 @@
         <div class="hero-container">
             <div class="hero-left">
                 <div class="hero-badge">
-                    <i class="fa-solid fa-star"></i> Rated #1 Car Service Platform in the UK
+                    <i class="fa-solid fa-star"></i> Rated #1 Car Service Platform in the Chennai
                 </div>
                 <h1>Car repair &amp; servicing <em>made easy</em></h1>
                 <p>Find trusted garages &amp; mechanics that come to you, with next-day availability and fixed upfront
                     pricing.</p>
 
-                <div class="search-box-wrap">
-                    <div class="input-wrap">
-                        <i class="fa-solid fa-car"></i>
-                        <input type="text" value="HONDA SEDAN" placeholder="Enter Vehicle Make/Model">
-                    </div>
-                    <div class="input-wrap">
-                        <i class="fa-solid fa-location-dot"></i>
-                        <input type="text" value="W12 7SB" placeholder="Enter Postcode">
-                    </div>
-                    <button class="get-price-btn">Get Price <i class="fa-solid fa-arrow-right"></i></button>
-                </div>
-                <a href="#" class="unknown-reg">I don't know my registration number →</a>
-
+              <form class="search-box-wrap" action="./404.html" method="GET">
+    <div class="input-wrap">
+        <i class="fa-solid fa-car"></i>
+        <input type="text" value="" placeholder="Enter Vehicle Make/Model" required>
+    </div>
+    <div class="input-wrap">
+        <i class="fa-solid fa-location-dot"></i>
+        <input type="text" value="" placeholder="Enter Postcode" required>
+    </div>
+    <button type="submit" class="get-price-btn">Get Price <i class="fa-solid fa-arrow-right"></i></button>
+</form>
+<a href="./404.html" class="unknown-reg">I don't know my registration number →</a>
                 <div class="reviews-row">
                     <div class="rating-block">
                         <div class="stars">
@@ -112,15 +108,15 @@
 >
 
                 <div class="fb fb-repairs">
-                    <img src="https://img.icons8.com/ios-filled/50/007bff/wrench.png" alt="">
+                    <img src="./src/wrench-compressed.webp" alt="">
                     <span>Repairs</span>
                 </div>
                 <div class="fb fb-service">
-                    <img src="https://img.icons8.com/ios-filled/50/007bff/maintenance.png" alt="">
+                    <img src="./src/maintenance-compressed.webp" alt="">
                     <span>Servicing</span>
                 </div>
                 <div class="fb fb-mot">
-                    <img src="https://img.icons8.com/ios-filled/50/007bff/car-roof-box.png" alt="">
+                    <img src="./src/maintenance-compressed.webp" alt="">
                     <span>MOT</span>
                 </div>
             </div>
@@ -215,42 +211,59 @@
                 <p class="section-sub reveal d2">Every service with upfront pricing, no hidden fees.</p>
             </div>
             <div class="services-grid">
-                <div class="service-card reveal d1">
-                    <div class="service-icon"><i class="fa-solid fa-oil-can"></i></div>
-                    <h3>Oil &amp; Filter Change</h3>
-                    <p>Keep your engine running smoothly with a full synthetic or semi-synthetic oil service.</p>
-                    <span class="price-from">From £69 →</span>
-                </div>
-                <div class="service-card reveal d2">
-                    <div class="service-icon"><i class="fa-solid fa-car-battery"></i></div>
-                    <h3>Battery Replacement</h3>
-                    <p>Dead or failing battery? We'll fit a new one at your home or workplace.</p>
-                    <span class="price-from">From £89 →</span>
-                </div>
-                <div class="service-card reveal d3">
-                    <div class="service-icon"><i class="fa-solid fa-circle-check"></i></div>
-                    <h3>MOT Test</h3>
-                    <p>Annual MOT at a local, trusted garage – book in minutes, drive with confidence.</p>
-                    <span class="price-from">From £35 →</span>
-                </div>
-                <div class="service-card reveal d1">
-                    <div class="service-icon"><i class="fa-solid fa-wrench"></i></div>
-                    <h3>Brake Pad Replacement</h3>
-                    <p>Front, rear or all four wheels. Parts + labour, fully covered with a 12-month guarantee.</p>
-                    <span class="price-from">From £99 →</span>
-                </div>
-                <div class="service-card reveal d2">
-                    <div class="service-icon"><i class="fa-solid fa-gauge-high"></i></div>
-                    <h3>Diagnostic Check</h3>
-                    <p>Warning light on? A full vehicle diagnostic will pinpoint the issue fast.</p>
-                    <span class="price-from">From £49 →</span>
-                </div>
-                <div class="service-card reveal d3">
-                    <div class="service-icon"><i class="fa-solid fa-snowflake"></i></div>
-                    <h3>Air Con Recharge</h3>
-                    <p>Restore your air conditioning to full power, ready for summer or year-round comfort.</p>
-                    <span class="price-from">From £55 →</span>
-                </div>
+                <a href="./Service.html">
+
+                    <div class="service-card reveal d1">
+                        <div class="service-icon"><i class="fa-solid fa-oil-can"></i></div>
+                        <h3>Oil &amp; Filter Change</h3>
+                        <p>Keep your engine running smoothly with a full synthetic or semi-synthetic oil service.</p>
+                        <span class="price-from">From ₹690 →</span>
+                    </div>
+                </a>
+                <a href="./Service.html">
+
+                    <div class="service-card reveal d2">
+                        <div class="service-icon"><i class="fa-solid fa-car-battery"></i></div>
+                        <h3>Battery Replacement</h3>
+                        <p>Dead or failing battery? We'll fit a new one at your home or workplace.</p>
+                        <span class="price-from">From ₹890 →</span>
+                    </div>
+                </a>
+                <a href="./Service.html">
+
+                    <div class="service-card reveal d3">
+                        <div class="service-icon"><i class="fa-solid fa-circle-check"></i></div>
+                        <h3>MOT Test</h3>
+                        <p>Annual MOT at a local, trusted garage – book in minutes, drive with confidence.</p>
+                        <span class="price-from">From ₹350 →</span>
+                    </div>
+                </a>
+                <a href="./Service.html">
+                    <div class="service-card reveal d1">
+                        <div class="service-icon"><i class="fa-solid fa-wrench"></i></div>
+                        <h3>Brake Pad Replacement</h3>
+                        <p>Front, rear or all four wheels. Parts + labour, fully covered with a 12-month guarantee.</p>
+                        <span class="price-from">From ₹990 →</span>
+                    </div>
+                </a>
+
+                <a href="./Service.html">
+                    <div class="service-card reveal d2">
+                        <div class="service-icon"><i class="fa-solid fa-gauge-high"></i></div>
+                        <h3>Diagnostic Check</h3>
+                        <p>Warning light on? A full vehicle diagnostic will pinpoint the issue fast.</p>
+                        <span class="price-from">From ₹490 →</span>
+                    </div>
+                </a>
+                <a href="./Service.html">
+
+                    <div class="service-card reveal d3">
+                        <div class="service-icon"><i class="fa-solid fa-snowflake"></i></div>
+                        <h3>Air Con Recharge</h3>
+                        <p>Restore your air conditioning to full power, ready for summer or year-round comfort.</p>
+                        <span class="price-from">From ₹550 →</span>
+                    </div>
+                </a>
             </div>
         </div>
     </section>
@@ -263,7 +276,7 @@
             <div class="trust-inner">
                 <div class="trust-visual reveal-left">
                     <div class="trust-img-bg">
-                        <img src="https://images.unsplash.com/photo-1625047509168-a7026f36de04?auto=format&fit=crop&q=80&w=800"
+                        <img src="./src/photo-1625047509168-a7026f36de04-compressed.webp"
                             alt="Mechanic at work">
                     </div>
                     <div class="trust-stat ts1">
@@ -340,7 +353,7 @@
             <div class="testimonials-header">
                 <p class="section-tag reveal">Real Reviews</p>
                 <h2 class="section-title reveal d1">What Our Customers Say</h2>
-                <p class="section-sub reveal d2">Over 192,000 verified reviews from real drivers across the UK.</p>
+                <p class="section-sub reveal d2">Over 192,000 verified reviews from real drivers across the Chennai.</p>
             </div>
             <div class="reviews-grid">
                 <div class="review-card reveal d1">
@@ -351,10 +364,9 @@
                     <p>"Absolutely brilliant service. My mechanic arrived on time, explained everything clearly and the
                         price was exactly as quoted. Won't go anywhere else."</p>
                     <div class="reviewer">
-                        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="" class="reviewer-avatar">
                         <div>
                             <div class="reviewer-name">Sarah M.</div>
-                            <div class="reviewer-loc">London, UK</div>
+                            <div class="reviewer-loc">London, Chennai</div>
                         </div>
                     </div>
                 </div>
@@ -366,10 +378,9 @@
                     <p>"Used Stackly for an MOT and full service. Cheaper than my local garage and the mechanic
                         was professional and friendly. Highly recommend!"</p>
                     <div class="reviewer">
-                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="" class="reviewer-avatar">
                         <div>
                             <div class="reviewer-name">James T.</div>
-                            <div class="reviewer-loc">Manchester, UK</div>
+                            <div class="reviewer-loc">Manchester, Chennai</div>
                         </div>
                     </div>
                 </div>
@@ -380,12 +391,11 @@
                             class="fa-solid fa-star-half-stroke"></i>
                     </div>
                     <p>"Battery died on a Monday morning. Booked through Stackly, had a mechanic at my door by
-                        11am. Saved my day. Outstanding!"</p>
+                        11am. Saved my day. Outstanding! and Excellent"</p>
                     <div class="reviewer">
-                        <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="" class="reviewer-avatar">
                         <div>
                             <div class="reviewer-name">Priya K.</div>
-                            <div class="reviewer-loc">Birmingham, UK</div>
+                            <div class="reviewer-loc">Birmingham, Chennai</div>
                         </div>
                     </div>
                 </div>
@@ -406,7 +416,7 @@
             <div class="pricing-grid">
                 <div class="pricing-card reveal d1">
                     <div class="pricing-name">Basic</div>
-                    <div class="pricing-price"><span>£</span>35</div>
+                    <div class="pricing-price"><span>₹</span>350</div>
                     <div class="pricing-sub">Per job, no subscription</div>
                     <ul class="pricing-features">
                         <li><i class="fa-solid fa-check"></i> Vetted local mechanic</li>
@@ -415,12 +425,14 @@
                         <li class="off"><i class="fa-solid fa-xmark"></i> Priority support</li>
                         <li class="off"><i class="fa-solid fa-xmark"></i> Loyalty rewards</li>
                     </ul>
-                    <button class="pricing-btn outline">Get Started</button>
+                    <a href="./404.html">
+                        <button class="pricing-btn outline">Get Started</button>
+                    </a>
                 </div>
                 <div class="pricing-card featured reveal-scale d2">
                     <div class="pricing-badge">Most Popular</div>
                     <div class="pricing-name">Pro</div>
-                    <div class="pricing-price"><span>£</span>9<span style="font-size:18px">/mo</span></div>
+                    <div class="pricing-price"><span>₹</span>900<span style="font-size:18px">/mo</span></div>
                     <div class="pricing-sub">Unlimited bookings included</div>
                     <ul class="pricing-features">
                         <li><i class="fa-solid fa-check"></i> Everything in Basic</li>
@@ -429,11 +441,13 @@
                         <li><i class="fa-solid fa-check"></i> 5% loyalty cashback</li>
                         <li class="off"><i class="fa-solid fa-xmark"></i> Fleet management</li>
                     </ul>
-                    <button class="pricing-btn white">Get Started</button>
+                    <a href="./404.html">
+                        <button class="pricing-btn white">Get Started</button>
+                    </a>
                 </div>
                 <div class="pricing-card reveal d3">
                     <div class="pricing-name">Fleet</div>
-                    <div class="pricing-price"><span>£</span>29<span style="font-size:18px">/mo</span></div>
+                    <div class="pricing-price"><span>₹</span>2900<span style="font-size:18px">/mo</span></div>
                     <div class="pricing-sub">For businesses &amp; fleets</div>
                     <ul class="pricing-features">
                         <li><i class="fa-solid fa-check"></i> Everything in Pro</li>
@@ -442,7 +456,9 @@
                         <li><i class="fa-solid fa-check"></i> Monthly invoicing</li>
                         <li><i class="fa-solid fa-check"></i> API access</li>
                     </ul>
+                    <a href="./404.html">
                     <button class="pricing-btn solid">Contact Sales</button>
+                    </a>
                 </div>
             </div>
         </div>
@@ -469,11 +485,11 @@
                         already making great money on the Stackly platform.</p>
                 </div>
                 <div class="reveal-right" style="display:flex;gap:14px;flex-wrap:wrap;">
-                    <a href="#"
+                    <a href="./404.html"
                         style="background:#fff;color:var(--blue);padding:14px 28px;border-radius:50px;font-size:14px;font-weight:700;text-decoration:none;transition:transform .2s,box-shadow .2s;"
                         onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 12px 30px rgba(0,0,0,.2)'"
                         onmouseout="this.style.transform='';this.style.boxShadow=''">Apply Now →</a>
-                    <a href="#"
+                    <a href="./404.html"
                         style="background:transparent;color:#fff;padding:14px 28px;border-radius:50px;font-size:14px;font-weight:700;text-decoration:none;border:2px solid rgba(255,255,255,.5);transition:border-color .2s"
                         onmouseover="this.style.borderColor='#fff'"
                         onmouseout="this.style.borderColor='rgba(255,255,255,.5)'">Learn More</a>
@@ -494,14 +510,14 @@
                     <p class="section-sub reveal d2">Get live updates on your mechanic's arrival, review invoices, and
                         chat directly – all in the Stackly app.</p>
                     <div class="app-btns reveal d3">
-                        <a href="#" class="app-btn">
+                        <a href="./404.html" class="app-btn">
                             <i class="fa-brands fa-apple"></i>
                             <div class="app-btn-text">
                                 <small>Download on the</small>
                                 <strong>App Store</strong>
                             </div>
                         </a>
-                        <a href="#" class="app-btn">
+                        <a href="./404.html" class="app-btn">
                             <i class="fa-brands fa-google-play"></i>
                             <div class="app-btn-text">
                                 <small>Get it on</small>
@@ -519,13 +535,13 @@
                             </div>
                             <div class="ps-card">
                                 <div class="ps-card-title">🔧 Oil Change – Honda Civic</div>
-                                <div class="ps-card-price">£89</div>
+                                <div class="ps-card-price">₹890</div>
                                 <div class="ps-card-sub">Tomorrow, 10:00 AM · W12 7SB</div>
                                 <button class="ps-btn">Track Mechanic →</button>
                             </div>
                             <div class="ps-card" style="opacity:.7;">
                                 <div class="ps-card-title">✅ MOT Test – Completed</div>
-                                <div class="ps-card-price">£35</div>
+                                <div class="ps-card-price">₹3500</div>
                                 <div class="ps-card-sub">12 Jun · Passed</div>
                             </div>
                         </div>
@@ -587,50 +603,49 @@
         <div class="container">
             <div class="footer-grid">
                 <div>
-                    <a href="#" class="footer-logo">Stackly<span>Mechanic</span></a>
-                    <p class="footer-desc">The UK's #1 platform for finding trusted mechanics and garages near you. Book
+                    <a href="./index.html" class="footer-logo">Stackly</a>
+                    <p class="footer-desc">The Chennai's #1 platform for finding trusted mechanics and garages near you. Book
                         online, get fixed, drive happy.</p>
                     <div class="footer-socials">
-                        <a href="#" class="social-btn"><i class="fa-brands fa-facebook-f"></i></a>
-                        <a href="#" class="social-btn"><i class="fa-brands fa-x-twitter"></i></a>
-                        <a href="#" class="social-btn"><i class="fa-brands fa-instagram"></i></a>
-                        <a href="#" class="social-btn"><i class="fa-brands fa-linkedin-in"></i></a>
+                        <a href="./404.html" class="social-btn"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="./404.html" class="social-btn"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="./404.html" class="social-btn"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="./404.html" class="social-btn"><i class="fa-brands fa-linkedin-in"></i></a>
                     </div>
                 </div>
                 <div class="footer-col">
                     <h5>Services</h5>
                     <ul>
-                        <li><a href="#">Oil Change</a></li>
-                        <li><a href="#">MOT Test</a></li>
-                        <li><a href="#">Brake Service</a></li>
-                        <li><a href="#">Battery Replacement</a></li>
-                        <li><a href="#">Diagnostics</a></li>
+                        <li><a href="./404.html">Oil Change</a></li>
+                        <li><a href="./404.html">MOT Test</a></li>
+                        <li><a href="./404.html">Brake Service</a></li>
+                        <li><a href="./404.html">Battery Replacement</a></li>
+                        <li><a href="./404.html">Diagnostics</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
                     <h5>Company</h5>
                     <ul>
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">About Us</a></li>
-                        <li><a href="#">Blog</a></li>
-                        <li><a href="#">Careers</a></li>
-                        <li><a href="#">Press</a></li>
-                        <li><a href="#">Contact</a></li>
+                        <li><a href="./index.html">Home</a></li>
+                        <li><a href="./About.html">About Us</a></li>
+                        <li><a href="./blog.html">Blog</a></li>
+                        <li><a href="./Service.html">Our Service</a></li>
+                        <li><a href="./contact.html">Contact</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
                     <h5>Support</h5>
                     <ul>
-                        <li><a href="#">Help Centre</a></li>
-                        <li><a href="#">Privacy Policy</a></li>
-                        <li><a href="#">Terms of Service</a></li>
-                        <li><a href="#">Cookie Policy</a></li>
-                        <li><a href="#">Apply as Mechanic</a></li>
+                        <li><a href="./contact.html">Help Centre</a></li>
+                        <li><a href="./404.html">Privacy Policy</a></li>
+                        <li><a href="./404.html">Terms of Service</a></li>
+                        <li><a href="./404.html">Cookie Policy</a></li>
+                        <li><a href="./404.html">Apply as Mechanic</a></li>
                     </ul>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>© 2024 Stackly Mechanic. All rights reserved. Registered in England & Wales.</p>
+                <p>© 2026 Stackly Mechanic. All rights reserved. Registered in England & Wales.</p>
                 <p>🛡️ All mechanics fully vetted & insured</p>
             </div>
         </div>

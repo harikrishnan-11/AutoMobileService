@@ -4,9 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Stackly – Login</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@700;800;900&display=swap" rel="stylesheet">
+    <title>Stackly – Sign Up</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@700;800;900&display=swap"
@@ -18,10 +16,8 @@
 
 <body>
 
-<!-- OVERLAY -->
 <div class="overlay" id="overlay"></div>
 
-<!-- MOBILE MENU -->
 <div class="mobile-menu" id="mobileMenu">
     <button class="mm-close" id="closeMenuBtn"><i class="fa-solid fa-xmark"></i></button>
     <a href="./index.html">Home</a>
@@ -33,9 +29,6 @@
     <a href="./login.html">Login</a>
 </div>
 
-<!-- ============================================================
-     HEADER
-============================================================ -->
 <div class="site-header" id="siteHeader">
     <nav class="nav-inner">
         <a href="./404.html" class="logo">Stackly</a>
@@ -53,11 +46,7 @@
     </nav>
 </div>
 
-    <!-- ============================================================
-           SECTION 1 — LOGIN HERO BANNER (Console Intro)
-     ============================================================ -->
     <section class="hero-about login-hero-override">
-        <!-- Animated Interactive Background Layers -->
         <div class="orb orb1"></div>
         <div class="orb orb2"></div>
         <div class="orb orb3"></div>
@@ -67,42 +56,39 @@
                 <div class="hero-crumb">
                     <a href="./index.html">Home</a>
                     <i class="fa-solid fa-chevron-right"></i>
-                    <span>Secure Console Access</span>
+                    <span>Initialize Portal Instance</span>
                 </div>
-                <h1>Command <em>Center</em></h1>
-                <p>Access your real-time vehicle performance metrics, scheduled diagnostics pipelines, active technician
-                    communication loops, and cryptographically verified billing statements.</p>
+                <h1>Create <em>Account</em></h1>
+                <p>Deploy your localized diagnostic cluster dashboard. Gain prioritized entry channels to mechanical engineers, smart log scheduling matrices, and live telemetry feeds.</p>
                 <div class="hero-ctas">
                     <a href="#auth-core" class="btn-primary">Jump to Secure Form <i
                             class="fa-solid fa-arrow-down"></i></a>
-                    <a href="./404.html" class="btn-outline-w">Request Enterprise Token</a>
+                    <a href="./login.html" class="btn-outline-w">Existing User Login</a>
                 </div>
             </div>
 
-            <!-- System Integrity Metrics Panel -->
             <div class="hero-cards login-cards-mobile">
                 <div class="hc hc1">
-                    <div class="hc-icon bg-blue"><i class="fa-solid fa-fingerprint"></i></div>
-                    <div class="hc-label">Auth Security</div>
-                    <div class="hc-val">MFA</div>
-                    <div class="hc-sub">Hardware Key Ready</div>
+                    <div class="hc-icon bg-blue"><i class="fa-solid fa-bolt"></i></div>
+                    <div class="hc-label">Activation</div>
+                    <div class="hc-val">Instant</div>
+                    <div class="hc-sub">No Initial Token Needed</div>
                 </div>
                 <div class="hc hc2">
-                    <div class="hc-icon bg-green"><i class="fa-solid fa-shield-halved"></i></div>
-                    <div class="hc-label">Encryption Array</div>
-                    <div class="hc-val">AES-256</div>
-                    <div class="hc-sub">End-to-End Handshake</div>
+                    <div class="hc-icon bg-green"><i class="fa-solid fa-circle-nodes"></i></div>
+                    <div class="hc-label">Sync Pipeline</div>
+                    <div class="hc-val">Cloud</div>
+                    <div class="hc-sub">Automated Machine Sync</div>
                 </div>
                 <div class="hc hc3">
-                    <div class="hc-icon bg-yel"><i class="fa-solid fa-server"></i></div>
-                    <div class="hc-label">System Gateway</div>
-                    <div class="hc-val">v4.8.2</div>
-                    <div class="hc-sub">All Stations Operational</div>
+                    <div class="hc-icon bg-yel"><i class="fa-solid fa-shield-halved"></i></div>
+                    <div class="hc-label">Data Privacy</div>
+                    <div class="hc-val">GDPR</div>
+                    <div class="hc-sub">Anonymized Audit Control</div>
                 </div>
             </div>
         </div>
 
-        <!-- Wave Section Divider -->
         <div class="wave-wrap">
             <svg viewBox="0 0 1440 80" preserveAspectRatio="none">
                 <path d="M0,40L120,50C240,60,480,70,720,68C960,66,1200,54,1320,44L1440,34L1440,80L0,80Z"></path>
@@ -110,140 +96,120 @@
         </div>
     </section>
 
-    <!-- ============================================================
-           SECTION 2 — REAL-TIME NODE ACCESS STATUS
-     ============================================================ -->
     <section class="ticker-section">
         <div class="ticker-track">
-            <div class="ticker-item"><i class="fa-solid fa-circle-check"></i> Detroit Server Node: Active (3ms latency)
-            </div>
+            <div class="ticker-item"><i class="fa-solid fa-circle-check"></i> Registration Framework: Open</div>
             <div class="ticker-dot"></div>
-            <div class="ticker-item"><i class="fa-solid fa-key"></i> Key Exchange Layer: Refreshed</div>
+            <div class="ticker-item"><i class="fa-solid fa-shield-virus"></i> Token Handshake: Isolated</div>
             <div class="ticker-dot"></div>
-            <div class="ticker-item"><i class="fa-solid fa-network-wired"></i> Remote Telemetry Feeds: Synced</div>
+            <div class="ticker-item"><i class="fa-solid fa-sliders"></i> System Access Permissions: Configured</div>
             <div class="ticker-dot"></div>
-            <!-- Infinite Scrolling Mirror Loop -->
-            <div class="ticker-item"><i class="fa-solid fa-circle-check"></i> Detroit Server Node: Active (3ms latency)
-            </div>
+            <div class="ticker-item"><i class="fa-solid fa-circle-check"></i> Registration Framework: Open</div>
             <div class="ticker-dot"></div>
-            <div class="ticker-item"><i class="fa-solid fa-key"></i> Key Exchange Layer: Refreshed</div>
+            <div class="ticker-item"><i class="fa-solid fa-shield-virus"></i> Token Handshake: Isolated</div>
             <div class="ticker-dot"></div>
-            <div class="ticker-item"><i class="fa-solid fa-network-wired"></i> Remote Telemetry Feeds: Synced</div>
+            <div class="ticker-item"><i class="fa-solid fa-sliders"></i> System Access Permissions: Configured</div>
         </div>
     </section>
 
-    <!-- ============================================================
-           SECTION 3 — MAIN SECURE ENCRYPTED AUTHCARD CORE
-     ============================================================ -->
     <section id="auth-core" class="cta-section login-spacing-override">
         <div class="container cta-inner login-layout-reverse">
 
             <div class="cta-text rv-l on">
-                <span class="sec-tag">Protected Portal</span>
-                <h2>Verify Identity Parameters to Mount Drive</h2>
-                <p>Our centralized authentication gateway isolates your session token across sandboxed environments.
-                    Ensure you are using registered corporate terminal locations to avoid account locking sequences.</p>
+                <span class="sec-tag">Onboarding Gateway</span>
+                <h2>Establish System Verification Parameters</h2>
+                <p>Provision your secure client account within our protected data grid. Allocating authorized workspace properties takes less than two minutes, opening instant connections to verified workshops.</p>
 
                 <div class="cta-features">
                     <div class="cta-feat">
-                        <i class="fa-solid fa-circle-nodes"></i>
-                        <span>Single Sign-On (SSO) authentication enabled</span>
+                        <i class="fa-solid fa-clock-rotate-left"></i>
+                        <span>Prioritized scheduling queues for registered workspace instances</span>
                     </div>
                     <div class="cta-feat">
-                        <i class="fa-solid fa-user-lock"></i>
-                        <span>Automatic background session timeout after 15 minutes</span>
+                        <i class="fa-solid fa-file-invoice-dollar"></i>
+                        <span>Centralized tracking metrics for all mechanical work records</span>
                     </div>
                 </div>
             </div>
 
-            <!-- Clean Interactive Authentic Login Matrix Form Component -->
             <div class="cta-form-card rv-r on auth-card-glow">
-                <h3>Login into Your Account</h3>
-                <form action="./404.html" method="POST">
-                    <div class="form-field">
-                        <input type="text" placeholder="Email Address" required class="email-id">
-                    </div>
-                    <div class="form-field">
-                        <div class="form-field">
-                            <select required>
-                                <option value="" disabled selected>Select a Role</option>
-                                <option value="user">User</option>
-                                <option value="admin">Admin</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="form-field auth-pass-wrapper">
-                        <input type="password" placeholder="Enter Your Password " required>
-                        <button type="button" class="auth-toggle-visibility"><i class="fa-solid fa-eye"></i></button>
-                    </div>
+                <h3>Register Your Workspace Account</h3>
+              <form action="./404.html" method="POST">
+    <div class="form-field">
+        <input type="text" placeholder="Full Professional Name" required>
+    </div>
+    <div class="form-field">
+        <input type="email" placeholder="Email Address" required class="email-id">
+    </div>
+    <div class="form-field">
+        <input type="tel" placeholder="Phone Number" required pattern="[0-9]{10,15}">
+    </div>
+    <div class="form-field">
+        <div class="form-field">
+            <select required>
+                <option value="" disabled selected>Select Your Role</option>
+                <option value="admin">Admin</option>
+                <option value="user">User</option>
+            </select>
+        </div>
+    </div>
+    <div class="form-field auth-pass-wrapper">
+        <input type="password" placeholder="Enter Secure Password" required class="first-pass">
+        <button type="button" class="auth-toggle-visibility"><i class="fa-solid fa-eye"></i></button>
+    </div>
+    <div class="form-field auth-pass-wrapper">
+        <input type="password" placeholder="Confirm Secure Password" required class="confirm-pass">
+    </div>
 
-                    <div class="auth-utility-row">
-                        <label class="auth-checkbox-label">
-                            <input type="checkbox">
-                            <span>Remember</span>
-                        </label>
-                        <a href="./404.html" class="auth-forgot-link">Forget Password?</a>
-                    </div>
+    <div class="auth-utility-row">
+        <label class="auth-checkbox-label">
+            <input type="checkbox" required>
+            <span>Accept Terms & Privacy Matrix</span>
+        </label>
+        <a href="./login.html" class="auth-forgot-link">Existing Account?</a>
+    </div>
 
-                    <button type="submit" class="form-submit">Login</button>
-                </form>
-
-                <div class="auth-divider"><span>OR CONTINUE WITH</span></div>
+    <button type="submit" class="form-submit">Create Account</button>
+</form>
+                <div class="auth-divider"><span>OR REGISTER WITH</span></div>
 
                 <div class="auth-sso-buttons">
-                    <a href="./404.html">
+                 <a href="./404.html">
                         <button class="sso-btn sso-google"><i class="fa-brands fa-google"></i> Google</button>
                     </a>
                     <a href="./404.html">
                         <button class="sso-btn sso-apple"><i class="fa-brands fa-apple"></i> Apple </button>
                     </a>
-                </div>
-                <div class="signup">
-                    <a href="./signup.html">
-                        <p>Don't have Account?<span>Create</span></p>
-                    </a>
-                </div>
             </div>
         </div>
     </section>
 
-    <!-- ============================================================
-           SECTION 4 — INTERACTIVE SYSTEM REQUISITES BLOCK
-     ============================================================ -->
     <section class="contact-section login-spacing-override" style="background:var(--pale);">
         <div class="container">
             <div class="contact-header rv on">
-                <span class="sec-tag">Environment Verification</span>
-                <h2 class="sec-title">Prerequisite Client Standards</h2>
+                <span class="sec-tag">Environment Safeguards</span>
+                <h2 class="sec-title">Included Protection Vectors</h2>
             </div>
             <div class="contact-grid login-three-column-grid">
-                <!-- Requirement 1 -->
                 <div class="contact-card rv-s on d1" style="background:#fff;">
-                    <div class="cc-icon"><i class="fa-solid fa-newspaper"></i></div>
-                    <h4>Validated Browsers</h4>
-                    <p>Optimized explicitly for Chromium architecture engines and modern updates of Safari.</p>
+                    <div class="cc-icon"><i class="fa-solid fa-lock"></i></div>
+                    <h4>Encryption Standards</h4>
+                    <p>All sensitive authentication properties are parsed through AES-256 protocols before cloud storage matching.</p>
                 </div>
-                <!-- Requirement 2 -->
                 <div class="contact-card rv-s on d2" style="background:#fff;">
-                    <div class="cc-icon"><i class="fa-solid fa-cookie-bite"></i></div>
-                    <h4>State Isolation</h4>
-                    <p>Requires functional cookies and localized application memory caches initialized to operate
-                        panels.</p>
+                    <div class="cc-icon"><i class="fa-solid fa-shield-halved"></i></div>
+                    <h4>Vetting Guarantees</h4>
+                    <p>Account setup connects you straight into mechanical service nodes verified for process accuracy and insurance compliance.</p>
                 </div>
-                <!-- Requirement 3 -->
                 <div class="contact-card rv-s on d3" style="background:#fff;">
-                    <div class="cc-icon"><i class="fa-solid fa-globe"></i></div>
-                    <h4>IP Tracking Matrix</h4>
-                    <p>Cross-references geo-location properties against whitelisted network vectors to stop proxy fraud.
-                    </p>
+                    <div class="cc-icon"><i class="fa-solid fa-user-check"></i></div>
+                    <h4>Spam Mitigation</h4>
+                    <p>Dynamic network filtering arrays protect your contact vectors from external automated spam systems.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ============================================================
-           SECTION 5 — CORPORATE SYSTEM TERMS AND DISCLAIMERS
-     ============================================================ -->
     <section class="story-section login-spacing-override">
         <div class="container story-inner">
             <div class="story-visual rv-l on">
@@ -269,24 +235,18 @@
 
             <div class="story-text rv-r on">
                 <span class="sec-tag">Binding Regulations</span>
-                <h2 class="sec-title">Authorized Terminal Usage Policy</h2>
-                <p>This network node is classified strictly for credentialed system personnel access. Real-time logging
-                    layers log performance and connectivity patterns throughout active usage cycles.</p>
+                <h2 class="sec-title">Data Storage & Accountability Parameters</h2>
+                <p>By executing an account deployment request sequence, you confirm configuration settings matching our compliance standard parameters. System records maintain completely transparent ledger metrics.</p>
                 <div class="story-highlight">
-                    "Unregistered connection requests trigger systemic defensive blocks, isolating the offending network
-                    node from communication tunnels instantly."
+                    "Registered accounts can export full physical mechanical inspection reports, maintenance histories, and processing logs as encrypted files natively."
                 </div>
-                <p style="font-size: 13px; color: var(--soft);">Unauthorized entry attempts violate national wire
-                    communications statues and face technical prosecution strategies.</p>
+                <p style="font-size: 13px; color: var(--soft);">We process account parameters strictly under privacy compliance rules, ensuring third-party marketing components remain locked off.</p>
             </div>
         </div>
     </section>
 
 
 
-    <!-- ============================================================
-     FOOTER
-============================================================ -->
     <footer>
         <div class="container">
             <div class="footer-grid">
@@ -337,9 +297,6 @@
             </div>
         </div>
     </footer>
-    <!-- ============================================================
-     JAVASCRIPT
-============================================================ -->
     <script>
         /* --- Mobile Menu --- */
         const hamburger = document.getElementById('hamburgerBtn');
@@ -367,30 +324,7 @@
             observer.observe(el);
         });
 
-        /* --- Counter Animation --- */
-        const counterObserver = new IntersectionObserver((entries) => {
-            entries.forEach(e => {
-                if (e.isIntersecting && !e.target.dataset.done) {
-                    e.target.dataset.done = true;
-                    const target = +e.target.dataset.target;
-                    const duration = 2000;
-                    const step = target / (duration / 16);
-                    let current = 0;
-                    const timer = setInterval(() => {
-                        current += step;
-                        if (current >= target) {
-                            current = target;
-                            clearInterval(timer);
-                        }
-                        const formatted = target >= 1000
-                            ? Math.floor(current).toLocaleString('en-GB') + (target === 500000 ? '+' : target === 14000 ? '+' : '')
-                            : Math.floor(current) + (target === 98 ? '%' : target === 12 ? 'mo' : '');
-                        e.target.textContent = formatted;
-                    }, 16);
-                }
-            });
-        }, { threshold: 0.4 });
-
+    
         document.querySelectorAll('[data-target]').forEach(el => counterObserver.observe(el));
 
         // FAQ Accordion - Only one open at a time
