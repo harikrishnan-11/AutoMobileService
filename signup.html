@@ -133,55 +133,49 @@
             </div>
 
             <div class="cta-form-card rv-r on auth-card-glow">
-                <h3>Register Your Workspace Account</h3>
-              <form action="./404.html" method="POST">
-    <div class="form-field">
-        <input type="text" placeholder="Full Professional Name" required>
+    <h3>Register Your Workspace Account</h3>
+    
+    <div id="formErrorBox" style="color: #ef4444; background: rgba(239, 68, 68, 0.1); padding: 10px; border-radius: 6px; margin-bottom: 15px; display: none; font-size: 14px; font-weight: 500; text-align: left;">
     </div>
-    <div class="form-field">
-        <input type="email" placeholder="Email Address" required class="email-id">
-    </div>
-    <div class="form-field">
-        <input type="tel" placeholder="Phone Number" required pattern="[0-9]{10,15}">
-    </div>
-    <div class="form-field">
+
+    <form id="registerForm" action="./404.html" method="POST">
         <div class="form-field">
-            <select required>
-                <option value="" disabled selected>Select Your Role</option>
-                <option value="admin">Admin</option>
-                <option value="user">User</option>
-            </select>
+            <input type="text" placeholder="Full Professional Name" required>
         </div>
-    </div>
-    <div class="form-field auth-pass-wrapper">
-        <input type="password" placeholder="Enter Secure Password" required class="first-pass">
-        <button type="button" class="auth-toggle-visibility"><i class="fa-solid fa-eye"></i></button>
-    </div>
-    <div class="form-field auth-pass-wrapper">
-        <input type="password" placeholder="Confirm Secure Password" required class="confirm-pass">
-    </div>
-
-    <div class="auth-utility-row">
-        <label class="auth-checkbox-label">
-            <input type="checkbox" required>
-            <span>Accept Terms & Privacy Matrix</span>
-        </label>
-        <a href="./login.html" class="auth-forgot-link">Existing Account?</a>
-    </div>
-
-    <button type="submit" class="form-submit">Create Account</button>
-</form>
-                <div class="auth-divider"><span>OR REGISTER WITH</span></div>
-
-                <div class="auth-sso-buttons">
-                 <a href="./404.html">
-                        <button class="sso-btn sso-google"><i class="fa-brands fa-google"></i> Google</button>
-                    </a>
-                    <a href="./404.html">
-                        <button class="sso-btn sso-apple"><i class="fa-brands fa-apple"></i> Apple </button>
-                    </a>
+        <div class="form-field">
+            <input type="email" placeholder="Email Address" required class="email-id">
+        </div>
+        <div class="form-field">
+            <input type="tel" placeholder="Phone Number" required pattern="[0-9]{10,15}">
+        </div>
+        <div class="form-field">
+            <div class="form-field">
+                <select required>
+                    <option value="" disabled selected>Select Your Role</option>
+                    <option value="admin">Admin</option>
+                    <option value="user">User</option>
+                </select>
             </div>
         </div>
+        <div class="form-field auth-pass-wrapper">
+            <input type="password" placeholder="Enter Secure Password" required class="first-pass">
+            <button type="button" class="auth-toggle-visibility"><i class="fa-solid fa-eye"></i></button>
+        </div>
+        <div class="form-field auth-pass-wrapper">
+            <input type="password" placeholder="Confirm Secure Password" required class="confirm-pass">
+        </div>
+
+        <div class="auth-utility-row">
+            <label class="auth-checkbox-label">
+                <input type="checkbox" required>
+                <span>Accept Terms & Privacy Matrix</span>
+            </label>
+            <a href="./login.html" class="auth-forgot-link">Existing Account?</a>
+        </div>
+
+        <button type="submit" class="form-submit">Create Account</button>
+    </form>
+</div>
     </section>
 
     <section class="contact-section login-spacing-override" style="background:var(--pale);">
@@ -343,6 +337,90 @@
                 currentItem.classList.toggle('open');
             });
         });
+        document.addEventListener('DOMContentLoaded', () => {
+    const form = document.getElementById('registerForm');
+    const errorBox = document.getElementById('formErrorBox');
+
+    form.addEventListener('submit', (event) => {
+        // Prevent default submission to 404.html to run strict validations
+        event.preventDefault(); 
+        
+        // Hide error container on new attempt
+        errorBox.style.display = 'none';
+        errorBox.innerHTML = '';
+
+        // Extract native elements
+        const emailInput = form.querySelector('.email-id');
+        const passwordInput = form.querySelector('.first-pass');
+        const confirmPasswordInput = form.querySelector('.confirm-pass');
+        const roleSelect = form.querySelector('select');
+        const checkbox = form.querySelector('input[type="checkbox"]');
+        const textInputs = form.querySelectorAll('input[type="text"], input[type="tel"]');
+
+        let errors = [];
+
+        // 1. Mandatory Fields Validation
+        textInputs.forEach(input => {
+            if (!input.value.trim()) {
+                errors.push("All text input parameters are mandatory.");
+            }
+        });
+
+        if (!roleSelect.value) {
+            errors.push("Please assign an account classification role.");
+        }
+
+        if (!checkbox.checked) {
+            errors.push("You must accept the Terms & Privacy Matrix.");
+        }
+
+        // 2. Email domain extension validation (.in or .com)
+        const emailValue = emailInput.value.trim().toLowerCase();
+        if (!emailValue.endsWith('.com') && !emailValue.endsWith('.in')) {
+            errors.push("Authorized emails must resolve with a valid '.com' or '.in' domain.");
+        }
+
+        // 3. Password length threshold confirmation (6+ characters)
+        if (passwordInput.value.length < 6) {
+            errors.push("Secure keys require a minimum allocation of 6 characters.");
+        }
+
+        // 4. Mirror Match Validation (Password matches Confirm Password)
+        if (passwordInput.value !== confirmPasswordInput.value) {
+            errors.push("Encryption parameters mismatch. Re-verify your confirmed password entry.");
+        }
+
+        // --- Processing Validation Output ---
+        if (errors.length > 0) {
+            // Display first matching structural error cleanly inside card container
+            errorBox.innerHTML = `<i class="fa-solid fa-circle-exclamation"></i> ${errors[0]}`;
+            errorBox.style.display = 'block';
+            
+            // Scroll smoothly up to the warning card sector if needed
+            errorBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        } else {
+            // SUCCESS: All metrics clear. Redirect to login portal route instantly.
+            window.location.href = "./login.html";
+        }
+    });
+
+    /* --- Extra UX Polish: Password view visibility toggle handler --- */
+    const toggleVisibilityBtn = form.querySelector('.auth-toggle-visibility');
+    if (toggleVisibilityBtn) {
+        toggleVisibilityBtn.addEventListener('click', function() {
+            const firstPass = form.querySelector('.first-pass');
+            const icon = this.querySelector('i');
+            
+            if (firstPass.type === 'password') {
+                firstPass.type = 'text';
+                icon.classList.replace('fa-eye', 'fa-eye-slash');
+            } else {
+                firstPass.type = 'password';
+                icon.classList.replace('fa-eye-slash', 'fa-eye');
+            }
+        });
+    }
+});
     </script>
 </body>
 

@@ -11,6 +11,8 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@700;800;900&display=swap"
         rel="stylesheet">
+        <link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="./about.css">
     <link rel="stylesheet" href="login.css">
@@ -67,9 +69,9 @@
                 <div class="hero-crumb">
                     <a href="./index.html">Home</a>
                     <i class="fa-solid fa-chevron-right"></i>
-                    <span>Secure Console Access</span>
+                    <span>Login</span>
                 </div>
-                <h1>Command <em>Center</em></h1>
+                <h1>Login <em>Center</em></h1>
                 <p>Access your real-time vehicle performance metrics, scheduled diagnostics pipelines, active technician
                     communication loops, and cryptographically verified billing statements.</p>
                 <div class="hero-ctas">
@@ -157,53 +159,59 @@
             </div>
 
             <!-- Clean Interactive Authentic Login Matrix Form Component -->
-            <div class="cta-form-card rv-r on auth-card-glow">
-                <h3>Login into Your Account</h3>
-                <form action="./404.html" method="POST">
-                    <div class="form-field">
-                        <input type="text" placeholder="Email Address" required class="email-id">
-                    </div>
-                    <div class="form-field">
-                        <div class="form-field">
-                            <select required>
-                                <option value="" disabled selected>Select a Role</option>
-                                <option value="user">User</option>
-                                <option value="admin">Admin</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="form-field auth-pass-wrapper">
-                        <input type="password" placeholder="Enter Your Password " required>
-                        <button type="button" class="auth-toggle-visibility"><i class="fa-solid fa-eye"></i></button>
-                    </div>
+          <div class="cta-form-card rv-r on auth-card-glow">
+    <h3>Login into Your Account</h3>
+    
+    <div id="formErrorBox" style="color: #ef4444; background: rgba(239, 68, 68, 0.1); padding: 10px; border-radius: 6px; margin-bottom: 15px; display: none; font-size: 14px; font-weight: 500; text-align: left;">
+    </div>
 
-                    <div class="auth-utility-row">
-                        <label class="auth-checkbox-label">
-                            <input type="checkbox">
-                            <span>Remember</span>
-                        </label>
-                        <a href="./404.html" class="auth-forgot-link">Forget Password?</a>
-                    </div>
+    <form id="loginForm">
+        <div class="form-field">
+            <input type="email" placeholder="Enter Email Address" required class="email-id">
+        </div>
 
-                    <button type="submit" class="form-submit">Login</button>
-                </form>
+        <div class="form-field">
+            <select required class="role-select">
+                <option value="" selected disabled>Select a Role</option>
+                <option value="user">User</option>
+                <option value="admin">Admin</option>
+            </select>
+        </div>
 
-                <div class="auth-divider"><span>OR CONTINUE WITH</span></div>
+        <div class="form-field auth-pass-wrapper">
+            <input type="password" placeholder="Enter Your Password" required class="password-input">
+            <button type="button" class="auth-toggle-visibility">
+                <i class="fa-solid fa-eye"></i>
+            </button>
+        </div>
 
-                <div class="auth-sso-buttons">
-                    <a href="./404.html">
-                        <button class="sso-btn sso-google"><i class="fa-brands fa-google"></i> Google</button>
-                    </a>
-                    <a href="./404.html">
-                        <button class="sso-btn sso-apple"><i class="fa-brands fa-apple"></i> Apple </button>
-                    </a>
-                </div>
-                <div class="signup">
-                    <a href="./signup.html">
-                        <p>Don't have Account?<span>Create</span></p>
-                    </a>
-                </div>
-            </div>
+        <div class="auth-utility-row">
+            <label class="auth-checkbox-label">
+                <input type="checkbox">
+                <span>Remember</span>
+            </label>
+            <a href="./404.html" class="auth-forgot-link">Forget Password?</a>
+        </div>
+
+        <button type="submit" class="form-submit">Login</button>
+    </form>
+    
+    <div class="auth-divider"><span>OR CONTINUE WITH</span></div>
+
+    <div class="auth-sso-buttons">
+        <a href="./404.html">
+            <button class="sso-btn sso-google"><i class="fa-brands fa-google"></i> Google</button>
+        </a>
+        <a href="./404.html">
+            <button class="sso-btn sso-apple"><i class="fa-brands fa-apple"></i> Apple </button>
+        </a>
+    </div>
+    <div class="signup">
+        <a href="./signup.html">
+            <p>Don't have Account?<span>Create</span></p>
+        </a>
+    </div>
+</div>
         </div>
     </section>
 
@@ -410,6 +418,7 @@
             });
         });
     </script>
+    <script src="./login.js"></script>
 </body>
 
 </html>
