@@ -33,7 +33,7 @@
     <nav class="nav-inner">
 
         <div class="logo-container">
-            <a href="./404.html" class="logo"><img src="./src/Untitled design-compressed (1).webp" alt=""></a>
+            <a href="./index.html" class="logo"><img src="./src/Untitled design-compressed (1).webp" alt=""></a>
         </div>
         <ul class="nav-links">
             <li><a href="./index.html">Home</a></li>
@@ -141,9 +141,9 @@
     <div id="formErrorBox" style="color: #ef4444; background: rgba(239, 68, 68, 0.1); padding: 10px; border-radius: 6px; margin-bottom: 15px; display: none; font-size: 14px; font-weight: 500; text-align: left;">
     </div>
 
-    <form id="registerForm" action="./404.html" method="POST">
+    <form id="registerForm" method="POST">
         <div class="form-field">
-            <input type="text" placeholder="Full Professional Name" required>
+<input type="text" class="name-input" placeholder="Full Name">
         </div>
         <div class="form-field">
             <input type="email" placeholder="Email Address" required class="email-id">
@@ -249,7 +249,7 @@
             <div class="footer-grid">
                 <div>
 <div class="logo-container">
-            <a href="./404.html" class="logo"><img src="./src/Untitled design-compressed (1).webp" alt=""></a>
+            <a href="./index.html" class="logo"><img src="./src/Untitled design-compressed (1).webp" alt=""></a>
         </div>                   <p class="footer-desc">The Chennai's #1 platform for finding trusted mechanics and garages near you. Book
                         online, get fixed, drive happy.</p>
                     <div class="footer-socials">
@@ -296,137 +296,173 @@
             </div>
         </div>
     </footer>
-    <script>
-        /* --- Mobile Menu --- */
-        const hamburger = document.getElementById('hamburgerBtn');
-        const closeBtn = document.getElementById('closeMenuBtn');
-        const mobileMenu = document.getElementById('mobileMenu');
-        const overlay = document.getElementById('overlay');
+<script>
+    /* --- Mobile Menu --- */
+    const hamburger = document.getElementById('hamburgerBtn');
+    const closeBtn = document.getElementById('closeMenuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const overlay = document.getElementById('overlay');
 
-        const openMenu = () => { mobileMenu.classList.add('active'); overlay.classList.add('active'); }
-        const closeMenu = () => { mobileMenu.classList.remove('active'); overlay.classList.remove('active'); }
+    const openMenu = () => { 
+        if(mobileMenu && overlay) { mobileMenu.classList.add('active'); overlay.classList.add('active'); } 
+    }
+    const closeMenu = () => { 
+        if(mobileMenu && overlay) { mobileMenu.classList.remove('active'); overlay.classList.remove('active'); } 
+    }
 
-        hamburger.addEventListener('click', openMenu);
-        closeBtn.addEventListener('click', closeMenu);
-        overlay.addEventListener('click', closeMenu);
+    if (hamburger) hamburger.addEventListener('click', openMenu);
+    if (closeBtn) closeBtn.addEventListener('click', closeMenu);
+    if (overlay) overlay.addEventListener('click', closeMenu);
 
-        /* --- Scroll Reveal --- */
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(e => {
-                if (e.isIntersecting) {
-                    e.target.classList.add('visible');
-                }
-            });
-        }, { threshold: 0.12 });
-
-        document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale').forEach(el => {
-            observer.observe(el);
-        });
-
-    
-        document.querySelectorAll('[data-target]').forEach(el => counterObserver.observe(el));
-
-        // FAQ Accordion - Only one open at a time
-        document.querySelectorAll('.faq-q').forEach(question => {
-            question.addEventListener('click', () => {
-                const currentItem = question.closest('.faq-item');
-
-                // Close all other items
-                document.querySelectorAll('.faq-item').forEach(item => {
-                    if (item !== currentItem) {
-                        item.classList.remove('open');
-                    }
-                });
-
-                // Toggle current item
-                currentItem.classList.toggle('open');
-            });
-        });
-        document.addEventListener('DOMContentLoaded', () => {
-    const form = document.getElementById('registerForm');
-    const errorBox = document.getElementById('formErrorBox');
-
-    form.addEventListener('submit', (event) => {
-        // Prevent default submission to 404.html to run strict validations
-        event.preventDefault(); 
-        
-        // Hide error container on new attempt
-        errorBox.style.display = 'none';
-        errorBox.innerHTML = '';
-
-        // Extract native elements
-        const emailInput = form.querySelector('.email-id');
-        const passwordInput = form.querySelector('.first-pass');
-        const confirmPasswordInput = form.querySelector('.confirm-pass');
-        const roleSelect = form.querySelector('select');
-        const checkbox = form.querySelector('input[type="checkbox"]');
-        const textInputs = form.querySelectorAll('input[type="text"], input[type="tel"]');
-
-        let errors = [];
-
-        // 1. Mandatory Fields Validation
-        textInputs.forEach(input => {
-            if (!input.value.trim()) {
-                errors.push("All text input parameters are mandatory.");
+    /* --- Scroll Reveal --- */
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(e => {
+            if (e.isIntersecting) {
+                e.target.classList.add('visible');
             }
         });
+    }, { threshold: 0.12 });
 
-        if (!roleSelect.value) {
-            errors.push("Please assign an account classification role.");
-        }
-
-        if (!checkbox.checked) {
-            errors.push("You must accept the Terms & Privacy Matrix.");
-        }
-
-        // 2. Email domain extension validation (.in or .com)
-        const emailValue = emailInput.value.trim().toLowerCase();
-        if (!emailValue.endsWith('.com') && !emailValue.endsWith('.in')) {
-            errors.push("Authorized emails must resolve with a valid '.com' or '.in' domain.");
-        }
-
-        // 3. Password length threshold confirmation (6+ characters)
-        if (passwordInput.value.length < 6) {
-            errors.push("Secure keys require a minimum allocation of 6 characters.");
-        }
-
-        // 4. Mirror Match Validation (Password matches Confirm Password)
-        if (passwordInput.value !== confirmPasswordInput.value) {
-            errors.push("Encryption parameters mismatch. Re-verify your confirmed password entry.");
-        }
-
-        // --- Processing Validation Output ---
-        if (errors.length > 0) {
-            // Display first matching structural error cleanly inside card container
-            errorBox.innerHTML = `<i class="fa-solid fa-circle-exclamation"></i> ${errors[0]}`;
-            errorBox.style.display = 'block';
-            
-            // Scroll smoothly up to the warning card sector if needed
-            errorBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
-        } else {
-            // SUCCESS: All metrics clear. Redirect to login portal route instantly.
-            window.location.href = "./login.html";
-        }
+    document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale').forEach(el => {
+        observer.observe(el);
     });
 
-    /* --- Extra UX Polish: Password view visibility toggle handler --- */
-    const toggleVisibilityBtn = form.querySelector('.auth-toggle-visibility');
-    if (toggleVisibilityBtn) {
-        toggleVisibilityBtn.addEventListener('click', function() {
-            const firstPass = form.querySelector('.first-pass');
-            const icon = this.querySelector('i');
+    /* --- Counter Observer (Fixed & Guarded) --- */
+    if (typeof counterObserver !== 'undefined') {
+        document.querySelectorAll('[data-target]').forEach(el => counterObserver.observe(el));
+    } else {
+        console.warn("counterObserver is not defined. Skipping animation registration.");
+    }
+
+    /* --- FAQ Accordion - Only one open at a time --- */
+    document.querySelectorAll('.faq-q').forEach(question => {
+        question.addEventListener('click', () => {
+            const currentItem = question.closest('.faq-item');
+            if (!currentItem) return;
+
+            // Close all other items
+            document.querySelectorAll('.faq-item').forEach(item => {
+                if (item !== currentItem) {
+                    item.classList.remove('open');
+                }
+            });
+
+            // Toggle current item
+            currentItem.classList.toggle('open');
+        });
+    });
+
+    /* --- Form Registration & Validation --- */
+    document.addEventListener('DOMContentLoaded', () => {
+        const form = document.getElementById('registerForm');
+        const errorBox = document.getElementById('formErrorBox');
+
+        if (!form) return; // Safeguard if code runs on a page without this form
+
+        form.addEventListener('submit', (event) => {
+            // Prevent default submission instantly to guard against 405/404 errors
+            event.preventDefault(); 
             
-            if (firstPass.type === 'password') {
-                firstPass.type = 'text';
-                icon.classList.replace('fa-eye', 'fa-eye-slash');
+            // Hide error container on new attempt
+            if (errorBox) {
+                errorBox.style.display = 'none';
+                errorBox.innerHTML = '';
+            }
+
+            // Extract native elements safely
+            const nameInput = form.querySelector('.name-input');
+            const emailInput = form.querySelector('.email-id');
+            const passwordInput = form.querySelector('.first-pass');
+            const confirmPasswordInput = form.querySelector('.confirm-pass');
+            const roleSelect = form.querySelector('select');
+            const checkbox = form.querySelector('input[type="checkbox"]');
+            const textInputs = form.querySelectorAll('input[type="text"], input[type="tel"]');
+
+            let errors = [];
+
+            // 1. Mandatory Fields Validation
+            if (textInputs) {
+                textInputs.forEach(input => {
+                    if (!input.value.trim()) {
+                        if (!errors.includes("All text input parameters are mandatory.")) {
+                            errors.push("All text input parameters are mandatory.");
+                        }
+                    }
+                });
+            }
+
+            if (roleSelect && !roleSelect.value) {
+                errors.push("Please assign an account classification role.");
+            }
+
+            if (checkbox && !checkbox.checked) {
+                errors.push("You must accept the Terms & Privacy Matrix.");
+            }
+            
+            // 1b. Name Alphabetic Validation
+            if (nameInput) {
+                const nameValue = nameInput.value.trim();
+                if (nameValue && !/^[A-Za-z\s]+$/.test(nameValue)) {
+                    errors.push("Name should contain only alphabetic characters.");
+                }
+            }
+
+            // 2. Email domain extension validation (.in or .com)
+            if (emailInput) {
+                const emailValue = emailInput.value.trim().toLowerCase();
+                if (!emailValue.endsWith('.com') && !emailValue.endsWith('.in')) {
+                    errors.push("Authorized emails must resolve with a valid '.com' or '.in' domain.");
+                }
+            }
+
+            // 3. Password length threshold confirmation (6+ characters)
+            if (passwordInput && passwordInput.value.length < 6) {
+                errors.push("Secure keys require a minimum allocation of 6 characters.");
+            }
+
+            // 4. Mirror Match Validation (Password matches Confirm Password)
+            if (passwordInput && confirmPasswordInput && passwordInput.value !== confirmPasswordInput.value) {
+                errors.push("Encryption parameters mismatch. Re-verify your confirmed password entry.");
+            }
+
+            // --- Processing Validation Output ---
+            if (errors.length > 0) {
+                if (errorBox) {
+                    // Display first matching structural error cleanly inside card container
+                    errorBox.innerHTML = `<i class="fa-solid fa-circle-exclamation"></i> ${errors[0]}`;
+                    errorBox.style.display = 'block';
+                    
+                    // Scroll smoothly up to the warning card sector if needed
+                    errorBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                } else {
+                    alert(errors[0]); // Fallback alert if DOM element errorBox goes missing
+                }
             } else {
-                firstPass.type = 'password';
-                icon.classList.replace('fa-eye-slash', 'fa-eye');
+                // SUCCESS: All metrics clear. Redirect to login portal route instantly.
+                window.location.href = "./login.html";
             }
         });
-    }
-});
-    </script>
+
+        /* --- Extra UX Polish: Password view visibility toggle handler --- */
+        const toggleVisibilityBtn = form.querySelector('.auth-toggle-visibility');
+        if (toggleVisibilityBtn) {
+            toggleVisibilityBtn.addEventListener('click', function() {
+                const firstPass = form.querySelector('.first-pass');
+                const icon = this.querySelector('i');
+                
+                if (firstPass && icon) {
+                    if (firstPass.type === 'password') {
+                        firstPass.type = 'text';
+                        icon.classList.replace('fa-eye', 'fa-eye-slash');
+                    } else {
+                        firstPass.type = 'password';
+                        icon.classList.replace('fa-eye-slash', 'fa-eye');
+                    }
+                }
+            });
+        }
+    });
+</script>
 </body>
 
 </html>
