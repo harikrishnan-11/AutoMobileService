@@ -31,7 +31,12 @@ html {
     scroll-behavior: smooth;
 }
 
-
+body {
+    font-family: 'Inter', sans-serif;
+    background: #fff;
+    color: var(--dark);
+    overflow-x: hidden;
+}
 
 /* ============================================================
            KEYFRAMES
@@ -342,6 +347,7 @@ section {
     color: rgba(255, 255, 255, .68);
 }
 
+/* ============================================================
 
 /* ============================================================
            SECTION 1 — HERO BANNER
@@ -2047,4 +2053,29 @@ footer {
         width: 16px;
         height: 16px;
     }
+    .story-chip {
+    position: absolute;
+    background: #fff;
+    border-radius: 8px;
+    padding: 5px 10px;
+    box-shadow: 0 12px 32px rgba(0, 0, 0, .14);
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    z-index: 2;
+    margin: 0;
+    width: fit-content;
+    
+
+}
+.sc-left {
+    bottom: -14px;
+    left: -4px;
+}
+
+.sc-right {
+    top: -20px;
+    right: -10px;
+}
+
 }
