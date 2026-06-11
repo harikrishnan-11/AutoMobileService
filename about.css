@@ -1810,7 +1810,7 @@ footer {
 
     .sc-left,
     .sc-right {
-        position: static;
+        position: absolute;
         margin-top: 16px;
     }
 

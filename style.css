@@ -990,10 +990,14 @@
 
     .trust-stat {
         position: absolute;
-        background: #fff;
-        border-radius: 16px;
-        padding: 18px 22px;
-        box-shadow: 0 12px 30px rgba(0, 0, 0, .14);
+    background: #fff;
+    border-radius: 16px;
+    padding: 16px 20px;
+    box-shadow: 0 12px 32px rgba(0, 0, 0, .14);
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    z-index: 2;
     }
 
     .trust-stat .num {
@@ -1010,14 +1014,14 @@
     }
 
     .ts1 {
-        bottom: 30px;
-        left: -24px;
+        bottom: -24px;
+    left: -24px;
         animation: badgePop .6s 1s ease both;
     }
 
     .ts2 {
-        top: 30px;
-        right: -24px;
+         top: -20px;
+    right: -20px;
         animation: badgePop .6s 1.2s ease both;
     }
 
@@ -1754,13 +1758,14 @@
         }
 
         .trust-visual {
+            margin-bottom: 16px;
             height: 260px;
         }
 
         .ts1,
         .ts2 {
-            position: static;
-            margin-top: 12px;
+             position: absolute;
+            margin-top: 16px;
         }
 
         .stats-grid {
