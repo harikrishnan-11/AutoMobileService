@@ -1,0 +1,879 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AutoServe Pro — My Account</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="stylesheet" href="./dashboard.css">
+</head>
+<body>
+
+<!-- OVERLAY -->
+<div class="overlay" id="overlay" onclick="closeSidebar()"></div>
+
+<!-- ── SIDEBAR ── -->
+<aside class="sidebar" id="sidebar">
+   <div class="sidebar-logo">
+    <img src="./src/Untitled design-compressed (1).webp" alt="">
+  </div>
+
+  <div class="nav-section">My Account</div>
+  <ul>
+    <li class="nav-item active" onclick="navigate('home', this)" data-page="home">
+      <i class="fas fa-gauge-high"></i> Overview
+    </li>
+    <li class="nav-item" onclick="navigate('appointments', this)" data-page="appointments">
+      <i class="fas fa-calendar-check"></i> My Appointments
+      <span class="nav-badge">2</span>
+    </li>
+    <li class="nav-item" onclick="navigate('vehicles', this)" data-page="vehicles">
+      <i class="fas fa-car"></i> My Vehicles
+    </li>
+    <li class="nav-item" onclick="navigate('tracking', this)" data-page="tracking">
+      <i class="fas fa-location-dot"></i> Track Service
+      <span class="nav-badge">1</span>
+    </li>
+    <li class="nav-item" onclick="navigate('invoices', this)" data-page="invoices">
+      <i class="fas fa-file-invoice-dollar"></i> Invoices
+    </li>
+  </ul>
+
+  <div class="nav-section">More</div>
+  <ul>
+    <li class="nav-item" onclick="navigate('profile', this)" data-page="profile">
+      <i class="fas fa-circle-user"></i> My Profile
+    </li>
+    <li class="nav-item" onclick="navigate('support', this)" data-page="support">
+      <i class="fas fa-headset"></i> Support
+    </li>
+  </ul>
+
+  <div class="sidebar-footer">v2.4.1 &copy; 2026 AutoServe</div>
+</aside>
+
+<!-- ── TOPBAR ── -->
+<header class="topbar">
+  <button class="hamburger icon-btn" onclick="toggleSidebar()"><i class="fas fa-bars"></i></button>
+  <div class="topbar-title" id="topbar-title">Overview</div>
+
+  <div class="topbar-actions">
+    <button class="icon-btn" title="Notifications">
+      <i class="fas fa-bell"></i>
+      <span class="dot"></span>
+    </button>
+    <div class="topbar-user" onclick="toggleDropdown()">
+      <div class="user-av" id="user-av"><i class="fa-solid fa-user"></i></div>
+      <div class="user-info">
+        <div class="user-name" id="user-email-name"></div>
+        <div class="user-role">Customer</div>
+      </div>
+      <i class="fas fa-chevron-down" style="font-size:.65rem;color:var(--muted);margin-left:4px"></i>
+      <div class="user-dropdown" id="user-dropdown">
+        <div class="dropdown-item"><i class="fas fa-circle-user"></i> My Profile</div>
+        <div class="dropdown-item"><i class="fas fa-envelope"></i> <span id="user-email"></span></div>
+        <div class="dropdown-divider"></div>
+        <div class="dropdown-item logout"><i class="fas fa-right-from-bracket"></i> Logout</div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ── MAIN ── -->
+<main class="main">
+
+<!-- ════════════════════════════════════════════════════
+     PAGE 1 — OVERVIEW / HOME
+════════════════════════════════════════════════════ -->
+<section class="page active" id="page-home">
+  <div class="page-header">
+    <h1>Welcome back.</h1>
+    <p>Here's a summary of your vehicles and upcoming service visits.</p>
+  </div>
+
+  <!-- STAT CARDS -->
+  <div class="grid-4">
+    <div class="stat-card">
+      <div class="stat-top">
+        <div class="stat-icon" style="background:rgba(249,115,22,.15)">
+          <i class="fas fa-car" style="color:var(--accent)"></i>
+        </div>
+      </div>
+      <div class="stat-val">2</div>
+      <div class="stat-label">Registered Vehicles</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-top">
+        <div class="stat-icon" style="background:rgba(59,130,246,.12)">
+          <i class="fas fa-calendar-check" style="color:var(--info)"></i>
+        </div>
+        <span class="stat-change up">Active</span>
+      </div>
+      <div class="stat-val">1</div>
+      <div class="stat-label">Service In Progress</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-top">
+        <div class="stat-icon" style="background:rgba(34,197,94,.12)">
+          <i class="fas fa-circle-check" style="color:var(--success)"></i>
+        </div>
+      </div>
+      <div class="stat-val">14</div>
+      <div class="stat-label">Total Services Done</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-top">
+        <div class="stat-icon" style="background:rgba(234,179,8,.12)">
+          <i class="fas fa-star" style="color:var(--warning)"></i>
+        </div>
+      </div>
+      <div class="stat-val">4.8</div>
+      <div class="stat-label">Your Avg Rating Given</div>
+    </div>
+  </div>
+
+  <div class="grid-2-1">
+    <!-- Spend Chart -->
+    <div class="card">
+      <div class="card-head">
+        <div class="card-title">Service Spend — 2026</div>
+        <button class="card-action">This Year</button>
+      </div>
+      <div class="chart-area" id="spendChart"></div>
+      <div class="bar-label" id="spendLabels"></div>
+    </div>
+
+    <!-- Active Job Snapshot -->
+    <div class="card">
+      <div class="card-head">
+        <div class="card-title">Active Job</div>
+        <button class="card-action" onclick="navigate('tracking', document.querySelector('[data-page=tracking]'))">Track →</button>
+      </div>
+      <div style="text-align:center;padding:10px 0">
+        <div style="font-size:2rem;margin-bottom:8px">🔧</div>
+        <div style="font-family:'Syne',sans-serif;font-size:.95rem;font-weight:700">AC Repair</div>
+        <div style="font-size:.75rem;color:var(--muted);margin:4px 0 12px">Honda City · TN 58 BQ 7890</div>
+        <span class="badge badge-orange">In Progress</span>
+        <div style="margin-top:14px">
+          <div style="display:flex;justify-content:space-between;font-size:.74rem;color:var(--muted);margin-bottom:5px"><span>Progress</span><span>65%</span></div>
+          <div class="progress-bar"><div class="progress-fill" style="width:65%"></div></div>
+        </div>
+        <div style="font-size:.72rem;color:var(--muted);margin-top:10px"><i class="fas fa-clock"></i> ETA: Today 3:00 PM · Bay 1 · Sanjay K.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Upcoming Appointments -->
+  <div class="grid-2">
+    <div class="card">
+      <div class="card-head">
+        <div class="card-title">Upcoming Appointments</div>
+        <button class="btn btn-primary btn-sm" onclick="navigate('appointments', document.querySelector('[data-page=appointments]'))">+ Book</button>
+      </div>
+      <div class="appt-item">
+        <div class="appt-date"><div class="appt-day">10</div><div class="appt-mon">Jun</div></div>
+        <div class="appt-body"><div class="appt-title">Engine Diagnostics — Maruti Swift</div><div class="appt-sub">Bay 2 · Confirmed</div></div>
+        <div class="appt-time">10:00 AM</div>
+      </div>
+      <div class="appt-item">
+        <div class="appt-date"><div class="appt-day">18</div><div class="appt-mon">Jun</div></div>
+        <div class="appt-body"><div class="appt-title">Full Service — Honda City</div><div class="appt-sub">Bay 1 · Pending confirmation</div></div>
+        <div class="appt-time">11:00 AM</div>
+      </div>
+      <div style="margin-top:12px;text-align:center">
+        <button class="btn btn-outline btn-sm" onclick="navigate('appointments', document.querySelector('[data-page=appointments]'))">View all appointments</button>
+      </div>
+    </div>
+
+    <!-- Notifications -->
+    <div class="card">
+      <div class="card-head"><div class="card-title">Notifications</div></div>
+      <div class="notif-item notif-unread">
+        <div class="notif-icon" style="background:rgba(249,115,22,.12);color:var(--accent)"><i class="fas fa-car-wrench"></i></div>
+        <div class="notif-body"><div class="notif-text">Your Honda City AC Repair is 65% complete. Estimated pickup by 3 PM today.</div><div class="notif-time">1 hr ago</div></div>
+      </div>
+      <div class="notif-item notif-unread">
+        <div class="notif-icon" style="background:rgba(59,130,246,.12);color:var(--info)"><i class="fas fa-calendar-check"></i></div>
+        <div class="notif-body"><div class="notif-text">Appointment confirmed for Engine Diagnostics on June 10 at 10:00 AM.</div><div class="notif-time">Yesterday</div></div>
+      </div>
+      <div class="notif-item">
+        <div class="notif-icon" style="background:rgba(34,197,94,.12);color:var(--success)"><i class="fas fa-file-invoice"></i></div>
+        <div class="notif-body"><div class="notif-text">Invoice #INV-2208 (₹2,200) for AC Repair is ready. Payment due on delivery.</div><div class="notif-time">2 hrs ago</div></div>
+      </div>
+      <div class="notif-item">
+        <div class="notif-icon" style="background:rgba(234,179,8,.12);color:var(--warning)"><i class="fas fa-rotate"></i></div>
+        <div class="notif-body"><div class="notif-text">Service reminder: Your Maruti Swift is due for an oil change in ~1,400 km.</div><div class="notif-time">3 days ago</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════════
+     PAGE 2 — MY APPOINTMENTS
+════════════════════════════════════════════════════ -->
+<section class="page" id="page-appointments">
+  <div class="page-header">
+    <h1>My Appointments</h1>
+    <p>Book, reschedule, or cancel service visits for your vehicles.</p>
+  </div>
+
+  <div class="grid-4">
+    <div class="stat-card"><div class="stat-top"><div class="stat-icon" style="background:rgba(249,115,22,.15)"><i class="fas fa-calendar-day" style="color:var(--accent)"></i></div></div><div class="stat-val">1</div><div class="stat-label">Today</div></div>
+    <div class="stat-card"><div class="stat-top"><div class="stat-icon" style="background:rgba(59,130,246,.12)"><i class="fas fa-calendar-week" style="color:var(--info)"></i></div></div><div class="stat-val">2</div><div class="stat-label">Upcoming</div></div>
+    <div class="stat-card"><div class="stat-top"><div class="stat-icon" style="background:rgba(34,197,94,.12)"><i class="fas fa-circle-check" style="color:var(--success)"></i></div></div><div class="stat-val">12</div><div class="stat-label">Completed</div></div>
+    <div class="stat-card"><div class="stat-top"><div class="stat-icon" style="background:rgba(239,68,68,.12)"><i class="fas fa-calendar-xmark" style="color:var(--danger)"></i></div></div><div class="stat-val">1</div><div class="stat-label">Cancelled</div></div>
+  </div>
+
+  <div class="grid-2">
+    <!-- Upcoming List -->
+    <div class="card">
+      <div class="card-head"><div class="card-title">Upcoming Appointments</div></div>
+      <div class="appt-item">
+        <div class="appt-date"><div class="appt-day">09</div><div class="appt-mon">Jun</div></div>
+        <div class="appt-body">
+          <div class="appt-title">AC Repair — Honda City</div>
+          <div class="appt-sub">Bay 1 · Sanjay K. · <span class="badge badge-orange">In Progress</span></div>
+        </div>
+        <div class="appt-time">11:30 AM</div>
+      </div>
+      <div class="appt-item">
+        <div class="appt-date"><div class="appt-day">10</div><div class="appt-mon">Jun</div></div>
+        <div class="appt-body">
+          <div class="appt-title">Engine Diagnostics — Maruti Swift</div>
+          <div class="appt-sub">Bay 2 · Auto-assign · <span class="badge badge-blue">Confirmed</span></div>
+        </div>
+        <div class="appt-time">10:00 AM</div>
+      </div>
+      <div class="appt-item">
+        <div class="appt-date"><div class="appt-day">18</div><div class="appt-mon">Jun</div></div>
+        <div class="appt-body">
+          <div class="appt-title">Full Service — Honda City</div>
+          <div class="appt-sub">Bay 1 · Auto-assign · <span class="badge badge-yellow">Pending</span></div>
+        </div>
+        <div class="appt-time">11:00 AM</div>
+      </div>
+    </div>
+
+    <!-- Book Form -->
+    <div class="card">
+      <div class="card-head"><div class="card-title">Book New Appointment</div></div>
+      <div class="form-group">
+        <label class="form-label">Select Vehicle</label>
+        <select class="form-control">
+          <option>Honda City — TN 58 BQ 7890</option>
+          <option>Maruti Swift — TN 01 AZ 9912</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Service Type</label>
+        <select class="form-control">
+          <option>Select service…</option>
+          <option>Engine Oil Change</option>
+          <option>Full Service</option>
+          <option>AC Repair / Refill</option>
+          <option>Battery Check</option>
+          <option>Brake Service</option>
+          <option>Tyre Rotation / Replacement</option>
+        </select>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label class="form-label">Preferred Date</label>
+          <input class="form-control" type="date" value="2026-06-12">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Time Slot</label>
+          <select class="form-control">
+            <option>09:00 AM</option>
+            <option>11:00 AM</option>
+            <option>02:00 PM</option>
+            <option>04:00 PM</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Additional Notes</label>
+        <textarea class="form-control" rows="2" placeholder="Describe the issue or any special instructions…"></textarea>
+      </div>
+      <button class="btn btn-primary" style="width:100%"><i class="fas fa-calendar-plus"></i> Request Appointment</button>
+    </div>
+  </div>
+
+  <!-- All Appointments Table -->
+  <div class="card">
+    <div class="card-head"><div class="card-title">All Appointments</div><button class="card-action">Filter</button></div>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Ref</th><th>Vehicle</th><th>Service</th><th>Date & Time</th><th>Technician</th><th>Status</th><th></th></tr>
+        </thead>
+        <tbody>
+          <tr><td>#AP-401</td><td>Honda City</td><td>AC Repair</td><td>09 Jun, 11:30</td><td>Sanjay K.</td><td><span class="badge badge-orange">In Progress</span></td><td><button class="btn btn-outline btn-sm">Reschedule</button></td></tr>
+          <tr><td>#AP-403</td><td>Maruti Swift</td><td>Engine Diagnostics</td><td>10 Jun, 10:00</td><td>Auto</td><td><span class="badge badge-blue">Confirmed</span></td><td><button class="btn btn-outline btn-sm">Cancel</button></td></tr>
+          <tr><td>#AP-412</td><td>Honda City</td><td>Full Service</td><td>18 Jun, 11:00</td><td>Auto</td><td><span class="badge badge-yellow">Pending</span></td><td><button class="btn btn-outline btn-sm">Cancel</button></td></tr>
+          <tr><td>#AP-388</td><td>Honda City</td><td>Oil Change</td><td>12 Mar, 09:00</td><td>Mehul P.</td><td><span class="badge badge-green">Completed</span></td><td><button class="btn btn-outline btn-sm">Rebook</button></td></tr>
+          <tr><td>#AP-371</td><td>Maruti Swift</td><td>Tyre Rotation</td><td>05 Jan, 11:00</td><td>Mehul P.</td><td><span class="badge badge-green">Completed</span></td><td><button class="btn btn-outline btn-sm">Rebook</button></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════════
+     PAGE 3 — MY VEHICLES
+════════════════════════════════════════════════════ -->
+<section class="page" id="page-vehicles">
+  <div class="page-header">
+    <h1>My Vehicles</h1>
+    <p>Service history, health status, and quick actions for each of your vehicles.</p>
+  </div>
+
+  <div class="grid-3">
+    <!-- Vehicle 1 -->
+    <div class="vehicle-card">
+      <div class="vehicle-head">
+        <div class="vehicle-icon">🚙</div>
+        <div>
+          <div class="vehicle-name">Honda City (2021)</div>
+          <div class="vehicle-plate">TN 58 BQ 7890</div>
+        </div>
+        <span class="badge badge-orange" style="margin-left:auto">In Service</span>
+      </div>
+      <div class="vehicle-meta">
+        <span class="vehicle-tag">Diesel</span>
+        <span class="vehicle-tag">52,100 km</span>
+        <span class="vehicle-tag">9 services</span>
+      </div>
+      <div>
+        <div style="display:flex;justify-content:space-between;font-size:.78rem;color:var(--muted);margin-bottom:4px"><span>Service Health</span><span>54%</span></div>
+        <div class="progress-bar"><div class="progress-fill" style="width:54%"></div></div>
+      </div>
+      <div style="font-size:.74rem;color:var(--warning)"><i class="fas fa-triangle-exclamation"></i> Next service overdue — book now</div>
+      <div style="display:flex;gap:8px">
+        <button class="btn btn-outline btn-sm" style="flex:1">History</button>
+        <button class="btn btn-primary btn-sm" style="flex:1">Track Job</button>
+      </div>
+    </div>
+
+    <!-- Vehicle 2 -->
+    <div class="vehicle-card">
+      <div class="vehicle-head">
+        <div class="vehicle-icon">🚗</div>
+        <div>
+          <div class="vehicle-name">Maruti Swift (2023)</div>
+          <div class="vehicle-plate">TN 01 AZ 9912</div>
+        </div>
+        <span class="badge badge-green" style="margin-left:auto">Active</span>
+      </div>
+      <div class="vehicle-meta">
+        <span class="vehicle-tag">Petrol</span>
+        <span class="vehicle-tag">8,600 km</span>
+        <span class="vehicle-tag">5 services</span>
+      </div>
+      <div>
+        <div style="display:flex;justify-content:space-between;font-size:.78rem;color:var(--muted);margin-bottom:4px"><span>Service Health</span><span>97%</span></div>
+        <div class="progress-bar"><div class="progress-fill" style="width:97%"></div></div>
+      </div>
+      <div style="font-size:.74rem;color:var(--success)"><i class="fas fa-circle-check"></i> In good shape — next service ~1,400 km away</div>
+      <div style="display:flex;gap:8px">
+        <button class="btn btn-outline btn-sm" style="flex:1">History</button>
+        <button class="btn btn-primary btn-sm" style="flex:1">Book Service</button>
+      </div>
+    </div>
+
+    <!-- Add Vehicle -->
+    <div class="vehicle-card" style="border:1px dashed var(--border);justify-content:center;align-items:center;min-height:220px;cursor:pointer">
+      <div style="text-align:center;color:var(--muted)">
+        <i class="fas fa-plus-circle" style="font-size:2rem;color:var(--accent);margin-bottom:10px"></i>
+        <div style="font-weight:600;font-size:.875rem">Add Vehicle</div>
+        <div style="font-size:.78rem;margin-top:4px">Register a new car</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- History + Add Vehicle Form -->
+  <div class="grid-2">
+    <div class="card">
+      <div class="card-head">
+        <div class="card-title">Service History — TN 58 BQ 7890</div>
+        <button class="card-action">Download PDF</button>
+      </div>
+      <div class="timeline">
+        <div class="tl-item"><div class="tl-dot active"></div><div><div class="tl-title">AC Repair — In Progress</div><div class="tl-sub">09 Jun 2026 · Sanjay K.</div></div></div>
+        <div class="tl-item"><div class="tl-dot done"></div><div><div class="tl-title">Oil Change + Filter Replacement</div><div class="tl-sub">12 Mar 2026 · Mehul P. · ₹1,400</div></div></div>
+        <div class="tl-item"><div class="tl-dot done"></div><div><div class="tl-title">Full Service Inspection</div><div class="tl-sub">05 Dec 2025 · Arif M. · ₹6,200</div></div></div>
+        <div class="tl-item"><div class="tl-dot done"></div><div><div class="tl-title">Tyre Rotation</div><div class="tl-sub">18 Sep 2025 · Mehul P. · ₹800</div></div></div>
+        <div class="tl-item"><div class="tl-dot done"></div><div><div class="tl-title">Brake Fluid Change</div><div class="tl-sub">03 Jun 2025 · Sanjay K. · ₹950</div></div></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-head"><div class="card-title">Register New Vehicle</div></div>
+      <div class="form-group"><label class="form-label">Make / Brand</label>
+        <select class="form-control"><option>Maruti</option><option>Hyundai</option><option>Tata</option><option>Honda</option><option>Toyota</option><option>Kia</option><option>MG</option></select>
+      </div>
+      <div class="form-row">
+        <div class="form-group"><label class="form-label">Model</label><input class="form-control" placeholder="e.g. Swift"></div>
+        <div class="form-group"><label class="form-label">Year</label><input class="form-control" type="number" placeholder="2023"></div>
+      </div>
+      <div class="form-row">
+        <div class="form-group"><label class="form-label">Fuel Type</label>
+          <select class="form-control"><option>Petrol</option><option>Diesel</option><option>Electric</option><option>CNG</option></select>
+        </div>
+        <div class="form-group"><label class="form-label">Current Km</label><input class="form-control" type="number" placeholder="12500"></div>
+      </div>
+      <div class="form-group"><label class="form-label">Registration No.</label><input class="form-control" placeholder="TN 01 AB 1234"></div>
+      <button class="btn btn-primary" style="width:100%"><i class="fas fa-car-side"></i> Add Vehicle</button>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════════
+     PAGE 4 — TRACK SERVICE
+════════════════════════════════════════════════════ -->
+<section class="page" id="page-tracking">
+  <div class="page-header">
+    <h1>Track My Service</h1>
+    <p>Real-time progress for your active job orders.</p>
+  </div>
+
+  <!-- Active Job Card -->
+  <div class="card" style="border-color:rgba(249,115,22,.3);background:linear-gradient(135deg,rgba(249,115,22,.05),var(--surface))">
+    <div style="display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:12px;margin-bottom:20px">
+      <div>
+        <div style="font-family:'Syne',sans-serif;font-size:1.1rem;font-weight:700">AC Repair — Honda City</div>
+        <div style="font-size:.8rem;color:var(--muted);margin-top:3px">Job #SJ-2090 · TN 58 BQ 7890 · Bay 1</div>
+      </div>
+      <span class="badge badge-orange" style="font-size:.75rem;padding:6px 14px">In Progress</span>
+    </div>
+    <div style="display:flex;gap:20px;flex-wrap:wrap;margin-bottom:20px">
+      <div style="font-size:.8rem"><span style="color:var(--muted)">Technician</span><br><strong>Sanjay Kumar</strong></div>
+      <div style="font-size:.8rem"><span style="color:var(--muted)">Started</span><br><strong>09 Jun, 11:30 AM</strong></div>
+      <div style="font-size:.8rem"><span style="color:var(--muted)">Estimated Ready</span><br><strong>Today, 3:00 PM</strong></div>
+      <div style="font-size:.8rem"><span style="color:var(--muted)">Estimated Cost</span><br><strong>₹2,200</strong></div>
+    </div>
+
+    <!-- Step Tracker -->
+    <div style="display:flex;gap:0;margin-bottom:20px;overflow-x:auto;padding-bottom:4px">
+      <!-- Steps -->
+      <div style="flex:1;text-align:center;min-width:90px">
+        <div style="width:32px;height:32px;border-radius:50%;background:var(--success);display:flex;align-items:center;justify-content:center;margin:0 auto 6px;font-size:.8rem;color:#fff"><i class="fas fa-check"></i></div>
+        <div style="font-size:.7rem;font-weight:600">Received</div>
+        <div style="font-size:.65rem;color:var(--muted)">11:30 AM</div>
+      </div>
+      <div style="flex:0 0 30px;display:flex;align-items:center;padding-bottom:22px"><div style="height:2px;width:100%;background:var(--success)"></div></div>
+      <div style="flex:1;text-align:center;min-width:90px">
+        <div style="width:32px;height:32px;border-radius:50%;background:var(--success);display:flex;align-items:center;justify-content:center;margin:0 auto 6px;font-size:.8rem;color:#fff"><i class="fas fa-check"></i></div>
+        <div style="font-size:.7rem;font-weight:600">Diagnosed</div>
+        <div style="font-size:.65rem;color:var(--muted)">12:00 PM</div>
+      </div>
+      <div style="flex:0 0 30px;display:flex;align-items:center;padding-bottom:22px"><div style="height:2px;width:100%;background:var(--success)"></div></div>
+      <div style="flex:1;text-align:center;min-width:90px">
+        <div style="width:32px;height:32px;border-radius:50%;background:var(--accent);display:flex;align-items:center;justify-content:center;margin:0 auto 6px;font-size:.8rem;color:#fff;box-shadow:0 0 0 5px rgba(249,115,22,.2)"><i class="fas fa-wrench"></i></div>
+        <div style="font-size:.7rem;font-weight:600;color:var(--accent)">Working</div>
+        <div style="font-size:.65rem;color:var(--muted)">In progress</div>
+      </div>
+      <div style="flex:0 0 30px;display:flex;align-items:center;padding-bottom:22px"><div style="height:2px;width:100%;background:var(--border)"></div></div>
+      <div style="flex:1;text-align:center;min-width:90px">
+        <div style="width:32px;height:32px;border-radius:50%;background:var(--border);display:flex;align-items:center;justify-content:center;margin:0 auto 6px;font-size:.8rem;color:var(--muted)"><i class="fas fa-car-side"></i></div>
+        <div style="font-size:.7rem;font-weight:600;color:var(--muted)">Quality Check</div>
+        <div style="font-size:.65rem;color:var(--muted)">Pending</div>
+      </div>
+      <div style="flex:0 0 30px;display:flex;align-items:center;padding-bottom:22px"><div style="height:2px;width:100%;background:var(--border)"></div></div>
+      <div style="flex:1;text-align:center;min-width:90px">
+        <div style="width:32px;height:32px;border-radius:50%;background:var(--border);display:flex;align-items:center;justify-content:center;margin:0 auto 6px;font-size:.8rem;color:var(--muted)"><i class="fas fa-flag-checkered"></i></div>
+        <div style="font-size:.7rem;font-weight:600;color:var(--muted)">Ready</div>
+        <div style="font-size:.65rem;color:var(--muted)">~3:00 PM</div>
+      </div>
+    </div>
+
+    <div style="display:flex;justify-content:space-between;font-size:.78rem;color:var(--muted);margin-bottom:6px"><span>Overall Progress</span><span style="color:var(--accent);font-weight:600">65%</span></div>
+    <div class="progress-bar" style="height:10px"><div class="progress-fill" style="width:65%"></div></div>
+  </div>
+
+  <!-- Technician Note + Updates -->
+  <div class="grid-2">
+    <div class="card">
+      <div class="card-head"><div class="card-title">Technician Notes</div></div>
+      <div class="notif-item notif-unread">
+        <div class="notif-icon" style="background:rgba(249,115,22,.12);color:var(--accent)"><i class="fas fa-user-gear"></i></div>
+        <div class="notif-body"><div class="notif-text">Diagnosed low refrigerant (R134a) and a faulty compressor seal. Parts sourced from stock. Replacement underway.</div><div class="notif-time">Sanjay K. · 12:45 PM</div></div>
+      </div>
+      <div class="notif-item">
+        <div class="notif-icon" style="background:rgba(59,130,246,.12);color:var(--info)"><i class="fas fa-clipboard-check"></i></div>
+        <div class="notif-body"><div class="notif-text">Initial inspection complete. Vehicle checked in and moved to Bay 1.</div><div class="notif-time">Workshop · 11:35 AM</div></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-head"><div class="card-title">Contact Garage</div></div>
+      <div style="display:flex;flex-direction:column;gap:10px">
+        <a href="tel:+919443200123" style="text-decoration:none">
+          <div class="track-card">
+            <div class="track-icon" style="background:rgba(34,197,94,.12);color:var(--success)"><i class="fas fa-phone"></i></div>
+            <div class="track-body"><div class="track-title">Call Garage</div><div class="track-sub">+91 94432 00123</div></div>
+            <i class="fas fa-chevron-right" style="color:var(--muted);font-size:.75rem"></i>
+          </div>
+        </a>
+        <div class="track-card" style="cursor:pointer">
+          <div class="track-icon" style="background:rgba(249,115,22,.12);color:var(--accent)"><i class="fas fa-comment-dots"></i></div>
+          <div class="track-body"><div class="track-title">Send Message</div><div class="track-sub">Chat with service desk</div></div>
+          <i class="fas fa-chevron-right" style="color:var(--muted);font-size:.75rem"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════════
+     PAGE 5 — INVOICES
+════════════════════════════════════════════════════ -->
+<section class="page" id="page-invoices">
+  <div class="page-header">
+    <h1>My Invoices</h1>
+    <p>View, download, and pay outstanding invoices.</p>
+  </div>
+
+  <div class="grid-4">
+    <div class="stat-card"><div class="stat-top"><div class="stat-icon" style="background:rgba(34,197,94,.12)"><i class="fas fa-indian-rupee-sign" style="color:var(--success)"></i></div></div><div class="stat-val">₹18.4k</div><div class="stat-label">Total Spent (2026)</div></div>
+    <div class="stat-card"><div class="stat-top"><div class="stat-icon" style="background:rgba(59,130,246,.12)"><i class="fas fa-file-invoice" style="color:var(--info)"></i></div></div><div class="stat-val">14</div><div class="stat-label">Total Invoices</div></div>
+    <div class="stat-card"><div class="stat-top"><div class="stat-icon" style="background:rgba(234,179,8,.12)"><i class="fas fa-hourglass-half" style="color:var(--warning)"></i></div></div><div class="stat-val">₹2,200</div><div class="stat-label">Pending Payment</div></div>
+    <div class="stat-card"><div class="stat-top"><div class="stat-icon" style="background:rgba(249,115,22,.15)"><i class="fas fa-download" style="color:var(--accent)"></i></div></div><div class="stat-val">3</div><div class="stat-label">Available to Download</div></div>
+  </div>
+
+  <!-- Pending Payment Banner -->
+  <div style="background:rgba(249,115,22,.08);border:1px solid rgba(249,115,22,.25);border-radius:var(--radius);padding:16px 20px;display:flex;align-items:center;gap:14px;margin-bottom:20px;flex-wrap:wrap">
+    <i class="fas fa-triangle-exclamation" style="color:var(--accent);font-size:1.2rem"></i>
+    <div style="flex:1;min-width:0">
+      <div style="font-weight:600;font-size:.9rem">Invoice #INV-2208 is awaiting payment</div>
+      <div style="font-size:.78rem;color:var(--muted);margin-top:2px">AC Repair · Honda City · ₹2,200 · Due on delivery</div>
+    </div>
+    <button class="btn btn-primary btn-sm"><i class="fas fa-credit-card"></i> Pay Now</button>
+  </div>
+
+  <!-- Invoice List -->
+  <div class="card">
+    <div class="card-head"><div class="card-title">All Invoices</div><button class="card-action">Download All</button></div>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Invoice #</th><th>Service</th><th>Vehicle</th><th>Date</th><th>Amount</th><th>Status</th><th></th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>#INV-2208</strong></td>
+            <td>AC Repair</td>
+            <td>Honda City</td>
+            <td>09 Jun 2026</td>
+            <td style="font-weight:600">₹2,200</td>
+            <td><span class="badge badge-yellow">Pending</span></td>
+            <td><button class="btn btn-primary btn-sm">Pay</button></td>
+          </tr>
+          <tr>
+            <td><strong>#INV-2180</strong></td>
+            <td>Oil Change + Filter</td>
+            <td>Honda City</td>
+            <td>12 Mar 2026</td>
+            <td style="font-weight:600">₹1,400</td>
+            <td><span class="badge badge-green">Paid</span></td>
+            <td><button class="btn btn-outline btn-sm"><i class="fas fa-download"></i></button></td>
+          </tr>
+          <tr>
+            <td><strong>#INV-2141</strong></td>
+            <td>Tyre Rotation</td>
+            <td>Maruti Swift</td>
+            <td>05 Jan 2026</td>
+            <td style="font-weight:600">₹800</td>
+            <td><span class="badge badge-green">Paid</span></td>
+            <td><button class="btn btn-outline btn-sm"><i class="fas fa-download"></i></button></td>
+          </tr>
+          <tr>
+            <td><strong>#INV-2098</strong></td>
+            <td>Full Service Inspection</td>
+            <td>Honda City</td>
+            <td>05 Dec 2025</td>
+            <td style="font-weight:600">₹6,200</td>
+            <td><span class="badge badge-green">Paid</span></td>
+            <td><button class="btn btn-outline btn-sm"><i class="fas fa-download"></i></button></td>
+          </tr>
+          <tr>
+            <td><strong>#INV-2065</strong></td>
+            <td>Brake Fluid Change</td>
+            <td>Honda City</td>
+            <td>03 Jun 2025</td>
+            <td style="font-weight:600">₹950</td>
+            <td><span class="badge badge-green">Paid</span></td>
+            <td><button class="btn btn-outline btn-sm"><i class="fas fa-download"></i></button></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Rate Last Service -->
+  <div class="card">
+    <div class="card-head"><div class="card-title">Rate Your Last Service</div></div>
+    <div style="display:flex;align-items:flex-start;gap:20px;flex-wrap:wrap">
+      <div style="flex:1;min-width:200px">
+        <div style="font-size:.875rem;font-weight:500;margin-bottom:4px">AC Repair — Honda City</div>
+        <div style="font-size:.75rem;color:var(--muted);margin-bottom:14px">Technician: Sanjay Kumar · 09 Jun 2026</div>
+        <div style="font-size:.78rem;color:var(--muted);margin-bottom:8px">How was your experience?</div>
+        <div class="star-row" id="stars">
+          <button class="star-btn" onclick="setRating(1)">★</button>
+          <button class="star-btn" onclick="setRating(2)">★</button>
+          <button class="star-btn" onclick="setRating(3)">★</button>
+          <button class="star-btn" onclick="setRating(4)">★</button>
+          <button class="star-btn" onclick="setRating(5)">★</button>
+        </div>
+      </div>
+      <div style="flex:2;min-width:200px">
+        <div class="form-group">
+          <label class="form-label">Leave a comment (optional)</label>
+          <textarea class="form-control" rows="3" placeholder="Excellent service! The AC is working perfectly now…"></textarea>
+        </div>
+        <button class="btn btn-primary"><i class="fas fa-paper-plane"></i> Submit Review</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════════
+     PAGE 6 — MY PROFILE
+════════════════════════════════════════════════════ -->
+<section class="page" id="page-profile">
+  <div class="page-header">
+    <h1>My Profile</h1>
+    <p>Update your personal details and notification preferences.</p>
+  </div>
+
+  <div class="grid-2">
+    <div class="card">
+      <div class="card-head"><div class="card-title">Personal Information</div></div>
+      <div style="display:flex;flex-direction:column;align-items:flex-start;margin-bottom:20px">
+        <div class="profile-av">
+          <i class="fa-solid fa-user"></i>
+          <div class="profile-av-edit"><i class="fas fa-camera"></i></div>
+        </div>
+        <div style="font-family:'Syne',sans-serif;font-size:1.1rem;font-weight:700" id="user-email-name"> </div>
+        <div style="font-size:.78rem;color:var(--muted)">Member since Jan 2024 &nbsp;·&nbsp; 14 services</div>
+      </div>
+      <div class="form-row">
+        <div class="form-group"><label class="form-label">First Name</label><input class="form-control" value="xxx"></div>
+        <div class="form-group"><label class="form-label">Last Name</label><input class="form-control" value="yyy"></div>
+      </div>
+      <div class="form-group"><label class="form-label">Email Address</label><input class="form-control" value="zzz"></div>
+      <div class="form-row">
+        <div class="form-group"><label class="form-label">Phone</label><input class="form-control" value="+91 98400 12345"></div>
+        <div class="form-group"><label class="form-label">City</label><input class="form-control" value="Chennai"></div>
+      </div>
+      <div class="form-group"><label class="form-label">Address</label><textarea class="form-control" rows="2">14, Anna Nagar, Chennai, TN 600040</textarea></div>
+      <button class="btn btn-primary"><i class="fas fa-floppy-disk"></i> Save Changes</button>
+    </div>
+
+    <div>
+      <!-- Notification Prefs -->
+      <div class="card">
+        <div class="card-head"><div class="card-title">Notification Preferences</div></div>
+        <div style="display:flex;flex-direction:column;gap:16px">
+          <div style="display:flex;align-items:center;justify-content:space-between">
+            <div><div style="font-size:.875rem;font-weight:600">Service Updates</div><div style="font-size:.75rem;color:var(--muted)">Progress and status changes</div></div>
+            <label class="toggle"><input type="checkbox" checked><span class="track"></span></label>
+          </div>
+          <div style="display:flex;align-items:center;justify-content:space-between">
+            <div><div style="font-size:.875rem;font-weight:600">Appointment Reminders</div><div style="font-size:.75rem;color:var(--muted)">24 hrs before your visit</div></div>
+            <label class="toggle"><input type="checkbox" checked><span class="track"></span></label>
+          </div>
+          <div style="display:flex;align-items:center;justify-content:space-between">
+            <div><div style="font-size:.875rem;font-weight:600">Invoice & Payment</div><div style="font-size:.75rem;color:var(--muted)">Alerts for new invoices</div></div>
+            <label class="toggle"><input type="checkbox" checked><span class="track"></span></label>
+          </div>
+          <div style="display:flex;align-items:center;justify-content:space-between">
+            <div><div style="font-size:.875rem;font-weight:600">Service Reminders</div><div style="font-size:.75rem;color:var(--muted)">When next service is due</div></div>
+            <label class="toggle"><input type="checkbox"><span class="track"></span></label>
+          </div>
+          <div style="display:flex;align-items:center;justify-content:space-between">
+            <div><div style="font-size:.875rem;font-weight:600">Promotions & Offers</div><div style="font-size:.75rem;color:var(--muted)">Discounts and seasonal deals</div></div>
+            <label class="toggle"><input type="checkbox"><span class="track"></span></label>
+          </div>
+        </div>
+      </div>
+
+      <!-- Change Password -->
+      <div class="card">
+        <div class="card-head"><div class="card-title">Change Password</div></div>
+        <div class="form-group"><label class="form-label">Current Password</label><input class="form-control" type="password" placeholder="••••••••"></div>
+        <div class="form-group"><label class="form-label">New Password</label><input class="form-control" type="password" placeholder="••••••••"></div>
+        <div class="form-group"><label class="form-label">Confirm New Password</label><input class="form-control" type="password" placeholder="••••••••"></div>
+        <button class="btn btn-primary"><i class="fas fa-shield-halved"></i> Update Password</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════════
+     PAGE 7 — SUPPORT
+════════════════════════════════════════════════════ -->
+<section class="page" id="page-support">
+  <div class="page-header">
+    <h1>Support</h1>
+    <p>Get help, raise a complaint, or ask us anything.</p>
+  </div>
+
+  <div class="grid-2">
+    <!-- Quick Contact -->
+    <div class="card">
+      <div class="card-head"><div class="card-title">Contact Us</div></div>
+      <div style="display:flex;flex-direction:column;gap:10px;margin-bottom:20px">
+        <div class="track-card">
+          <div class="track-icon" style="background:rgba(34,197,94,.12);color:var(--success)"><i class="fas fa-phone"></i></div>
+          <div class="track-body"><div class="track-title">Call Support</div><div class="track-sub">+91 94432 00123 · Mon–Sat, 8AM–8PM</div></div>
+        </div>
+        <div class="track-card">
+          <div class="track-icon" style="background:rgba(59,130,246,.12);color:var(--info)"><i class="fas fa-envelope"></i></div>
+          <div class="track-body"><div class="track-title">Email Us</div><div class="track-sub">support@autoservepro.in</div></div>
+        </div>
+        <div class="track-card">
+          <div class="track-icon" style="background:rgba(249,115,22,.12);color:var(--accent)"><i class="fab fa-whatsapp"></i></div>
+          <div class="track-body"><div class="track-title">WhatsApp</div><div class="track-sub">Message us for quick queries</div></div>
+        </div>
+      </div>
+
+      <div class="card-head" style="border-top:1px solid var(--border);padding-top:16px"><div class="card-title">FAQs</div></div>
+      <div style="display:flex;flex-direction:column;gap:8px">
+        <div style="background:var(--surface2);border:1px solid var(--border);border-radius:var(--radius-sm);padding:12px;font-size:.83rem;cursor:pointer">
+          <div style="display:flex;justify-content:space-between"><span>How do I reschedule my appointment?</span><i class="fas fa-chevron-down" style="color:var(--muted);font-size:.75rem"></i></div>
+        </div>
+        <div style="background:var(--surface2);border:1px solid var(--border);border-radius:var(--radius-sm);padding:12px;font-size:.83rem;cursor:pointer">
+          <div style="display:flex;justify-content:space-between"><span>What payment methods are accepted?</span><i class="fas fa-chevron-down" style="color:var(--muted);font-size:.75rem"></i></div>
+        </div>
+        <div style="background:var(--surface2);border:1px solid var(--border);border-radius:var(--radius-sm);padding:12px;font-size:.83rem;cursor:pointer">
+          <div style="display:flex;justify-content:space-between"><span>How do I download my invoice?</span><i class="fas fa-chevron-down" style="color:var(--muted);font-size:.75rem"></i></div>
+        </div>
+        <div style="background:var(--surface2);border:1px solid var(--border);border-radius:var(--radius-sm);padding:12px;font-size:.83rem;cursor:pointer">
+          <div style="display:flex;justify-content:space-between"><span>Is my vehicle covered under warranty?</span><i class="fas fa-chevron-down" style="color:var(--muted);font-size:.75rem"></i></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Raise Complaint -->
+    <div class="card">
+      <div class="card-head"><div class="card-title">Raise a Complaint / Request</div></div>
+      <div class="form-group">
+        <label class="form-label">Type</label>
+        <select class="form-control">
+          <option>General Enquiry</option>
+          <option>Service Complaint</option>
+          <option>Billing Issue</option>
+          <option>Appointment Problem</option>
+          <option>Other</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Related Job / Invoice (optional)</label>
+        <input class="form-control" placeholder="e.g. #SJ-2090 or #INV-2208">
+      </div>
+      <div class="form-group">
+        <label class="form-label">Subject</label>
+        <input class="form-control" placeholder="Brief subject of your query">
+      </div>
+      <div class="form-group">
+        <label class="form-label">Message</label>
+        <textarea class="form-control" rows="5" placeholder="Describe your issue in detail. We'll respond within 24 hours…"></textarea>
+      </div>
+      <div style="display:flex;gap:10px;flex-wrap:wrap">
+        <button class="btn btn-primary"><i class="fas fa-paper-plane"></i> Submit Ticket</button>
+        <button class="btn btn-outline"><i class="fas fa-paperclip"></i> Attach File</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<script>
+/* ── NAV ── */
+function navigate(pageId, el) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
+  document.getElementById('page-' + pageId).classList.add('active');
+  if (el) {
+    el.classList.add('active');
+    document.getElementById('topbar-title').textContent =
+      el.querySelector('i').nextSibling.textContent.trim();
+  }
+  if (window.innerWidth < 900) closeSidebar();
+  window.scrollTo(0, 0);
+}
+
+/* ── SIDEBAR ── */
+function toggleSidebar() {
+  document.getElementById('sidebar').classList.toggle('open');
+  document.getElementById('overlay').classList.toggle('open');
+}
+function closeSidebar() {
+  document.getElementById('sidebar').classList.remove('open');
+  document.getElementById('overlay').classList.remove('open');
+}
+
+/* ── DROPDOWN ── */
+function toggleDropdown() {
+  document.getElementById('user-dropdown').classList.toggle('open');
+}
+document.addEventListener('click', function(e) {
+  const u = document.querySelector('.topbar-user');
+  if (u && !u.contains(e.target)) {
+    document.getElementById('user-dropdown').classList.remove('open');
+  }
+});
+
+/* ── STAR RATING ── */
+function setRating(n) {
+  document.querySelectorAll('#stars .star-btn').forEach((s, i) => {
+    s.classList.toggle('active', i < n);
+  });
+}
+
+/* ── SPEND CHART ── */
+(function buildChart() {
+  const months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+  const vals   = [0, 0, 1.4, 0, 0, 2.2, 0, 0, 0, 0, 0, 0];
+  const maxVal = 3;
+  const chart  = document.getElementById('spendChart');
+  const labels = document.getElementById('spendLabels');
+  if (!chart) return;
+  vals.forEach((v, i) => {
+    const bar = document.createElement('div');
+    bar.className = 'bar';
+    bar.style.height = v > 0 ? Math.max((v / maxVal * 100), 8) + '%' : '4px';
+    bar.style.opacity = v > 0 ? '1' : '.2';
+    if (i === 5) bar.classList.add('current');
+    bar.title = months[i] + (v > 0 ? ': ₹' + (v * 1000) : ': No service');
+    chart.appendChild(bar);
+    const lbl = document.createElement('span');
+    lbl.textContent = months[i].slice(0,1);
+    labels.appendChild(lbl);
+  });
+})();
+
+/* ── AUTH ── */
+document.addEventListener("DOMContentLoaded", () => {
+  const email = localStorage.getItem("userEmail");
+  if (!email) {
+    window.location.href = "login.html";
+    return;
+  }
+  const emailEl = document.getElementById("user-email");
+  if (emailEl) emailEl.textContent = email;
+  const nameEl = document.getElementById("user-email-name");
+  if (nameEl) nameEl.textContent = email.split("@")[0];
+
+  document.querySelector(".logout")?.addEventListener("click", () => {
+    localStorage.removeItem("userEmail");
+    localStorage.removeItem("userRole");
+    window.location.href = "login.html";
+  });
+});
+</script>
+</body>
+</html>

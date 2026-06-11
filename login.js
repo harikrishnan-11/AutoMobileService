@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     const loginForm = document.getElementById('loginForm');
     const errorBox = document.getElementById('formErrorBox');
-
+    
     loginForm.addEventListener('submit', (event) => {
         // Halt traditional submission mechanics
         event.preventDefault();
@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const passwordInput = loginForm.querySelector('.password-input');
         const roleSelect = loginForm.querySelector('.role-select');
 
-        let errors = [];
+        let errors = [];    
 
         // 1. Validate Email Domain Node
         const emailValue = emailInput.value.trim().toLowerCase();
@@ -28,20 +28,26 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         // 3. Process Validation Diagnostics
-        if (errors.length > 0) {
-            // Render the top message using the exact signup format style
-            errorBox.innerHTML = `<i class="fa-solid fa-circle-exclamation"></i> ${errors[0]}`;
-            errorBox.style.display = 'block';
-        } else {
-            // SUCCESS: Pull value matrix parameter to process dynamic redirection
-            const selectedRole = roleSelect.value;
+        // 3. Process Validation Diagnostics
+if (errors.length > 0) {
+    errorBox.innerHTML = `<i class="fa-solid fa-circle-exclamation"></i> ${errors[0]}`;
+    errorBox.style.display = 'block';
+} else {
 
-            if (selectedRole === 'admin') {
-                window.location.href = "./admin.html";
-            } else if (selectedRole === 'user') {
-                window.location.href = "./user.html";
-            }
-        }
+    const selectedRole = roleSelect.value;
+    const email = emailInput.value.trim();
+
+    // Save user data
+    localStorage.setItem("userEmail", email);
+    localStorage.setItem("userRole", selectedRole);
+
+    // Redirect
+    if (selectedRole === 'admin') {
+        window.location.href = "./admin.html";
+    } else if (selectedRole === 'user') {
+        window.location.href = "./user.html";
+    }
+}
     });
 
     /* --- Password Visibility Toggle --- */

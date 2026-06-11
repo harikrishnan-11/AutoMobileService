@@ -16,8 +16,7 @@
 <!-- ── SIDEBAR ── -->
 <aside class="sidebar" id="sidebar">
   <div class="sidebar-logo">
-    <div class="logo-icon"><i class="fas fa-car-wrench"></i></div>
-    <div class="logo-text">Auto<span>Serve</span> Pro</div>
+    <img src="./src/Untitled design-compressed (1).webp" alt="">
   </div>
 
   <div class="nav-section">Main</div>
@@ -71,16 +70,16 @@
     <div class="topbar-user" onclick="toggleDropdown()">
       <div class="user-av" id="user-av">AK</div>
       <div class="user-info">
-        <div class="user-name" id="user-name">Arjun Kumar</div>
-        <div class="user-role" id="user-role-tag">Admin</div>
+        <div class="user-name" id="user-email-name"></div>
+        <div class="user-role" id="">Admin</div>
       </div>
       <i class="fas fa-chevron-down" style="font-size:.65rem;color:var(--muted);margin-left:4px"></i>
       <div class="user-dropdown" id="user-dropdown">
         <div class="dropdown-item"><i class="fas fa-circle-user"></i> My Profile</div>
-        <div class="dropdown-item"><i class="fas fa-envelope"></i> <span id="dd-email">arjun@autoservepro.in</span></div>
+        <div class="dropdown-item"><i class="fas fa-envelope"></i> <span id="user-email"></span></div>
         <div class="dropdown-item"><i class="fas fa-gear"></i> Account Settings</div>
         <div class="dropdown-divider"></div>
-        <div class="dropdown-item logout" onclick="handleLogout()"><i class="fas fa-right-from-bracket"></i> Logout</div>
+        <div class="dropdown-item logout" ><i class="fas fa-right-from-bracket"></i> Logout</div>
       </div>
     </div>
   </div>
@@ -938,10 +937,7 @@ document.addEventListener('click', function(e) {
 });
 
 /* ── ROLE SWITCH ── */
-const roles = {
-  admin: { name: 'Arjun Kumar', email: 'arjun@autoservepro.in', initials: 'AK', label: 'Admin' },
-  user:  { name: 'Priya Nair',  email: 'priya.nair@gmail.com',   initials: 'PN', label: 'Customer' }
-};
+
 function switchRole(r, btn) {
   document.querySelectorAll('.role-btn').forEach(b => b.classList.remove('active'));
   btn.classList.add('active');
@@ -955,13 +951,7 @@ function switchRole(r, btn) {
 }
 
 /* ── LOGOUT ── */
-function handleLogout() {
-  if (confirm('Logout from AutoServe Pro?')) {
-    document.body.style.opacity = '0';
-    document.body.style.transition = 'opacity .4s';
-    setTimeout(() => { document.body.style.opacity = '1'; document.body.style.transition = ''; alert('Logged out. (Demo — page reloaded)'); location.reload(); }, 400);
-  }
-}
+
 
 /* ── REVENUE CHART ── */
 (function buildChart() {
@@ -983,6 +973,42 @@ function handleLogout() {
     labels.appendChild(lbl);
   });
 })();
+document.addEventListener("DOMContentLoaded", () => {
+
+    const email = localStorage.getItem("userEmail");
+    const role = localStorage.getItem("userRole");
+
+    // Optional protection
+    if (!email) {
+        window.location.href = "login.html";
+        return;
+    }
+
+    // Email in dropdown
+    const userEmail = document.getElementById("user-email");
+    if (userEmail) {
+        userEmail.textContent = email;
+    }
+
+    // Username section
+    const userName = document.getElementById("user-email-name");
+    if (userName) {
+        userName.textContent = email.split("@")[0];
+    }
+
+    // Logout
+    const logoutBtn = document.querySelector(".logout");
+
+    if (logoutBtn) {
+        logoutBtn.addEventListener("click", () => {
+            localStorage.removeItem("userEmail");
+            localStorage.removeItem("userRole");
+            window.location.href = "login.html";
+        });
+    }
+
+});
 </script>
+<script src="./login.js"></script>
 </body>
 </html>
